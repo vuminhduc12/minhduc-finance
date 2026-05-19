@@ -17,7 +17,7 @@ export function OperatorTeaserSection() {
             role="img"
             aria-label="ブランドマスコット ミライくん"
           >
-            <MiraiMascot compact className="h-36 w-36 sm:h-40 sm:w-40 lg:h-44 lg:w-44" />
+            <MiraiMascot compact variant="cheer" className="h-36 w-36 sm:h-40 sm:w-40 lg:h-44 lg:w-44" />
           </div>
           <div className="min-w-0 flex-1">
             <h2

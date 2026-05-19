@@ -38,8 +38,8 @@ export function ButtonLink({
   const inner =
     subLabelVi != null && subLabelVi !== "" ? (
       <>
-        <span>{children}</span>
-        <span lang="vi" className="max-w-[22rem] text-[0.68rem] font-medium leading-snug opacity-95 sm:text-[0.72rem]">
+        <span className="lang-ja">{children}</span>
+        <span lang="vi" className="lang-vi max-w-[22rem] text-[0.82rem] font-semibold leading-snug opacity-95 sm:text-sm">
           {subLabelVi}
         </span>
       </>

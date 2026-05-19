@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 const routes = [
   "",
   "/articles",
+  "/official-info",
   "/scam-check",
   "/profile",
   "/contact",

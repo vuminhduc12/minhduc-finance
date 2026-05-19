@@ -16,8 +16,8 @@ export function AudienceStrip() {
           <span className="text-xs font-bold text-navy-soft">VN</span>
           <FlagIcon code="vn" className="h-5 w-7" />
         </span>
-        <span className="block text-navy">{audienceStrip.ja}</span>
-        <span lang="vi" className="mt-1.5 block font-medium leading-relaxed text-navy-soft">
+        <span className="lang-ja block text-navy">{audienceStrip.ja}</span>
+        <span lang="vi" className="lang-vi block font-medium leading-relaxed text-navy-soft">
           {audienceStrip.vi}
         </span>
       </p>

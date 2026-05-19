@@ -35,6 +35,38 @@ html {
   scroll-behavior: smooth;
 }
 
+.lang-ja,
+.lang-vi {
+  overflow-wrap: break-word;
+}
+
+html:not([data-lang="ja"]) .lang-ja {
+  display: none !important;
+}
+
+html[data-lang="ja"] .lang-vi {
+  display: none !important;
+}
+
+.lang-toggle-button {
+  color: var(--navy);
+}
+
+.lang-toggle-button:hover {
+  background: var(--accent-muted);
+}
+
+html:not([data-lang="ja"]) .lang-toggle-vi,
+html[data-lang="ja"] .lang-toggle-ja {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+html:not([data-lang="ja"]) .lang-toggle-vi:hover,
+html[data-lang="ja"] .lang-toggle-ja:hover {
+  background: var(--navy);
+}
+
 body {
   background:
     radial-gradient(circle at top left, rgba(15, 159, 143, 0.12), transparent 34rem),
@@ -44,6 +76,7 @@ body {
   font-family: var(--font-sans);
   font-size: 0.9375rem;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 ::selection {

@@ -11,8 +11,8 @@ export function MobileActionBar() {
           rel="noopener noreferrer"
           className="inline-flex min-h-11 flex-col items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold leading-snug text-white"
         >
-          <span>Risk Check</span>
-          <span lang="vi" className="text-[0.65rem] font-semibold opacity-90">
+          <span className="lang-ja">Risk Check</span>
+          <span lang="vi" className="lang-vi">
             Kiểm tra LINE
           </span>
         </a>
@@ -20,8 +20,8 @@ export function MobileActionBar() {
           href="/contact"
           className="inline-flex min-h-11 flex-col items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-center text-xs font-bold leading-snug text-navy"
         >
-          <span>Contact</span>
-          <span lang="vi" className="text-[0.65rem] font-semibold text-navy-soft">
+          <span className="lang-ja">Contact</span>
+          <span lang="vi" className="lang-vi">
             Liên hệ
           </span>
         </Link>

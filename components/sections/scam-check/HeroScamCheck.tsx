@@ -19,9 +19,9 @@ export function HeroScamCheck() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-3 py-1.5 text-xs font-medium text-accent shadow-sm sm:text-sm">
               <FlagIcon code="jp" className="h-4 w-6" />
-              <span>{hero.eyebrow.ja}</span>
+              <span className="lang-ja">{hero.eyebrow.ja}</span>
               <FlagIcon code="vn" className="h-4 w-6" />
-              <span lang="vi" className="hidden text-[0.7rem] font-semibold leading-snug text-navy-soft sm:inline sm:text-xs">
+              <span lang="vi" className="lang-vi text-[0.7rem] font-semibold leading-snug text-navy-soft sm:text-xs">
                 {hero.eyebrow.vi}
               </span>
             </p>
@@ -32,8 +32,8 @@ export function HeroScamCheck() {
               <BiSubheading text={hero.title} />
             </h1>
             <div className="mt-4 max-w-2xl text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
-              <p className="text-foreground">{hero.lead.ja}</p>
-              <p lang="vi" className="mt-2 border-l-2 border-accent/40 pl-3 text-[0.8125rem] leading-relaxed sm:text-[0.9375rem]">
+              <p className="lang-ja text-foreground">{hero.lead.ja}</p>
+              <p lang="vi" className="lang-vi text-foreground">
                 {hero.lead.vi}
               </p>
             </div>
@@ -59,10 +59,14 @@ export function HeroScamCheck() {
             </div>
           </div>
           <div className="mx-auto hidden w-full max-w-[260px] rounded-3xl border border-border bg-white/78 p-5 text-center shadow-[0_18px_45px_rgba(11,31,58,0.09)] lg:block">
-            <MiraiMascot compact className="mx-auto h-44 w-44" title="詐欺チェックを案内するミライくん" />
-            <p className="mt-2 text-sm font-bold text-navy">ミライくんが一緒に確認</p>
+            <MiraiMascot compact variant="think" className="mx-auto h-44 w-44" title="詐欺チェックを考えるミライくん" />
+            <p className="mt-2 text-sm font-bold text-navy">
+              <span className="lang-ja">ミライくんが一緒に確認</span>
+              <span lang="vi" className="lang-vi">Mirai cùng bạn kiểm tra</span>
+            </p>
             <p className="mt-1 text-xs leading-relaxed text-muted">
-              急がされる話ほど、いったん止まって整理します。
+              <span className="lang-ja">急がされる話ほど、いったん止まって整理します。</span>
+              <span lang="vi" className="lang-vi">Lời mời càng gấp, càng cần dừng lại để sắp xếp.</span>
             </p>
           </div>
         </div>

@@ -22,10 +22,10 @@ function BiLines({
 }) {
   return (
     <span className="block">
-      <span className={`block ${className}`}>{text.ja}</span>
+      <span className={`lang-ja block ${className}`}>{text.ja}</span>
       <span
         lang="vi"
-        className={`mt-1 block text-[0.88em] font-semibold leading-snug text-navy-soft sm:mt-1.5 sm:text-[0.92em] ${viClassName}`}
+        className={`lang-vi block text-[0.88em] font-semibold leading-snug text-navy-soft sm:text-[0.92em] ${viClassName}`}
       >
         {text.vi}
       </span>

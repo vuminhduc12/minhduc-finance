@@ -8,7 +8,7 @@ const viSize: Record<Size, string> = {
   lg: "mt-2 border-l-2 border-accent/40 pl-3 text-sm leading-relaxed text-navy-soft sm:text-[0.9375rem]",
 };
 
-/** 本文ブロック：日本語 → ベトナム語（視覚的に下位行） */
+/** 本文ブロック：表示言語はヘッダーの国旗ボタンで切り替え */
 export function BiBlock({
   text,
   viSize: size = "md",
@@ -20,8 +20,8 @@ export function BiBlock({
 }) {
   return (
     <div className={className}>
-      <p className="leading-relaxed">{text.ja}</p>
-      <p lang="vi" className={viSize[size]}>
+      <p className="lang-ja leading-relaxed">{text.ja}</p>
+      <p lang="vi" className={`lang-vi leading-relaxed ${viSize[size].replace("mt-1 ", "").replace("mt-1.5 ", "").replace("mt-2 ", "")}`}>
         {text.vi}
       </p>
     </div>
@@ -32,8 +32,8 @@ export function BiBlock({
 export function BiSubheading({ text, className = "" }: { text: Bi; className?: string }) {
   return (
     <span className={`block ${className}`}>
-      <span className="block">{text.ja}</span>
-      <span lang="vi" className="mt-1.5 block text-[0.88em] font-semibold leading-snug text-navy-soft sm:text-[0.9em]">
+      <span className="lang-ja block">{text.ja}</span>
+      <span lang="vi" className="lang-vi block text-[0.88em] font-semibold leading-snug text-navy-soft sm:text-[0.9em]">
         {text.vi}
       </span>
     </span>

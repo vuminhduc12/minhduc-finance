@@ -36,13 +36,18 @@ export default function ArticlesPage() {
               CONTENT CATEGORIES
             </p>
             <h1 className="mt-2 text-[1.65rem] font-bold leading-tight text-navy sm:text-4xl">
-              記事ライブラリ
-              <span lang="vi" className="mt-1.5 block text-[0.72em] font-semibold text-navy-soft">
+              <span className="lang-ja">記事ライブラリ</span>
+              <span lang="vi" className="lang-vi text-[0.72em] font-semibold text-navy-soft">
                 Thư viện bài viết
               </span>
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-              生活に近いお金の疑問を、詐欺予防・送金・NISA・支払いなどのカテゴリで整理します。
+              <span className="lang-ja">
+                生活に近いお金の疑問を、詐欺予防・送金・NISA・支払いなどのカテゴリで整理します。
+              </span>
+              <span lang="vi" className="lang-vi">
+                Sắp xếp các câu hỏi gần đời sống theo chủ đề: phòng tránh lừa đảo, chuyển tiền, NISA và thanh toán.
+              </span>
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
@@ -51,9 +56,9 @@ export default function ArticlesPage() {
                 key={category.id}
                 className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-bold text-navy shadow-sm"
               >
-                {category.label.ja}
-                <span lang="vi" className="ml-1 font-semibold text-muted">
-                  / {category.label.vi}
+                <span className="lang-ja">{category.label.ja}</span>
+                <span lang="vi" className="lang-vi">
+                  {category.label.vi}
                 </span>
               </span>
             ))}

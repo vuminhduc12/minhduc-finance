@@ -33,19 +33,18 @@ export function ArticleHubSection({ limit, showHeaderLink = true }: Props) {
               href="/articles"
               className="inline-flex min-h-11 items-center justify-center rounded-xl border border-navy bg-white px-4 py-2 text-sm font-bold text-navy hover:bg-navy hover:text-white"
             >
-              記事一覧へ
+              <span className="lang-ja">記事一覧へ</span>
+              <span lang="vi" className="lang-vi">Xem bài viết</span>
             </Link>
           ) : null}
         </div>
-        <div className="grid gap-3 md:grid-cols-3 md:gap-4">
+        <div className="mt-6 grid gap-3 md:grid-cols-3 md:gap-4">
           {items.map((article) => (
             <Card key={article.slug} className="flex h-full flex-col overflow-hidden p-0">
-              <div className="border-b border-border bg-navy px-4 py-3 text-white">
+              <div className="min-w-0 border-b border-border bg-navy px-4 py-3 text-white">
                 <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent-muted">
-                  {article.categoryLabel.ja}
-                </p>
-                <p lang="vi" className="mt-0.5 text-[0.68rem] text-slate-300">
-                  {article.categoryLabel.vi}
+                  <span className="lang-ja">{article.categoryLabel.ja}</span>
+                  <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
                 </p>
               </div>
               <div className="flex flex-1 flex-col p-4 sm:p-5">
@@ -54,15 +53,15 @@ export function ArticleHubSection({ limit, showHeaderLink = true }: Props) {
                   <span>{article.status === "published" ? "Published" : "Planned"}</span>
                 </div>
                 <h3 className="text-base font-bold leading-snug text-navy sm:text-lg">
-                  <span className="block">{article.title.ja}</span>
-                  <span lang="vi" className="mt-1 block text-[0.82rem] font-semibold text-navy-soft">
+                  <span className="lang-ja block">{article.title.ja}</span>
+                  <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-navy-soft">
                     {article.title.vi}
                   </span>
                 </h3>
-                <p className="mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+                <p className="lang-ja mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                   {article.excerpt.ja}
                 </p>
-                <p lang="vi" className="mt-1.5 border-l-2 border-accent/30 pl-2.5 text-[0.72rem] leading-relaxed text-navy-soft sm:text-xs">
+                <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                   {article.excerpt.vi}
                 </p>
               </div>

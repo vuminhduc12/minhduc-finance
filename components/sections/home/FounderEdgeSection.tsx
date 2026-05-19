@@ -20,14 +20,14 @@ export function FounderEdgeSection() {
               id="founder-edge-heading"
               className="mt-3 text-[1.55rem] font-bold leading-tight tracking-tight text-white sm:text-3xl md:text-[2.25rem]"
             >
-              <span className="block">{founderEdge.heading.ja}</span>
-              <span lang="vi" className="mt-2 block text-[0.72em] font-semibold text-accent-muted">
+              <span className="lang-ja block">{founderEdge.heading.ja}</span>
+              <span lang="vi" className="lang-vi block text-[0.72em] font-semibold text-accent-muted">
                 {founderEdge.heading.vi}
               </span>
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
-              <span className="block">{founderEdge.subtitle.ja}</span>
-              <span lang="vi" className="mt-2 block text-[0.88em] text-slate-400">
+              <span className="lang-ja block">{founderEdge.subtitle.ja}</span>
+              <span lang="vi" className="lang-vi block text-[0.88em] text-slate-400">
                 {founderEdge.subtitle.vi}
               </span>
             </p>
@@ -55,15 +55,15 @@ export function FounderEdgeSection() {
                 </div>
                 <div>
                   <h3 className="text-base font-bold leading-snug text-white sm:text-lg">
-                    <span className="block">{edge.title.ja}</span>
-                    <span lang="vi" className="mt-1 block text-[0.82rem] font-semibold text-accent-muted">
+                    <span className="lang-ja block">{edge.title.ja}</span>
+                    <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-accent-muted">
                       {edge.title.vi}
                     </span>
                   </h3>
-                  <p className="mt-2 text-[0.82rem] leading-relaxed text-slate-300 sm:text-sm">
+                  <p className="lang-ja mt-2 text-[0.82rem] leading-relaxed text-slate-300 sm:text-sm">
                     {edge.body.ja}
                   </p>
-                  <p lang="vi" className="mt-1.5 border-l-2 border-accent/40 pl-2.5 text-[0.72rem] leading-relaxed text-slate-400 sm:text-xs">
+                  <p lang="vi" className="lang-vi mt-2 text-[0.82rem] leading-relaxed text-slate-300 sm:text-sm">
                     {edge.body.vi}
                   </p>
                 </div>

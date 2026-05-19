@@ -2,13 +2,21 @@ type Props = {
   className?: string;
   title?: string;
   compact?: boolean;
+  variant?: "smile" | "think" | "cheer" | "surprised" | "calm" | "explain";
 };
 
 export function MiraiMascot({
   className = "",
   title = "ミライくん",
   compact = false,
+  variant = "smile",
 }: Props) {
+  const isCalm = variant === "calm";
+  const isThink = variant === "think";
+  const isCheer = variant === "cheer";
+  const isSurprised = variant === "surprised";
+  const isExplain = variant === "explain";
+
   return (
     <svg
       viewBox={compact ? "28 8 164 204" : "0 0 220 260"}
@@ -47,20 +55,84 @@ export function MiraiMascot({
       />
       <path d="M99 42c-2-15 3-27 15-34 7 13 3 25-15 34z" fill="#0F9F8F" />
       <path d="M115 42c5-14 15-22 30-23 0 15-9 24-30 23z" fill="#28B7AA" />
-      <circle cx="91" cy="85" r="5" fill="#172033" />
-      <circle cx="129" cy="85" r="5" fill="#172033" />
-      <path d="M99 104c8 8 22 8 30 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+      {isCalm ? (
+        <>
+          <path d="M86 85c5 4 10 4 15 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+          <path d="M119 85c5 4 10 4 15 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+        </>
+      ) : isSurprised ? (
+        <>
+          <circle cx="91" cy="85" r="6.5" fill="#172033" />
+          <circle cx="129" cy="85" r="6.5" fill="#172033" />
+        </>
+      ) : (
+        <>
+          <circle cx="91" cy="85" r="5" fill="#172033" />
+          <circle cx="129" cy="85" r="5" fill="#172033" />
+        </>
+      )}
+      {isThink ? (
+        <path d="M103 105c6 3 14 3 20 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+      ) : isSurprised ? (
+        <circle cx="110" cy="106" r="5" fill="none" stroke="#172033" strokeWidth="4" />
+      ) : isCheer ? (
+        <path d="M96 101c8 12 26 12 34 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+      ) : isCalm ? (
+        <path d="M101 103c7 6 18 6 25 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+      ) : (
+        <path d="M99 104c8 8 22 8 30 0" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
+      )}
       <circle cx="75" cy="98" r="8" fill="#F2B8A8" opacity="0.55" />
       <circle cx="145" cy="98" r="8" fill="#F2B8A8" opacity="0.55" />
       <path d="M62 84c-8 1-14 8-13 17 1 8 8 14 16 13" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
       <path d="M158 84c8 1 14 8 13 17-1 8-8 14-16 13" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
       <path d="M61 80c4-34 24-55 49-55s45 21 49 55" fill="none" stroke="#172033" strokeWidth="4" strokeLinecap="round" />
-      <path d="M77 126c-13 2-22 12-25 29" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
-      <path d="M143 126c13 2 22 12 25 29" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
-      <circle cx="53" cy="158" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
-      <circle cx="167" cy="158" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+      {isCheer ? (
+        <>
+          <path d="M77 126c-17-2-29-12-35-28" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
+          <path d="M143 126c17-2 29-12 35-28" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
+          <circle cx="40" cy="96" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+          <circle cx="180" cy="96" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+        </>
+      ) : isExplain ? (
+        <>
+          <path d="M77 126c-13 2-22 12-25 29" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
+          <path d="M143 126c15 0 29-7 42-20" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
+          <circle cx="53" cy="158" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+          <circle cx="187" cy="104" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+          <path d="M190 76v-30h-42v38" fill="none" stroke="#0B1F3A" strokeWidth="4" strokeLinecap="round" />
+          <path d="M156 73h26" stroke="#0F9F8F" strokeWidth="5" strokeLinecap="round" />
+          <path d="M156 61h18" stroke="#C88A2D" strokeWidth="5" strokeLinecap="round" />
+        </>
+      ) : (
+        <>
+          <path d="M77 126c-13 2-22 12-25 29" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
+          <path d="M143 126c13 2 22 12 25 29" stroke="#0B1F3A" strokeWidth="9" strokeLinecap="round" />
+          <circle cx="53" cy="158" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+          <circle cx="167" cy="158" r="10" fill="#FDF6EF" stroke="#172033" strokeWidth="3" />
+        </>
+      )}
       <path d="M154 82c11 0 20 9 20 20" stroke="#0F9F8F" strokeWidth="4" strokeLinecap="round" opacity="0.25" />
       <path d="M139 53c7 5 12 11 16 19" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" opacity="0.35" />
+      {isThink ? (
+        <>
+          <circle cx="154" cy="42" r="4" fill="#0F9F8F" opacity="0.7" />
+          <circle cx="166" cy="31" r="6" fill="#0F9F8F" opacity="0.45" />
+          <circle cx="181" cy="20" r="8" fill="#0F9F8F" opacity="0.28" />
+        </>
+      ) : null}
+      {isSurprised ? (
+        <>
+          <path d="M53 56l-10-12" stroke="#C88A2D" strokeWidth="4" strokeLinecap="round" />
+          <path d="M167 56l10-12" stroke="#C88A2D" strokeWidth="4" strokeLinecap="round" />
+        </>
+      ) : null}
+      {isCheer ? (
+        <>
+          <path d="M44 70l-9-5" stroke="#C88A2D" strokeWidth="4" strokeLinecap="round" />
+          <path d="M176 70l9-5" stroke="#C88A2D" strokeWidth="4" strokeLinecap="round" />
+        </>
+      ) : null}
     </svg>
   );
 }

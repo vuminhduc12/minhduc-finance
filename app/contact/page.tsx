@@ -32,39 +32,43 @@ export default function ContactPage() {
             id="contact-title"
             className="text-[1.5rem] font-bold leading-snug text-navy sm:text-3xl"
           >
-            <span className="block">お問い合わせ</span>
-            <span lang="vi" className="mt-1.5 block text-lg font-semibold text-navy-soft sm:text-xl">
+            <span className="lang-ja block">お問い合わせ</span>
+            <span lang="vi" className="lang-vi text-lg font-semibold text-navy-soft sm:text-xl">
               Liên hệ
             </span>
           </h1>
           <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm md:text-base">
-            {contactCopy.leadBeforeLink.ja}
-            <Link href="/scam-check" className="font-medium text-accent underline-offset-2 hover:underline">
-              {contactCopy.scamCheckPageLink.ja}
-            </Link>
-            {contactCopy.leadAfterLink.ja}
-          </p>
-          <p lang="vi" className="mt-2 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm">
-            {contactCopy.leadBeforeLink.vi}
-            <Link href="/scam-check" className="font-medium text-accent underline-offset-2 hover:underline">
-              {contactCopy.scamCheckPageLink.vi}
-            </Link>
-            {contactCopy.leadAfterLink.vi}
+            <span className="lang-ja">
+              {contactCopy.leadBeforeLink.ja}
+              <Link href="/scam-check" className="font-medium text-accent underline-offset-2 hover:underline">
+                {contactCopy.scamCheckPageLink.ja}
+              </Link>
+              {contactCopy.leadAfterLink.ja}
+            </span>
+            <span lang="vi" className="lang-vi">
+              {contactCopy.leadBeforeLink.vi}
+              <Link href="/scam-check" className="font-medium text-accent underline-offset-2 hover:underline">
+                {contactCopy.scamCheckPageLink.vi}
+              </Link>
+              {contactCopy.leadAfterLink.vi}
+            </span>
           </p>
 
           <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
             <Card>
               <h2 className="text-sm font-bold text-navy sm:text-base">
-                <span className="block">メール窓口</span>
-                <span lang="vi" className="mt-1 block text-xs font-semibold text-navy-soft">
+                <span className="lang-ja block">メール窓口</span>
+                <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
                   Email liên hệ
                 </span>
               </h2>
               <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted sm:text-sm">
-                現在はメールアプリを開く形式です。本番公開時に正式なメールアドレスへ差し替えます。
-              </p>
-              <p lang="vi" className="mt-2 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
-                Hiện tại nút sẽ mở ứng dụng email. Khi public production, hãy thay bằng địa chỉ chính thức.
+                <span className="lang-ja">
+                  現在はメールアプリを開く形式です。本番公開時に正式なメールアドレスへ差し替えます。
+                </span>
+                <span lang="vi" className="lang-vi">
+                  Hiện tại nút sẽ mở ứng dụng email. Khi public production, hãy thay bằng địa chỉ chính thức.
+                </span>
               </p>
               <ButtonLink
                 href={CONTACT_MAILTO}
@@ -78,16 +82,16 @@ export default function ContactPage() {
             </Card>
             <Card>
               <h2 className="text-sm font-bold text-navy sm:text-base">
-                <span className="block">対応できるご連絡</span>
-                <span lang="vi" className="mt-1 block text-xs font-semibold text-navy-soft">
+                <span className="lang-ja block">対応できるご連絡</span>
+                <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
                   Các nội dung có thể liên hệ
                 </span>
               </h2>
               <ul className="mt-2 space-y-2 text-[0.8125rem] sm:mt-3 sm:text-sm">
                 {contactCopy.inquiryTypes.map((item) => (
                   <li key={item.ja} className="border-l-2 border-accent/25 pl-2.5">
-                    <span className="block text-foreground">{item.ja}</span>
-                    <span lang="vi" className="mt-0.5 block text-[0.7rem] text-navy-soft sm:text-xs">
+                    <span className="lang-ja block text-foreground">{item.ja}</span>
+                    <span lang="vi" className="lang-vi text-foreground">
                       {item.vi}
                     </span>
                   </li>
@@ -97,11 +101,9 @@ export default function ContactPage() {
                     className="font-medium text-accent underline-offset-2 hover:underline"
                     href="/scam-check"
                   >
-                    {cta.scamCheckAboutLink.ja}
+                    <span className="lang-ja">{cta.scamCheckAboutLink.ja}</span>
+                    <span lang="vi" className="lang-vi">{cta.scamCheckAboutLink.vi}</span>
                   </Link>
-                  <span lang="vi" className="mt-0.5 block text-[0.7rem] text-navy-soft sm:text-xs">
-                    {cta.scamCheckAboutLink.vi}
-                  </span>
                 </li>
                 <li>
                   <a
@@ -110,11 +112,9 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {cta.lineCheckExternal.ja}
+                    <span className="lang-ja">{cta.lineCheckExternal.ja}</span>
+                    <span lang="vi" className="lang-vi">{cta.lineCheckExternal.vi}</span>
                   </a>
-                  <span lang="vi" className="mt-0.5 block text-[0.7rem] text-navy-soft sm:text-xs">
-                    {cta.lineCheckExternal.vi}
-                  </span>
                 </li>
                 <li>
                   <a
@@ -123,11 +123,9 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {cta.noteOpen.ja}
+                    <span className="lang-ja">{cta.noteOpen.ja}</span>
+                    <span lang="vi" className="lang-vi">{cta.noteOpen.vi}</span>
                   </a>
-                  <span lang="vi" className="mt-0.5 block text-[0.7rem] text-navy-soft sm:text-xs">
-                    {cta.noteOpen.vi}
-                  </span>
                 </li>
               </ul>
             </Card>
@@ -135,19 +133,25 @@ export default function ContactPage() {
 
           <Card className="mt-6 sm:mt-8">
             <h2 className="text-sm font-bold text-navy sm:text-base">
-              <span className="block">お受けできないご依頼</span>
-              <span lang="vi" className="mt-1 block text-xs font-semibold text-navy-soft">
+              <span className="lang-ja block">お受けできないご依頼</span>
+              <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
                 Những yêu cầu chúng tôi không nhận
               </span>
             </h2>
             <ul className="mt-2 list-inside list-disc space-y-1.5 text-[0.8125rem] text-muted sm:mt-3 sm:text-sm">
-              <li>個別銘柄の推奨、売買タイミングの断定</li>
-              <li>契約書の精読や法的判断の代行</li>
-              <li>成果やリターンの保証</li>
+              <li>
+                <span className="lang-ja">個別銘柄の推奨、売買タイミングの断定</span>
+                <span lang="vi" className="lang-vi">Không khuyến nghị mã cụ thể hoặc khẳng định thời điểm mua/bán</span>
+              </li>
+              <li>
+                <span className="lang-ja">契約書の精読や法的判断の代行</span>
+                <span lang="vi" className="lang-vi">Không đọc hợp đồng thay hoặc đưa ra phán đoán pháp lý thay bạn</span>
+              </li>
+              <li>
+                <span className="lang-ja">成果やリターンの保証</span>
+                <span lang="vi" className="lang-vi">Không cam kết kết quả hoặc lợi nhuận</span>
+              </li>
             </ul>
-            <p lang="vi" className="mt-3 border-l-2 border-accent/25 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
-              Không tư vấn mã cụ thể hay thời điểm mua/bán; không đọc hợp đồng thay hay đưa ra ý kiến pháp lý; không cam kết lợi nhuận.
-            </p>
           </Card>
         </Container>
       </section>
