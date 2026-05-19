@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# minhduc-finance（サイト用リポジトリ）
 
-## Getting Started
+在日ベトナム人向けの金融教育・情報サイトの MVP です。[Next.js](https://nextjs.org)（App Router）で構築しています。
 
-First, run the development server:
+## 前提
+
+- [Node.js](https://nodejs.org/)（LTS 推奨）
+- パッケージマネージャは **npm** を想定（`yarn` / `pnpm` でも可）
+
+## セットアップと開発
+
+依存関係のインストール:
+
+```bash
+npm install
+```
+
+開発サーバー起動（既定では http://localhost:3000）:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+本番ビルドの確認:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+コード品質:
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 本番公開前に必ず差し替える箇所
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+外部 URL やプレースホルダは `lib/constants.ts` にまとめています。公開前に実値へ更新してください。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| 定数 | 内容 |
+|------|------|
+| `LINE_BOT_URL` | LINE 友だち追加・Bot 導線 |
+| `PDF_URL` | PDF 教材の案内・購入ページ |
+| `NOTE_PROFILE_URL` | note などメインの発信ハブ |
+| `CONTACT_MAILTO` | お問い合わせ用 `mailto:` |
 
-## Deploy on Vercel
+## 文言・二言語について
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+完全な i18n（`/vi` 切り替え等）は MVP では入れていません。代わりに **`lib/copy/`** に日本語・ベトナム語の文言を定数として分離し、画面では併記する形にしています。トップ・詐欺チェックは日越併記、プロフィールは日本語本文＋ベトナム語要約が中心です。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 型: `lib/copy/types.ts`（`Bi` = `{ ja, vi }`）
+- セクション用コピー: `lib/copy/home.ts`, `scam-check.ts`, `profile.ts` など
+- CTA 文言の共有: `lib/copy/cta.ts`
+
+## 主要ページ（ルート）
+
+| パス | 概要 |
+|------|------|
+| `/` | トップ |
+| `/scam-check` | 詐欺チェック（LINE Bot）の紹介 |
+| `/profile` | 運営者プロフィール |
+| `/contact` | お問い合わせ |
+| `/privacy` | プライバシーポリシー（ひな形） |
+| `/disclaimer` | 免責事項（ひな形） |
+
+## デプロイ
+
+Next.js の標準的なホスティング（例: [Vercel](https://vercel.com)）にそのまま載せられます。詳細は [Next.js のデプロイ手順](https://nextjs.org/docs/app/building-your-application/deploying)を参照してください。
+
+## 参考リンク（Next.js 公式）
+
+- [Next.js ドキュメント](https://nextjs.org/docs)
+- [create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app)
+# minhduc-finance
