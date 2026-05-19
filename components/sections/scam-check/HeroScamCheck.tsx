@@ -1,3 +1,5 @@
+import { FlagIcon } from "@/components/brand/FlagIcon";
+import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { BiSubheading } from "@/components/ui/Bilingual";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
@@ -13,43 +15,56 @@ export function HeroScamCheck() {
       aria-labelledby="scam-hero-title"
     >
       <Container>
-        <p className="text-xs font-medium text-accent sm:text-sm">
-          <span className="block">{hero.eyebrow.ja}</span>
-          <span lang="vi" className="mt-1 block text-[0.7rem] font-semibold leading-snug text-navy-soft sm:text-xs">
-            {hero.eyebrow.vi}
-          </span>
-        </p>
-        <h1
-          id="scam-hero-title"
-          className="mt-2 max-w-3xl text-[1.5rem] font-bold leading-snug text-navy sm:mt-3 sm:text-3xl sm:leading-snug lg:text-[2.125rem]"
-        >
-          <BiSubheading text={hero.title} />
-        </h1>
-        <div className="mt-4 max-w-2xl text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
-          <p className="text-foreground">{hero.lead.ja}</p>
-          <p lang="vi" className="mt-2 border-l-2 border-accent/40 pl-3 text-[0.8125rem] leading-relaxed sm:text-[0.9375rem]">
-            {hero.lead.vi}
-          </p>
-        </div>
-        <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
-          <ButtonLink
-            href={LINE_BOT_URL}
-            external
-            className="sm:w-auto"
-            aria-label={`${cta.lineCheckNowShort.ja} ${cta.lineCheckNowShort.vi}`}
-            subLabelVi={cta.lineCheckNowShort.vi}
-          >
-            {cta.lineCheckNowShort.ja}
-          </ButtonLink>
-          <ButtonLink
-            href="#flow"
-            variant="secondary"
-            className="sm:w-auto"
-            aria-label={`${cta.flowOnlyLater.ja} ${cta.flowOnlyLater.vi}`}
-            subLabelVi={cta.flowOnlyLater.vi}
-          >
-            {cta.flowOnlyLater.ja}
-          </ButtonLink>
+        <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-center">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-3 py-1.5 text-xs font-medium text-accent shadow-sm sm:text-sm">
+              <FlagIcon code="jp" className="h-4 w-6" />
+              <span>{hero.eyebrow.ja}</span>
+              <FlagIcon code="vn" className="h-4 w-6" />
+              <span lang="vi" className="hidden text-[0.7rem] font-semibold leading-snug text-navy-soft sm:inline sm:text-xs">
+                {hero.eyebrow.vi}
+              </span>
+            </p>
+            <h1
+              id="scam-hero-title"
+              className="mt-2 max-w-3xl text-[1.5rem] font-bold leading-snug text-navy sm:mt-3 sm:text-3xl sm:leading-snug lg:text-[2.125rem]"
+            >
+              <BiSubheading text={hero.title} />
+            </h1>
+            <div className="mt-4 max-w-2xl text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
+              <p className="text-foreground">{hero.lead.ja}</p>
+              <p lang="vi" className="mt-2 border-l-2 border-accent/40 pl-3 text-[0.8125rem] leading-relaxed sm:text-[0.9375rem]">
+                {hero.lead.vi}
+              </p>
+            </div>
+            <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
+              <ButtonLink
+                href={LINE_BOT_URL}
+                external
+                className="sm:w-auto"
+                aria-label={`${cta.lineCheckNowShort.ja} ${cta.lineCheckNowShort.vi}`}
+                subLabelVi={cta.lineCheckNowShort.vi}
+              >
+                {cta.lineCheckNowShort.ja}
+              </ButtonLink>
+              <ButtonLink
+                href="#flow"
+                variant="secondary"
+                className="sm:w-auto"
+                aria-label={`${cta.flowOnlyLater.ja} ${cta.flowOnlyLater.vi}`}
+                subLabelVi={cta.flowOnlyLater.vi}
+              >
+                {cta.flowOnlyLater.ja}
+              </ButtonLink>
+            </div>
+          </div>
+          <div className="mx-auto hidden w-full max-w-[260px] rounded-3xl border border-border bg-white/78 p-5 text-center shadow-[0_18px_45px_rgba(11,31,58,0.09)] lg:block">
+            <MiraiMascot compact className="mx-auto h-44 w-44" title="詐欺チェックを案内するミライくん" />
+            <p className="mt-2 text-sm font-bold text-navy">ミライくんが一緒に確認</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted">
+              急がされる話ほど、いったん止まって整理します。
+            </p>
+          </div>
         </div>
       </Container>
     </section>

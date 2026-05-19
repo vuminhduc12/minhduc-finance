@@ -1,6 +1,8 @@
 import { BiSubheading } from "@/components/ui/Bilingual";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
+import { FlagIcon } from "@/components/brand/FlagIcon";
+import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { LINE_BOT_URL } from "@/lib/constants";
 import { cta } from "@/lib/copy/cta";
 import { homeCopy } from "@/lib/copy/home";
@@ -16,8 +18,12 @@ export function HeroHome() {
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-10">
           <div className="space-y-5 sm:space-y-6">
-            <p className="max-w-xl text-left text-xs font-medium leading-relaxed text-navy-soft sm:text-sm">
-              <span className="block text-navy">{hero.trustLine.ja}</span>
+            <p className="inline-flex max-w-xl flex-col rounded-full border border-border/80 bg-white/75 px-4 py-2 text-left text-xs font-medium leading-relaxed text-navy-soft shadow-sm backdrop-blur sm:text-sm">
+              <span className="flex items-center gap-2 text-navy">
+                <FlagIcon code="jp" className="h-4 w-6" />
+                <FlagIcon code="vn" className="h-4 w-6" />
+                {hero.trustLine.ja}
+              </span>
               <span lang="vi" className="mt-1 block font-normal leading-relaxed">
                 {hero.trustLine.vi}
               </span>
@@ -70,26 +76,22 @@ export function HeroHome() {
             </p>
           </div>
           <aside
-            className="rounded-2xl border border-border/80 bg-card/90 p-5 shadow-[0_24px_70px_rgba(11,31,58,0.12)] backdrop-blur sm:rounded-3xl sm:p-6"
-            aria-label="顔写真の枠（差し替え用）"
+            className="relative overflow-hidden rounded-2xl border border-border/80 bg-card/90 p-5 shadow-[0_24px_70px_rgba(11,31,58,0.12)] backdrop-blur sm:rounded-3xl sm:p-6"
+            aria-label="ブランドマスコット ミライくん"
           >
+            <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-border bg-white/80 px-2.5 py-1 text-[0.68rem] font-bold text-navy shadow-sm">
+              <FlagIcon code="jp" className="h-3.5 w-5" />
+              <span>JP/VN</span>
+              <FlagIcon code="vn" className="h-3.5 w-5" />
+            </div>
             <div className="mx-auto flex max-w-[260px] flex-col items-center text-center sm:max-w-[280px]">
-              <div
-                role="img"
-                aria-label="顔写真のプレースホルダー。準備ができたら差し替えてください。"
-                className="flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-slate-100 to-slate-200 text-slate-500 ring-4 ring-accent-muted sm:h-44 sm:w-44"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-16 w-16 opacity-60 sm:h-20 sm:w-20"
-                  aria-hidden
-                >
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
+              <div className="flex h-44 w-44 items-center justify-center rounded-full bg-gradient-to-br from-white to-accent-muted/80 ring-4 ring-white sm:h-56 sm:w-56">
+                <MiraiMascot className="h-48 w-48 sm:h-60 sm:w-60" />
               </div>
-              <p className="mt-3 text-sm font-semibold text-navy sm:mt-4">Vu Minh Duc</p>
+              <p className="mt-3 text-sm font-semibold text-navy sm:mt-4">ミライくん</p>
+              <p className="mt-1 text-[11px] font-medium text-gold sm:text-xs">
+                Financial Education Brand Mascot
+              </p>
               <p className="mt-2 whitespace-pre-line text-[11px] font-medium leading-relaxed text-navy sm:text-xs">
                 {hero.cardRole.ja}
               </p>

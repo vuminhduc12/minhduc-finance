@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FlagIcon } from "@/components/brand/FlagIcon";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const nav = [
@@ -14,13 +15,20 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3">
         <Link
           href="/"
-          className="min-w-0 shrink font-semibold leading-tight text-navy hover:text-accent-hover"
+          className="flex min-w-0 shrink items-center gap-2.5 font-semibold leading-tight text-navy hover:text-accent-hover"
         >
-          <span className="block truncate text-sm sm:text-base">
-            {SITE_NAME}
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-navy text-white shadow-[0_10px_24px_rgba(11,31,58,0.16)]">
+            <span className="text-sm font-bold">MF</span>
           </span>
-          <span className="block truncate text-[11px] font-normal text-muted sm:text-xs">
-            {SITE_TAGLINE}
+          <span className="min-w-0">
+            <span className="flex items-center gap-1.5 truncate text-sm sm:text-base">
+              {SITE_NAME}
+              <FlagIcon code="jp" className="hidden h-3.5 w-5 sm:block" />
+              <FlagIcon code="vn" className="hidden h-3.5 w-5 sm:block" />
+            </span>
+            <span className="block truncate text-[11px] font-normal text-muted sm:text-xs">
+              {SITE_TAGLINE}
+            </span>
           </span>
         </Link>
         <nav

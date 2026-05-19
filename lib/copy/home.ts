@@ -15,8 +15,8 @@ export const homeCopy = {
       vi: "Giải thích bằng Nhật-Việt dễ hiểu về chế độ ở Nhật, lương, thuế, chuyển tiền, NISA và nền tảng đầu tư. LINE check và PDF giúp bạn không vội tin lời mời đáng ngờ.",
     } satisfies Bi,
     cardRole: {
-      ja: "Founder / Financial education writer\n日本語とベトナム語で発信",
-      vi: "Founder / Người viết giáo dục tài chính\nĐăng nội dung bằng Nhật-Việt",
+      ja: "お金の話をやさしく案内する\n未来志向のブランドマスコット",
+      vi: "Linh vật thương hiệu\nđồng hành học tiền bạc dễ hiểu",
     } satisfies Bi,
     trustPoints: [
       { ja: "日越併記", vi: "Song ngữ Nhật-Việt" },

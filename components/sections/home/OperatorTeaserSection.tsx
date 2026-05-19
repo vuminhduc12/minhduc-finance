@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { NOTE_PROFILE_URL } from "@/lib/constants";
@@ -10,21 +11,13 @@ export function OperatorTeaserSection() {
   return (
     <section className="py-10 sm:py-12 md:py-14" aria-labelledby="operator-teaser-heading">
       <Container>
-        <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:rounded-3xl sm:p-8 lg:flex lg:items-center lg:gap-10 lg:p-10">
+        <div className="overflow-hidden rounded-2xl border border-border bg-[linear-gradient(135deg,#ffffff,rgba(213,247,241,0.48))] p-5 shadow-[0_18px_45px_rgba(11,31,58,0.07)] sm:rounded-3xl sm:p-8 lg:flex lg:items-center lg:gap-10 lg:p-10">
           <div
-            className="mx-auto mb-5 flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-400 sm:mb-6 sm:h-32 sm:w-32 lg:mb-0 lg:h-36 lg:w-36"
+            className="mx-auto mb-5 flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-white text-slate-400 shadow-inner ring-4 ring-accent-muted sm:mb-6 sm:h-36 sm:w-36 lg:mb-0 lg:h-40 lg:w-40"
             role="img"
-            aria-label="運営者の顔写真プレースホルダー"
+            aria-label="ブランドマスコット ミライくん"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-12 w-12 opacity-70 sm:h-14 sm:w-14"
-              aria-hidden
-            >
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
+            <MiraiMascot compact className="h-36 w-36 sm:h-40 sm:w-40 lg:h-44 lg:w-44" />
           </div>
           <div className="min-w-0 flex-1">
             <h2
