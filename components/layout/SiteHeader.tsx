@@ -4,6 +4,7 @@ import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const nav = [
   { href: "/", label: "ホーム" },
+  { href: "/articles", label: "記事" },
   { href: "/scam-check", label: "詐欺チェック" },
   { href: "/profile", label: "プロフィール" },
   { href: "/contact", label: "お問い合わせ" },
@@ -44,6 +45,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/scam-check"
+            className="ml-2 rounded-full bg-navy px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(11,31,58,0.18)] hover:bg-navy-soft"
+          >
+            まず確認する
+          </Link>
         </nav>
         <details className="relative md:hidden">
           <summary className="cursor-pointer list-none rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-navy marker:content-none [&::-webkit-details-marker]:hidden">

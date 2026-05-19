@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
+import { ArticleHubSection } from "@/components/sections/ArticleHubSection";
 import { DualCtaBand } from "@/components/sections/DualCtaBand";
 import { FaqList } from "@/components/sections/FaqList";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { FounderEdgeSection } from "@/components/sections/home/FounderEdgeSection";
 import { HeroHome } from "@/components/sections/home/HeroHome";
+import { LearningPathSection } from "@/components/sections/home/LearningPathSection";
 import { OperatorTeaserSection } from "@/components/sections/home/OperatorTeaserSection";
 import { PainPointsSection } from "@/components/sections/home/PainPointsSection";
 import { PdfPromoSection } from "@/components/sections/home/PdfPromoSection";
+import { QuickChoiceSection } from "@/components/sections/home/QuickChoiceSection";
 import { ScamCheckPromoSection } from "@/components/sections/home/ScamCheckPromoSection";
+import { TrustRibbonSection } from "@/components/sections/home/TrustRibbonSection";
 import { WhatYouCanDoSection } from "@/components/sections/home/WhatYouCanDoSection";
 import { Container } from "@/components/ui/Container";
 import { homeCopy } from "@/lib/copy/home";
@@ -23,8 +28,13 @@ export default function HomePage() {
   return (
     <>
       <HeroHome />
+      <TrustRibbonSection />
+      <QuickChoiceSection />
+      <FounderEdgeSection />
       <PainPointsSection />
       <WhatYouCanDoSection />
+      <LearningPathSection />
+      <ArticleHubSection limit={3} />
       <ScamCheckPromoSection />
       <PdfPromoSection />
       <OperatorTeaserSection />

@@ -13,12 +13,16 @@ export function HeroHome() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden border-b border-border bg-[radial-gradient(circle_at_top_left,rgba(15,159,143,0.18),transparent_28rem),linear-gradient(135deg,#ffffff_0%,#eefcf9_46%,#f7f9fc_100%)] pb-10 pt-8 sm:pb-14 sm:pt-11 lg:pb-16 lg:pt-14"
+      className="relative overflow-hidden border-b border-border bg-[radial-gradient(circle_at_12%_12%,rgba(15,159,143,0.18),transparent_30rem),radial-gradient(circle_at_88%_18%,rgba(11,31,58,0.14),transparent_26rem),linear-gradient(135deg,#ffffff_0%,#f3fbfa_42%,#eef3f8_100%)] pb-16 pt-8 sm:pb-20 sm:pt-11 lg:pb-24 lg:pt-14"
     >
+      <div
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+        aria-hidden
+      />
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-10">
           <div className="space-y-5 sm:space-y-6">
-            <p className="inline-flex max-w-xl flex-col rounded-full border border-border/80 bg-white/75 px-4 py-2 text-left text-xs font-medium leading-relaxed text-navy-soft shadow-sm backdrop-blur sm:text-sm">
+            <p className="inline-flex max-w-xl flex-col rounded-2xl border border-border/80 bg-white/80 px-4 py-2.5 text-left text-xs font-semibold leading-relaxed text-navy-soft shadow-sm backdrop-blur sm:text-sm">
               <span className="flex items-center gap-2 text-navy">
                 <FlagIcon code="jp" className="h-4 w-6" />
                 <FlagIcon code="vn" className="h-4 w-6" />
@@ -30,7 +34,7 @@ export function HeroHome() {
             </p>
             <h1
               id="hero-title"
-              className="text-[1.5rem] font-bold leading-snug tracking-tight text-navy sm:text-3xl sm:leading-snug lg:text-[2.125rem] lg:leading-tight"
+              className="max-w-3xl text-[1.7rem] font-bold leading-snug tracking-tight text-navy sm:text-4xl sm:leading-tight lg:text-[3rem] lg:leading-[1.12]"
             >
               <BiSubheading text={hero.title} />
             </h1>
@@ -76,7 +80,7 @@ export function HeroHome() {
             </p>
           </div>
           <aside
-            className="relative overflow-hidden rounded-2xl border border-border/80 bg-card/90 p-5 shadow-[0_24px_70px_rgba(11,31,58,0.12)] backdrop-blur sm:rounded-3xl sm:p-6"
+            className="relative overflow-hidden rounded-[2rem] border border-navy/10 bg-[linear-gradient(160deg,#ffffff_0%,#f7fbfb_48%,#e6f4f2_100%)] p-5 shadow-[0_28px_80px_rgba(11,31,58,0.16)] backdrop-blur sm:p-6"
             aria-label="ブランドマスコット ミライくん"
           >
             <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-border bg-white/80 px-2.5 py-1 text-[0.68rem] font-bold text-navy shadow-sm">
@@ -88,9 +92,9 @@ export function HeroHome() {
               <div className="flex h-44 w-44 items-center justify-center rounded-full bg-gradient-to-br from-white to-accent-muted/80 ring-4 ring-white sm:h-56 sm:w-56">
                 <MiraiMascot className="h-48 w-48 sm:h-60 sm:w-60" />
               </div>
-              <p className="mt-3 text-sm font-semibold text-navy sm:mt-4">ミライくん</p>
-              <p className="mt-1 text-[11px] font-medium text-gold sm:text-xs">
-                Financial Education Brand Mascot
+              <p className="mt-3 text-sm font-bold tracking-wide text-navy sm:mt-4">MIRAI NAVIGATOR</p>
+              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold sm:text-xs">
+                Financial Education Mascot
               </p>
               <p className="mt-2 whitespace-pre-line text-[11px] font-medium leading-relaxed text-navy sm:text-xs">
                 {hero.cardRole.ja}
@@ -98,6 +102,16 @@ export function HeroHome() {
               <p lang="vi" className="mt-1.5 whitespace-pre-line text-[10px] leading-relaxed text-muted sm:text-[11px]">
                 {hero.cardRole.vi}
               </p>
+              <div className="mt-4 grid w-full grid-cols-2 gap-2">
+                <div className="rounded-2xl border border-border bg-white/85 p-3 text-left">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-muted">Mode</p>
+                  <p className="mt-1 text-xs font-bold text-navy">Risk Check</p>
+                </div>
+                <div className="rounded-2xl border border-border bg-white/85 p-3 text-left">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-muted">Scope</p>
+                  <p className="mt-1 text-xs font-bold text-navy">JP / VN</p>
+                </div>
+              </div>
               <dl className="mt-5 grid w-full grid-cols-2 gap-2 text-left">
                 {hero.trustPoints.map((point) => (
                   <div key={point.ja} className="rounded-xl border border-border bg-white/70 p-3">

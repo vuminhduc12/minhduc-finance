@@ -14,9 +14,12 @@ export function WhatYouCanDoSection() {
           subtitleBi={whatYouCan.subtitle}
         />
         <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
-          {whatYouCan.items.map((item) => (
+          {whatYouCan.items.map((item, index) => (
             <li key={item.title.ja}>
-              <Card className="h-full">
+              <Card className="h-full border-t-4 border-t-accent">
+                <div className="mb-3 inline-flex rounded-full bg-accent-muted px-2.5 py-1 text-[0.68rem] font-bold text-navy">
+                  SERVICE 0{index + 1}
+                </div>
                 <h3 className="text-base font-bold leading-snug text-navy sm:text-lg">
                   <span className="block">{item.title.ja}</span>
                   <span lang="vi" className="mt-1 block text-[0.8125rem] font-semibold leading-snug text-navy-soft">

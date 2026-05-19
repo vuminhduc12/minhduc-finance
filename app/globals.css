@@ -38,11 +38,17 @@ html {
 body {
   background:
     radial-gradient(circle at top left, rgba(15, 159, 143, 0.12), transparent 34rem),
+    radial-gradient(circle at top right, rgba(200, 138, 45, 0.1), transparent 28rem),
     linear-gradient(180deg, #ffffff 0%, var(--background) 18rem);
   color: var(--foreground);
   font-family: var(--font-sans);
   font-size: 0.9375rem;
   line-height: 1.65;
+}
+
+::selection {
+  background: var(--accent-muted);
+  color: var(--navy);
 }
 
 @media (min-width: 640px) {

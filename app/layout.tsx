@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { AudienceStrip } from "@/components/layout/AudienceStrip";
+import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import {
@@ -73,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${notoSansJp.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-background font-sans text-foreground antialiased">
+      <body className="flex min-h-full flex-col bg-background pb-16 font-sans text-foreground antialiased md:pb-0">
         <SkipLink />
         <SiteHeader />
         <AudienceStrip />
@@ -86,6 +87,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <MobileActionBar />
       </body>
     </html>
   );

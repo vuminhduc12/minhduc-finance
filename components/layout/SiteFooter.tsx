@@ -3,6 +3,8 @@ import { FlagIcon } from "@/components/brand/FlagIcon";
 import { BRAND_LEGAL_NAME, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const footerNav = [
+  { href: "/articles", label: "記事ライブラリ" },
+  { href: "/scam-check", label: "詐欺チェック" },
   { href: "/privacy", label: "プライバシーポリシー" },
   { href: "/disclaimer", label: "免責事項" },
   { href: "/contact", label: "お問い合わせ" },

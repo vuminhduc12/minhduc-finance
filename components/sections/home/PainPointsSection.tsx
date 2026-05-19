@@ -14,8 +14,11 @@ export function PainPointsSection() {
           subtitleBi={pains.subtitle}
         />
         <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
-          {pains.items.map((p) => (
-            <Card key={p.title.ja}>
+          {pains.items.map((p, index) => (
+            <Card key={p.title.ja} className="relative h-full overflow-hidden">
+              <span className="absolute right-4 top-4 text-5xl font-bold leading-none text-accent-muted/55" aria-hidden>
+                0{index + 1}
+              </span>
               <h3 className="text-base font-bold leading-snug text-navy sm:text-lg">
                 <span className="block">{p.title.ja}</span>
                 <span lang="vi" className="mt-1 block text-[0.8125rem] font-semibold leading-snug text-navy-soft">
