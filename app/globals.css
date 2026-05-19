@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f9fc;
+  --foreground: #172033;
+  --muted: #5f6f86;
+  --card: #ffffff;
+  --navy: #0b1f3a;
+  --navy-soft: #24415f;
+  --accent: #0f9f8f;
+  --accent-hover: #0b776c;
+  --accent-muted: #d5f7f1;
+  --border: #dbe4ee;
+  --ring: #0f9f8f;
+  --gold: #c88a2d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-noto-sans-jp), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(15, 159, 143, 0.12), transparent 34rem),
+    linear-gradient(180deg, #ffffff 0%, var(--background) 18rem);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+/* フォーカス可視化（キーボード操作） */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }

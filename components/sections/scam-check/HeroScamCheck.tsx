@@ -1,0 +1,57 @@
+import { BiSubheading } from "@/components/ui/Bilingual";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Container } from "@/components/ui/Container";
+import { LINE_BOT_URL } from "@/lib/constants";
+import { cta } from "@/lib/copy/cta";
+import { scamCheckCopy } from "@/lib/copy/scam-check";
+
+export function HeroScamCheck() {
+  const { hero } = scamCheckCopy;
+  return (
+    <section
+      className="border-b border-border bg-[radial-gradient(circle_at_top_left,rgba(15,159,143,0.16),transparent_28rem),linear-gradient(135deg,#ffffff_0%,#eefcf9_52%,#f7f9fc_100%)] pb-10 pt-8 sm:pb-14 sm:pt-11 lg:pb-16 lg:pt-14"
+      aria-labelledby="scam-hero-title"
+    >
+      <Container>
+        <p className="text-xs font-medium text-accent sm:text-sm">
+          <span className="block">{hero.eyebrow.ja}</span>
+          <span lang="vi" className="mt-1 block text-[0.7rem] font-semibold leading-snug text-navy-soft sm:text-xs">
+            {hero.eyebrow.vi}
+          </span>
+        </p>
+        <h1
+          id="scam-hero-title"
+          className="mt-2 max-w-3xl text-[1.5rem] font-bold leading-snug text-navy sm:mt-3 sm:text-3xl sm:leading-snug lg:text-[2.125rem]"
+        >
+          <BiSubheading text={hero.title} />
+        </h1>
+        <div className="mt-4 max-w-2xl text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
+          <p className="text-foreground">{hero.lead.ja}</p>
+          <p lang="vi" className="mt-2 border-l-2 border-accent/40 pl-3 text-[0.8125rem] leading-relaxed sm:text-[0.9375rem]">
+            {hero.lead.vi}
+          </p>
+        </div>
+        <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
+          <ButtonLink
+            href={LINE_BOT_URL}
+            external
+            className="sm:w-auto"
+            aria-label={`${cta.lineCheckNowShort.ja} ${cta.lineCheckNowShort.vi}`}
+            subLabelVi={cta.lineCheckNowShort.vi}
+          >
+            {cta.lineCheckNowShort.ja}
+          </ButtonLink>
+          <ButtonLink
+            href="#flow"
+            variant="secondary"
+            className="sm:w-auto"
+            aria-label={`${cta.flowOnlyLater.ja} ${cta.flowOnlyLater.vi}`}
+            subLabelVi={cta.flowOnlyLater.vi}
+          >
+            {cta.flowOnlyLater.ja}
+          </ButtonLink>
+        </div>
+      </Container>
+    </section>
+  );
+}
