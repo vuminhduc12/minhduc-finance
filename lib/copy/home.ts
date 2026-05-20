@@ -87,6 +87,82 @@ export const homeCopy = {
       },
     ] as const,
   },
+  targetInsight: {
+    kicker: "TARGET INSIGHT",
+    heading: {
+      ja: "誰の、どんな不安を解決するサービスなのか",
+      vi: "Dịch vụ này giải quyết nỗi lo nào, cho ai?",
+    } satisfies Bi,
+    subtitle: {
+      ja: "主な対象は、日本で働く・生活する20代後半〜40代前半のベトナム人。収入はあるが、日本語の制度・金融用語・詐欺リスクに不安が残る層です。",
+      vi: "Đối tượng chính là người Việt khoảng cuối 20 đến đầu 40 tuổi đang làm việc và sống tại Nhật. Có thu nhập, nhưng vẫn lo về制度 Nhật, từ vựng tài chính và rủi ro lừa đảo.",
+    } satisfies Bi,
+    segments: [
+      {
+        label: { ja: "25〜34歳", vi: "25-34 tuổi" },
+        title: { ja: "働き始め・生活を整えたい層", vi: "Người mới ổn định công việc và đời sống" },
+        insight: {
+          ja: "給与明細、税金、保険、送金、貯金を理解したいが、どこから学べばよいかわからない。",
+          vi: "Muốn hiểu bảng lương, thuế, bảo hiểm, chuyển tiền và tiết kiệm, nhưng không biết bắt đầu từ đâu.",
+        },
+        need: {
+          ja: "やさしい言葉で、生活に直結する順番に整理された教材と公式情報への導線が必要。",
+          vi: "Cần tài liệu dễ hiểu và lộ trình đến nguồn chính thức theo thứ tự gần với đời sống.",
+        },
+      },
+      {
+        label: { ja: "30〜45歳", vi: "30-45 tuổi" },
+        title: { ja: "家族・将来・資産形成を考え始める層", vi: "Người bắt đầu nghĩ về gia đình, tương lai và tích sản" },
+        insight: {
+          ja: "NISA、保険、教育費、帰国・定住などを考えたいが、失敗や詐欺への不安が強い。",
+          vi: "Muốn nghĩ về NISA, bảo hiểm, chi phí giáo dục, về nước/định cư nhưng lo thất bại và lừa đảo.",
+        },
+        need: {
+          ja: "売り込みではなく、判断材料・比較軸・リスク確認を先に示す中立的な学び場が必要。",
+          vi: "Cần nơi học trung lập, không bán hàng, đưa ra tiêu chí so sánh và kiểm tra rủi ro trước.",
+        },
+      },
+      {
+        label: { ja: "緊急層", vi: "Nhóm khẩn cấp" },
+        title: { ja: "投資話・紹介・送金を急がされている層", vi: "Người đang bị thúc ép đầu tư, giới thiệu hoặc chuyển tiền" },
+        insight: {
+          ja: "知人・SNS・同じコミュニティ経由の話ほど断りにくく、冷静な確認が遅れやすい。",
+          vi: "Lời mời từ người quen, SNS hoặc cộng đồng càng khó từ chối, khiến việc kiểm tra bình tĩnh bị chậm.",
+        },
+        need: {
+          ja: "送金・契約前に一度止まり、危険サインと公式確認先を短時間で整理する導線が必要。",
+          vi: "Cần một lối dừng lại trước khi chuyển tiền/ký hợp đồng, để kiểm tra dấu hiệu nguy hiểm và nguồn chính thức.",
+        },
+      },
+    ] as const,
+    outcomes: [
+      {
+        title: { ja: "利用前", vi: "Trước khi sử dụng" },
+        body: {
+          ja: "日本語の制度説明が難しく、SNSや知人の話に流されやすい。",
+          vi: "Khó hiểu giải thích制度 bằng tiếng Nhật và dễ bị cuốn theo SNS/người quen.",
+        },
+      },
+      {
+        title: { ja: "利用後", vi: "Sau khi sử dụng" },
+        body: {
+          ja: "まず確認する習慣ができ、公式情報・PDF・LINEチェックで判断を整理できる。",
+          vi: "Có thói quen kiểm tra trước, biết dùng nguồn chính thức, PDF và LINE check để sắp xếp quyết định.",
+        },
+      },
+      {
+        title: { ja: "得られる価値", vi: "Giá trị nhận được" },
+        body: {
+          ja: "損失回避、言葉の理解、家計改善、将来設計、安心して相談できる入口。",
+          vi: "Giảm rủi ro mất tiền, hiểu thuật ngữ, cải thiện chi tiêu, lập kế hoạch tương lai và có nơi hỏi an tâm.",
+        },
+      },
+    ] as const,
+    reason: {
+      ja: "この層に必要なのは、難しい専門知識そのものよりも、「日本語の制度をベトナム語の生活感覚に翻訳し、危ない話から距離を取るための判断順序」です。だから、日越バイリンガル・SE視点・リスク感覚を組み合わせたこのサービスが役に立ちます。",
+      vi: "Điều nhóm này cần không chỉ là kiến thức chuyên môn khó, mà là thứ tự quyết định: chuyển制度 Nhật sang cảm giác đời sống bằng tiếng Việt và giữ khoảng cách với lời mời nguy hiểm. Vì vậy dịch vụ kết hợp song ngữ Nhật-Việt, tư duy kỹ sư và cảm giác rủi ro sẽ hữu ích.",
+    } satisfies Bi,
+  },
   quickChoice: {
     heading: {
       ja: "Action Center",

@@ -11,6 +11,7 @@ import { PainPointsSection } from "@/components/sections/home/PainPointsSection"
 import { PdfPromoSection } from "@/components/sections/home/PdfPromoSection";
 import { QuickChoiceSection } from "@/components/sections/home/QuickChoiceSection";
 import { ScamCheckPromoSection } from "@/components/sections/home/ScamCheckPromoSection";
+import { TargetInsightSection } from "@/components/sections/home/TargetInsightSection";
 import { TrustRibbonSection } from "@/components/sections/home/TrustRibbonSection";
 import { WhatYouCanDoSection } from "@/components/sections/home/WhatYouCanDoSection";
 import { Container } from "@/components/ui/Container";
@@ -29,6 +30,7 @@ export default function HomePage() {
     <>
       <HeroHome />
       <TrustRibbonSection />
+      <TargetInsightSection />
       <QuickChoiceSection />
       <FounderEdgeSection />
       <PainPointsSection />
