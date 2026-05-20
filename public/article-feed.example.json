@@ -1,0 +1,37 @@
+{
+  "updatedAt": "2026-05-20",
+  "items": [
+    {
+      "slug": "investment-scam-signs",
+      "category": "risk",
+      "title": {
+        "ja": "怪しい投資話を見分ける5つのサイン",
+        "vi": "5 dấu hiệu nhận biết lời mời đầu tư đáng ngờ"
+      },
+      "excerpt": {
+        "ja": "「今だけ」「紹介で増える」「元本保証」など、送金前に確認したい言葉を整理します。",
+        "vi": "Sắp xếp các từ cần cảnh giác trước khi chuyển tiền: chỉ hôm nay, giới thiệu là tăng, bảo đảm vốn..."
+      },
+      "readTime": "6 min",
+      "status": "published",
+      "url": "https://example.com/articles/investment-scam-signs",
+      "source": "Manual JSON"
+    },
+    {
+      "slug": "salary-tax-basics",
+      "category": "life-money",
+      "title": {
+        "ja": "給与明細と税金を最初に見るポイント",
+        "vi": "Các điểm đầu tiên cần xem trong phiếu lương và thuế"
+      },
+      "excerpt": {
+        "ja": "手取り、所得税、住民税、社会保険料を生活設計に使える形で理解します。",
+        "vi": "Hiểu lương thực nhận, thuế thu nhập, thuế cư trú và bảo hiểm xã hội để lập kế hoạch sống."
+      },
+      "readTime": "7 min",
+      "status": "published",
+      "url": "https://example.com/articles/salary-tax-basics",
+      "source": "Manual JSON"
+    }
+  ]
+}

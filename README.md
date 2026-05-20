@@ -64,6 +64,19 @@ npm run lint
 | `/privacy` | プライバシーポリシー（ひな形） |
 | `/disclaimer` | 免責事項（ひな形） |
 
+## 記事データ連携（無料枠）
+
+記事ライブラリは、環境変数 `ARTICLE_FEED_URL` があれば外部JSONを読み込みます。未設定または取得失敗時は `lib/articles.ts` のローカル記事データを表示します。
+各記事に `url` を入れると、記事カードのボタンはそのURLへ遷移します。`https://...` の外部URLは新しいタブで開き、`/articles/...` の内部URLはサイト内遷移になります。
+
+無料で始める例:
+
+1. `public/article-feed.example.json` と同じ形式のJSONを作る
+2. GitHub Raw、Vercel Blob、Cloudflare Pages、Google Apps Script などで公開する
+3. Vercel の Environment Variables に `ARTICLE_FEED_URL=https://.../article-feed.json` を設定する
+
+取得は `next: { revalidate: 300 }` で5分ごとに再検証します。完全なDBなしで、無料枠に近い運用ができます。
+
 ## デプロイ
 
 Next.js の標準的なホスティング（例: [Vercel](https://vercel.com)）にそのまま載せられます。詳細は [Next.js のデプロイ手順](https://nextjs.org/docs/app/building-your-application/deploying)を参照してください。

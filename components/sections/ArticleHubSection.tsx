@@ -1,16 +1,17 @@
 import Link from "next/link";
-import { articlePreviews } from "@/lib/articles";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { getArticleFeed } from "@/lib/article-feed";
 
 type Props = {
   limit?: number;
   showHeaderLink?: boolean;
 };
 
-export function ArticleHubSection({ limit, showHeaderLink = true }: Props) {
-  const items = typeof limit === "number" ? articlePreviews.slice(0, limit) : articlePreviews;
+export async function ArticleHubSection({ limit, showHeaderLink = true }: Props) {
+  const feed = await getArticleFeed();
+  const items = typeof limit === "number" ? feed.items.slice(0, limit) : feed.items;
 
   return (
     <section className="bg-white/80 py-10 sm:py-12 md:py-14" aria-labelledby="article-hub-heading">
@@ -64,10 +65,54 @@ export function ArticleHubSection({ limit, showHeaderLink = true }: Props) {
                 <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                   {article.excerpt.vi}
                 </p>
+                <div className="mt-auto pt-4">
+                  {article.status !== "published" ? (
+                    <span className="inline-flex min-h-10 w-full items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-center text-xs font-bold text-muted">
+                      <span className="lang-ja">準備中</span>
+                      <span lang="vi" className="lang-vi">Đang chuẩn bị</span>
+                    </span>
+                  ) : article.url?.startsWith("/") ? (
+                    <Link
+                      href={article.url}
+                      className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
+                    >
+                      <span className="lang-ja">記事を読む</span>
+                      <span lang="vi" className="lang-vi">Đọc bài viết</span>
+                    </Link>
+                  ) : article.url ? (
+                    <a
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
+                    >
+                      <span className="lang-ja">元の記事を読む</span>
+                      <span lang="vi" className="lang-vi">Đọc bài gốc</span>
+                    </a>
+                  ) : (
+                    <Link
+                      href={`/articles/${article.slug}`}
+                      className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
+                    >
+                      <span className="lang-ja">サイト内で読む</span>
+                      <span lang="vi" className="lang-vi">Đọc trong site</span>
+                    </Link>
+                  )}
+                </div>
               </div>
             </Card>
           ))}
         </div>
+        <p className="mt-5 text-xs leading-relaxed text-muted">
+          <span className="lang-ja">
+            記事データ: {feed.source === "remote" ? "外部フィード連携中" : "無料ローカルJSON表示中"}
+            {feed.updatedAt ? ` / 更新: ${feed.updatedAt}` : ""}
+          </span>
+          <span lang="vi" className="lang-vi">
+            Dữ liệu bài viết: {feed.source === "remote" ? "đang liên kết feed ngoài" : "đang hiển thị JSON miễn phí nội bộ"}
+            {feed.updatedAt ? ` / cập nhật: ${feed.updatedAt}` : ""}
+          </span>
+        </p>
       </Container>
     </section>
   );

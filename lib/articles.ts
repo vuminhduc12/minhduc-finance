@@ -10,6 +10,10 @@ export type ArticlePreview = {
   excerpt: Bi;
   readTime: string;
   status: "published" | "planned";
+  url?: string;
+  source?: string;
+  publishedAt?: string;
+  body?: readonly Bi[];
 };
 
 export const articleCategories: readonly { id: ArticleCategory; label: Bi }[] = [
