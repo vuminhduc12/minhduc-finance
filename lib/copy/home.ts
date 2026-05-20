@@ -11,8 +11,8 @@ export const homeCopy = {
       vi: "Nền tảng kiến thức tài chính và kiểm tra rủi ro cho người Việt tại Nhật.",
     } satisfies Bi,
     lead: {
-      ja: "日本の制度、給与、税金、送金、NISA、投資の基礎を、やさしい日本語とベトナム語で整理します。怪しい話に急いで乗らないための入口として、LINEチェックやPDF教材も用意します。",
-      vi: "Giải thích bằng Nhật-Việt dễ hiểu về chế độ ở Nhật, lương, thuế, chuyển tiền, NISA và nền tảng đầu tư. LINE check và PDF giúp bạn không vội tin lời mời đáng ngờ.",
+      ja: "日本の制度、給与、税金、送金、NISA、投資の基礎を、やさしい日本語とベトナム語で整理します。迷っている人が次の行動を選べる導線を作ります。",
+      vi: "Giải thích bằng Nhật-Việt dễ hiểu về制度 Nhật, lương, thuế, chuyển tiền, NISA và đầu tư. Trang giúp người đang phân vân chọn bước tiếp theo.",
     } satisfies Bi,
     cardRole: {
       ja: "Financial Education Navigator\n学びとリスク確認を案内",
@@ -46,43 +46,6 @@ export const homeCopy = {
         body: {
           ja: "金融商品の販売ではなく、自分で判断するための材料を整理します。",
           vi: "Không bán sản phẩm tài chính; sắp xếp thông tin để bạn tự quyết định.",
-        },
-      },
-    ] as const,
-  },
-  founderEdge: {
-    kicker: "FOUNDER EDGE",
-    heading: {
-      ja: "このサイトが、ただの情報まとめで終わらない理由",
-      vi: "Vì sao đây không chỉ là trang tổng hợp thông tin",
-    } satisfies Bi,
-    subtitle: {
-      ja: "SE、プロボクサー、日越バイリンガル発信者。この3つを掛け合わせて、在日ベトナム人のお金の不安を構造化します。",
-      vi: "Kết hợp kỹ sư, võ sĩ chuyên nghiệp và người truyền đạt song ngữ Nhật-Việt để cấu trúc lại nỗi lo về tiền bạc của người Việt tại Nhật.",
-    } satisfies Bi,
-    edges: [
-      {
-        code: "SYSTEM",
-        title: { ja: "SEとして、複雑な制度を分解する", vi: "Tư duy kỹ sư: chia nhỏ hệ thống phức tạp" },
-        body: {
-          ja: "給与、税金、送金、NISA、契約条件を、順番に確認できる形へ整理します。",
-          vi: "Sắp xếp lương, thuế, chuyển tiền, NISA và điều kiện hợp đồng thành các bước dễ kiểm tra.",
-        },
-      },
-      {
-        code: "RISK",
-        title: { ja: "プロボクサーとして、危険な距離感を読む", vi: "Tư duy võ sĩ: đọc khoảng cách rủi ro" },
-        body: {
-          ja: "急かす言葉、紹介圧力、感情を動かす勧誘を、いったん距離を取るサインとして扱います。",
-          vi: "Nhìn lời thúc ép, áp lực giới thiệu và mời gọi cảm xúc như tín hiệu cần giữ khoảng cách.",
-        },
-      },
-      {
-        code: "BRIDGE",
-        title: { ja: "日越の言葉と文化の間をつなぐ", vi: "Kết nối ngôn ngữ và văn hóa Nhật-Việt" },
-        body: {
-          ja: "日本語の制度説明を、ベトナム語の感覚でも理解できるように翻訳ではなく再設計します。",
-          vi: "Không chỉ dịch, mà thiết kế lại cách giải thích để người Việt hiểu được trong bối cảnh Nhật.",
         },
       },
     ] as const,
@@ -159,151 +122,188 @@ export const homeCopy = {
       },
     ] as const,
     reason: {
-      ja: "この層に必要なのは、難しい専門知識そのものよりも、「日本語の制度をベトナム語の生活感覚に翻訳し、危ない話から距離を取るための判断順序」です。だから、日越バイリンガル・SE視点・リスク感覚を組み合わせたこのサービスが役に立ちます。",
-      vi: "Điều nhóm này cần không chỉ là kiến thức chuyên môn khó, mà là thứ tự quyết định: chuyển制度 Nhật sang cảm giác đời sống bằng tiếng Việt và giữ khoảng cách với lời mời nguy hiểm. Vì vậy dịch vụ kết hợp song ngữ Nhật-Việt, tư duy kỹ sư và cảm giác rủi ro sẽ hữu ích.",
+      ja: "この層に必要なのは、難しい専門知識そのものよりも、日本語の制度をベトナム語の生活感覚に翻訳し、危ない話から距離を取るための判断順序です。",
+      vi: "Điều nhóm này cần không chỉ là kiến thức chuyên môn khó, mà là thứ tự quyết định: chuyển制度 Nhật sang cảm giác đời sống bằng tiếng Việt và giữ khoảng cách với lời mời nguy hiểm.",
     } satisfies Bi,
+  },
+  founderEdge: {
+    kicker: "FOUNDER EDGE",
+    heading: {
+      ja: "このサイトが、ただの情報まとめで終わらない理由",
+      vi: "Vì sao đây không chỉ là trang tổng hợp thông tin",
+    } satisfies Bi,
+    subtitle: {
+      ja: "SE、プロボクサー、日越バイリンガル発信者。この3つを掛け合わせて、在日ベトナム人のお金の不安を構造化します。",
+      vi: "Kết hợp kỹ sư, võ sĩ chuyên nghiệp và người truyền đạt song ngữ Nhật-Việt để cấu trúc lại nỗi lo về tiền bạc của người Việt tại Nhật.",
+    } satisfies Bi,
+    edges: [
+      {
+        code: "SYSTEM",
+        title: { ja: "SEとして、複雑な制度を分解する", vi: "Tư duy kỹ sư: chia nhỏ hệ thống phức tạp" },
+        body: {
+          ja: "給与、税金、送金、NISA、契約条件を、順番に確認できる形へ整理します。",
+          vi: "Sắp xếp lương, thuế, chuyển tiền, NISA và điều kiện hợp đồng thành các bước dễ kiểm tra.",
+        },
+      },
+      {
+        code: "RISK",
+        title: { ja: "プロボクサーとして、危険な距離感を読む", vi: "Tư duy võ sĩ: đọc khoảng cách rủi ro" },
+        body: {
+          ja: "急かす言葉、紹介圧力、感情を動かす勧誘を、いったん距離を取るサインとして扱います。",
+          vi: "Nhìn lời thúc ép, áp lực giới thiệu và mời gọi cảm xúc như tín hiệu cần giữ khoảng cách.",
+        },
+      },
+      {
+        code: "BRIDGE",
+        title: { ja: "日越の言葉と文化の間をつなぐ", vi: "Kết nối ngôn ngữ và văn hóa Nhật-Việt" },
+        body: {
+          ja: "日本語の制度説明を、ベトナム語の感覚でも理解できるように再設計します。",
+          vi: "Thiết kế lại cách giải thích để người Việt hiểu được trong bối cảnh Nhật.",
+        },
+      },
+    ] as const,
   },
   quickChoice: {
     heading: {
-      ja: "Action Center",
-      vi: "Trung tâm hành động",
+      ja: "あなたはいま、どの状況ですか？",
+      vi: "Bây giờ bạn đang ở tình huống nào?",
     } satisfies Bi,
     subtitle: {
-      ja: "緊急度と目的に合わせて、最短の導線から進めます。",
-      vi: "Chọn lối đi ngắn nhất theo mức độ khẩn cấp và mục đích của bạn.",
+      ja: "迷っている内容を選ぶと、記事・PDF・公式情報・LINEチェックの最短導線へ進めます。",
+      vi: "Chọn tình huống của bạn để đi nhanh đến bài viết, PDF, nguồn chính thức hoặc LINE check.",
     } satisfies Bi,
     cards: [
       {
-        tag: { ja: "RISK CHECK", vi: "KIỂM TRA" },
-        title: { ja: "送金・契約前の確認", vi: "Kiểm tra trước khi chuyển tiền/ký" },
+        tag: { ja: "SCAM", vi: "LỪA ĐẢO" },
+        title: { ja: "怪しい投資話を見た", vi: "Tôi thấy lời mời đầu tư đáng ngờ" },
         body: {
-          ja: "送金・契約・紹介の前に、まずLINEで危険サインを整理します。",
-          vi: "Trước khi chuyển tiền/ký hợp đồng/giới thiệu, hãy kiểm tra dấu hiệu nguy hiểm trên LINE.",
+          ja: "送金・契約の前に危険サインを確認し、必要ならLINEチェックへ進みます。",
+          vi: "Trước khi chuyển tiền/ký hợp đồng, kiểm tra dấu hiệu nguy hiểm và đi đến LINE check nếu cần.",
         },
         href: "/scam-check",
-        cta: { ja: "リスクを確認", vi: "Kiểm tra rủi ro" },
+        cta: { ja: "危険サインを確認", vi: "Kiểm tra dấu hiệu" },
       },
       {
-        tag: { ja: "LEARN", vi: "HỌC" },
-        title: { ja: "生活金融の基礎学習", vi: "Học nền tảng tài chính đời sống" },
+        tag: { ja: "SALARY", vi: "LƯƠNG/THUẾ" },
+        title: { ja: "給与・税金がわからない", vi: "Tôi không hiểu lương/thuế" },
         body: {
-          ja: "給与・税金・送金・NISAなど、生活に近い言葉から整理します。",
-          vi: "Bắt đầu từ lương, thuế, chuyển tiền, NISA và các thuật ngữ gần đời sống.",
+          ja: "給与明細、税金、社会保険を公式情報と記事から確認します。",
+          vi: "Kiểm tra bảng lương, thuế và bảo hiểm xã hội qua bài viết và nguồn chính thức.",
         },
-        href: "#learning-path-heading",
-        cta: { ja: "学習導線へ", vi: "Xem lộ trình" },
+        href: "/articles/salary-tax-basics",
+        cta: { ja: "給与・税金の記事へ", vi: "Đọc bài lương/thuế" },
       },
       {
-        tag: { ja: "BUSINESS", vi: "TỔ CHỨC" },
-        title: { ja: "取材・協業・法人相談", vi: "Phỏng vấn, hợp tác, tổ chức" },
+        tag: { ja: "NISA", vi: "NISA" },
+        title: { ja: "NISAを始めたい", vi: "Tôi muốn bắt đầu NISA" },
         body: {
-          ja: "企業・学校・団体向けの資料や勉強会の相談窓口です。",
-          vi: "Lối liên hệ cho tài liệu/workshop dành cho công ty, trường học, tổ chức.",
+          ja: "メリットだけでなく、投資リスクと金融庁の公式情報も確認します。",
+          vi: "Không chỉ xem lợi ích, mà còn kiểm tra rủi ro đầu tư và nguồn chính thức FSA.",
+        },
+        href: "/articles/nisa-first-step",
+        cta: { ja: "NISA導線へ", vi: "Đi đến NISA" },
+      },
+      {
+        tag: { ja: "REMIT", vi: "CHUYỂN TIỀN" },
+        title: { ja: "ベトナムへ送金したい", vi: "Tôi muốn gửi tiền về Việt Nam" },
+        body: {
+          ja: "手数料、為替、送金先、怪しい依頼を送金前に確認します。",
+          vi: "Kiểm tra phí, tỷ giá, người nhận và lời nhờ đáng ngờ trước khi chuyển tiền.",
+        },
+        href: "/articles/remittance-checklist",
+        cta: { ja: "送金前チェックへ", vi: "Checklist chuyển tiền" },
+      },
+      {
+        tag: { ja: "PDF", vi: "PDF" },
+        title: { ja: "PDFでまず学びたい", vi: "Tôi muốn học bằng PDF trước" },
+        body: {
+          ja: "家計、税金、NISA、詐欺予防などの無料PDFから自分のペースで学びます。",
+          vi: "Học theo nhịp riêng qua PDF miễn phí về chi tiêu, thuế, NISA và phòng tránh lừa đảo.",
+        },
+        href: "/materials",
+        cta: { ja: "無料PDFを見る", vi: "Xem PDF miễn phí" },
+      },
+      {
+        tag: { ja: "B2B", vi: "TỔ CHỨC" },
+        title: { ja: "会社・学校で使いたい", vi: "Muốn dùng cho công ty/trường học" },
+        body: {
+          ja: "ベトナム人向けの金融トラブル予防資料・勉強会の相談へ進みます。",
+          vi: "Liên hệ về tài liệu/workshop phòng tránh rắc rối tài chính cho người Việt.",
         },
         href: "/contact",
-        cta: { ja: "窓口へ進む", vi: "Liên hệ" },
+        cta: { ja: "相談する", vi: "Liên hệ" },
       },
     ] as const,
   },
   pains: {
-    heading: {
-      ja: "リスクが高まりやすい状況",
-      vi: "Những tình huống dễ tăng rủi ro",
-    } satisfies Bi,
+    heading: { ja: "リスクが高まりやすい状況", vi: "Những tình huống dễ tăng rủi ro" } satisfies Bi,
     subtitle: {
       ja: "該当するほど、送金・契約・紹介の前に確認する価値があります。",
       vi: "Càng trùng khớp, càng nên kiểm tra trước khi chuyển tiền, ký hợp đồng hoặc giới thiệu.",
     } satisfies Bi,
     items: [
       {
-        title: {
-          ja: "SNSに「すぐ増える」話ばかり流れてくる",
-          vi: "Trên mạng xã hội toàn thấy lời hứa “tăng nhanh, dễ kiếm tiền”",
-        },
+        title: { ja: "SNSに「すぐ増える」話ばかり流れてくる", vi: "Trên SNS toàn thấy lời hứa tăng tiền nhanh" },
         body: {
-          ja: "FacebookやZaloで、高い利回りや紹介報酬の話を見ると、つい気になってしまいますよね。",
-          vi: "Trên Facebook hay Zalo, khi thấy lãi suất cao hay tiền hoa hồng giới thiệu, lòng mình dễ bị lay động.",
+          ja: "高い利回りや紹介報酬の話を見ると、つい気になってしまいます。",
+          vi: "Khi thấy lãi cao hay hoa hồng giới thiệu, rất dễ bị lay động.",
         },
       },
       {
-        title: {
-          ja: "日本語の金融の言葉が壁になる",
-          vi: "Từ vựng tài chính tiếng Nhật trở thành “bức tường”",
-        },
+        title: { ja: "日本語の金融の言葉が壁になる", vi: "Từ vựng tài chính tiếng Nhật trở thành rào cản" },
         body: {
-          ja: "NISAや投資信託に興味があっても、用語の時点で止まってしまう。それは自然なことです。",
-          vi: "Dù bạn muốn tìm hiểu NISA hay quỹ đầu tư, chỉ riêng thuật ngữ đã khiến bạn dừng lại. Điều đó rất bình thường.",
+          ja: "NISAや税金に興味があっても、用語の時点で止まってしまいます。",
+          vi: "Dù muốn hiểu NISA hay thuế, chỉ riêng thuật ngữ đã khiến bạn dừng lại.",
         },
       },
       {
-        title: {
-          ja: "本音で相談できる相手がいない",
-          vi: "Không có ai để trò chuyện thật lòng về chuyện tiền bạc",
-        },
+        title: { ja: "本音で相談できる相手がいない", vi: "Không có ai để hỏi thật lòng về tiền bạc" },
         body: {
           ja: "身近な人に聞くほど、遠慮してしまうこともあります。",
-          vi: "Càng hỏi người thân, đôi khi bạn càng ngại nói hết suy nghĩ của mình.",
+          vi: "Càng hỏi người thân, đôi khi càng ngại nói hết suy nghĩ.",
         },
       },
     ] as const,
   },
   whatYouCan: {
-    heading: {
-      ja: "提供する4つの機能",
-      vi: "4 chức năng chính",
-    } satisfies Bi,
+    heading: { ja: "提供する4つの機能", vi: "4 chức năng chính" } satisfies Bi,
     subtitle: {
-      ja: "まずは守る・わかる・相談できる状態を作り、将来的に教材・研修・法人支援へ広げます。",
-      vi: "Bắt đầu từ bảo vệ bản thân, hiểu đúng và có nơi hỏi; sau đó mở rộng sang tài liệu, workshop và hỗ trợ tổ chức.",
+      ja: "守る・わかる・確認する・相談できる状態を作ります。",
+      vi: "Giúp bạn tự bảo vệ, hiểu đúng, kiểm tra và có nơi hỏi.",
     } satisfies Bi,
     items: [
       {
-        title: {
-          ja: "LINEで、怪しい話を短く整理する",
-          vi: "Dùng LINE để sắp xếp nhanh lời mời đáng ngờ",
-        },
+        title: { ja: "LINEで、怪しい話を短く整理する", vi: "Dùng LINE để sắp xếp lời mời đáng ngờ" },
         body: {
-          ja: "送金や契約の前に、危険サインと次の行動を確認します。判定ではなく、一度止まるための導線です。",
-          vi: "Trước khi chuyển tiền hay ký hợp đồng, kiểm tra dấu hiệu nguy hiểm và bước tiếp theo. Đây là lối dừng lại, không phải phán quyết.",
+          ja: "送金や契約の前に、危険サインと次の行動を確認します。",
+          vi: "Trước khi chuyển tiền/ký hợp đồng, kiểm tra dấu hiệu nguy hiểm và bước tiếp theo.",
         },
       },
       {
-        title: {
-          ja: "PDF教材で、日本のお金の基礎を学ぶ",
-          vi: "Học nền tảng tiền bạc ở Nhật qua PDF",
-        },
+        title: { ja: "PDF教材で、日本のお金の基礎を学ぶ", vi: "Học nền tảng tiền bạc ở Nhật qua PDF" },
         body: {
-          ja: "給与明細、税金、国際送金、投資と投機の違いなど、生活に近いテーマから整理します。",
-          vi: "Bắt đầu từ chủ đề gần đời sống: phiếu lương, thuế, chuyển tiền, khác nhau giữa đầu tư và đầu cơ.",
+          ja: "給与明細、税金、送金、NISAなど生活に近いテーマから整理します。",
+          vi: "Bắt đầu từ phiếu lương, thuế, chuyển tiền, NISA và chủ đề gần đời sống.",
         },
       },
       {
-        title: {
-          ja: "記事とFAQで、信頼できる判断材料を増やす",
-          vi: "Tăng nguồn tham khảo đáng tin qua bài viết và FAQ",
-        },
+        title: { ja: "記事と公式情報で判断材料を増やす", vi: "Tăng nguồn tham khảo qua bài viết và nguồn chính thức" },
         body: {
-          ja: "断定的な儲け話ではなく、制度・言葉・リスクを理解するための情報を積み上げます。",
-          vi: "Không hứa hẹn làm giàu; tích lũy thông tin để hiểu chế độ, thuật ngữ và rủi ro.",
+          ja: "制度・言葉・リスクを理解するための情報を積み上げます。",
+          vi: "Tích lũy thông tin để hiểu制度, thuật ngữ và rủi ro.",
         },
       },
       {
-        title: {
-          ja: "相談・研修・法人支援へ広げる",
-          vi: "Mở rộng sang tư vấn, workshop và hỗ trợ tổ chức",
-        },
+        title: { ja: "相談・研修・法人支援へ広げる", vi: "Mở rộng sang tư vấn, workshop và hỗ trợ tổ chức" },
         body: {
-          ja: "将来的には企業・学校・コミュニティ向けに、金融トラブル予防の資料や勉強会を提供できる形へ育てます。",
-          vi: "Tương lai có thể cung cấp tài liệu và buổi học phòng tránh rắc rối tài chính cho công ty, trường học và cộng đồng.",
+          ja: "企業・学校・コミュニティ向けに金融トラブル予防の資料や勉強会へ広げます。",
+          vi: "Mở rộng thành tài liệu và workshop phòng tránh rắc rối tài chính cho tổ chức.",
         },
       },
     ] as const,
   },
   learningPath: {
-    heading: {
-      ja: "Risk Control Flow",
-      vi: "Quy trình kiểm soát rủi ro",
-    } satisfies Bi,
+    heading: { ja: "Risk Control Flow", vi: "Quy trình kiểm soát rủi ro" } satisfies Bi,
     subtitle: {
       ja: "行動を急がせずに、「止まる、学ぶ、相談する」の順番を見える化します。",
       vi: "Không thúc ép hành động. Hãy đi theo thứ tự: dừng lại, học, rồi hỏi khi cần.",
@@ -313,15 +313,15 @@ export const homeCopy = {
         badge: "01",
         title: { ja: "まず止まる", vi: "Dừng lại trước" },
         body: {
-          ja: "今だけ、秘密、紹介報酬などの言葉が出たら、送金や契約を急がずLINEチェックへ。",
-          vi: "Nếu có “chỉ hôm nay”, “bí mật”, hoa hồng giới thiệu, đừng vội chuyển tiền/ký hợp đồng.",
+          ja: "今だけ、秘密、紹介報酬などの言葉が出たら、送金や契約を急がない。",
+          vi: "Nếu có “chỉ hôm nay”, “bí mật”, hoa hồng giới thiệu, đừng vội chuyển tiền/ký.",
         },
       },
       {
         badge: "02",
         title: { ja: "言葉を理解する", vi: "Hiểu thuật ngữ" },
         body: {
-          ja: "給与、税金、送金、NISA、投資と投機など、生活に近いところから整理します。",
+          ja: "給与、税金、送金、NISA、投資と投機などを生活に近いところから整理します。",
           vi: "Bắt đầu từ lương, thuế, chuyển tiền, NISA, đầu tư và đầu cơ.",
         },
       },
@@ -330,55 +330,49 @@ export const homeCopy = {
         title: { ja: "必要なら相談する", vi: "Hỏi khi cần" },
         body: {
           ja: "契約・法律・税金の判断は専門家へ。サイトはその前の整理を手伝います。",
-          vi: "Hợp đồng, pháp lý, thuế cần chuyên gia. Trang này giúp bạn chuẩn bị trước.",
+          vi: "Hợp đồng, pháp lý, thuế cần chuyên gia. Trang này giúp chuẩn bị trước.",
         },
       },
     ] as const,
   },
   scamPromo: {
     kicker: { ja: "送金や契約の前に", vi: "Trước khi chuyển tiền hoặc ký hợp đồng" } satisfies Bi,
-    title: {
-      ja: "LINEで、危ないサインをひと通り確認する",
-      vi: "Dùng LINE để đi qua các “dấu hiệu nguy hiểm” một lượt",
-    } satisfies Bi,
+    title: { ja: "LINEで、危ないサインをひと通り確認する", vi: "Dùng LINE để kiểm tra các dấu hiệu nguy hiểm" } satisfies Bi,
     subtitle: {
-      ja: "だいたい3分ほどのイメージです。正解を出す機械ではなく、「今は決めない」という選択肢も含めて整理します。",
-      vi: "Khoảng 3 phút là đủ để hình dung. Đây không phải máy cho “đáp án đúng”, mà giúp bạn sắp xếp lại — kể cả lựa chọn “chưa quyết định ngay”.",
+      ja: "正解を出す機械ではなく、「今は決めない」という選択肢も含めて整理します。",
+      vi: "Không phải máy cho đáp án đúng, mà giúp bạn sắp xếp lại, kể cả lựa chọn chưa quyết định ngay.",
     } satisfies Bi,
     bullets: [
-      { ja: "紹介報酬が大きいほど、なぜ冷静さが必要か", vi: "Vì sao cần bình tĩnh khi hoa hồng giới thiệu càng lớn?" },
-      { ja: "「今だけ」「内緒」などの言葉への向き合い方", vi: "Cách đối diện với những từ kiểu “chỉ hôm nay”, “bí mật”…" },
+      { ja: "紹介報酬が大きいほど、なぜ冷静さが必要か", vi: "Vì sao cần bình tĩnh khi hoa hồng càng lớn?" },
+      { ja: "「今だけ」「内緒」などの言葉への向き合い方", vi: "Cách đối diện với “chỉ hôm nay”, “bí mật”" },
     ] as const satisfies readonly Bi[],
     asideTitle: { ja: "補足", vi: "Lưu ý thêm" } satisfies Bi,
     asideBeforeLink: {
       ja: "チェックは万能ではありません。それでも、感情が高ぶっているときに一度止まることには役立ちます。詳しくは",
-      vi: "Việc kiểm tra không phải lúc nào cũng đúng 100%. Nhưng nó vẫn giúp bạn “dừng lại một nhịp” khi đang quá xúc động. Chi tiết xem ",
+      vi: "Việc kiểm tra không đúng 100%, nhưng giúp bạn dừng lại khi đang xúc động. Chi tiết xem ",
     } satisfies Bi,
     asideAfterLink: { ja: "をご覧ください。", vi: "." } satisfies Bi,
     asideLinkLabel: { ja: "詐欺チェックのページ", vi: "trang kiểm tra lừa đảo" } satisfies Bi,
   },
   pdfPromo: {
-    cardTitle: { ja: "PDFに含めたいテーマ（例）", vi: "Các chủ đề dự kiến trong PDF (ví dụ)" } satisfies Bi,
+    cardTitle: { ja: "PDFに含めたいテーマ（例）", vi: "Các chủ đề trong PDF (ví dụ)" } satisfies Bi,
     themes: [
       { ja: "日本で働くときのお金の全体像", vi: "Bức tranh tổng thể về tiền bạc khi làm việc tại Nhật" },
-      { ja: "投資と投機の違い（生活に近い例）", vi: "Khác nhau giữa đầu tư và đầu cơ (ví dụ gần với đời sống)" },
-      { ja: "NISAの考え方（制度のイメージ）", vi: "Cách hiểu về NISA (hình dung chung về chế độ)" },
-      { ja: "税金・国際送金など、生活に近い入口", vi: "Thuế, chuyển tiền quốc tế… các chỗ bắt đầu gần với đời sống" },
+      { ja: "投資と投機の違い", vi: "Khác nhau giữa đầu tư và đầu cơ" },
+      { ja: "NISAの考え方", vi: "Cách hiểu về NISA" },
+      { ja: "税金・国際送金など生活に近い入口", vi: "Thuế, chuyển tiền quốc tế và chủ đề gần đời sống" },
     ] as const satisfies readonly Bi[],
     footnote: {
-      ja: "※ 章立てや販売形式は準備状況で変わる場合があります。",
-      vi: "※ Cấu trúc chương và hình thức bán có thể thay đổi tùy tiến độ chuẩn bị.",
+      ja: "※ 章立てや形式は準備状況で変わる場合があります。",
+      vi: "※ Cấu trúc và hình thức có thể thay đổi tùy tiến độ.",
     } satisfies Bi,
     kicker: { ja: "自分のペースで読む", vi: "Đọc theo nhịp của riêng bạn" } satisfies Bi,
     title: { ja: "はじめての方向けPDF教材", vi: "PDF cho người mới bắt đầu" } satisfies Bi,
     subtitle: {
-      ja: "「何から読めばいいかわからない」を減らすためのまとめです。読みやすさを優先し、無理な勧誘はしません。",
-      vi: "Tài liệu giúp bạn bớt bối rối “không biết bắt đầu từ đâu”. Ưu tiên dễ đọc, không ép buộc mua.",
+      ja: "「何から読めばいいかわからない」を減らすためのまとめです。",
+      vi: "Tài liệu giúp bạn bớt bối rối không biết bắt đầu từ đâu.",
     } satisfies Bi,
-    purchaseNote: {
-      ja: "購入は外部ページへ移動します。内容・価格は販売ページの記載をご確認ください（",
-      vi: "Khi mua, bạn sẽ chuyển sang trang bên ngoài. Nội dung và giá cả xin xem đúng theo trang bán (",
-    } satisfies Bi,
+    purchaseNote: { ja: "内容は教材ページで確認できます（", vi: "Bạn có thể xem nội dung tại trang tài liệu (" } satisfies Bi,
     disclaimerLink: { ja: "免責事項", vi: "miễn trừ trách nhiệm" } satisfies Bi,
     afterDisclaimer: { ja: "）。", vi: ")." } satisfies Bi,
   },
@@ -389,7 +383,7 @@ export const homeCopy = {
     } satisfies Bi,
     body: {
       ja: "SEとして制度や条件を構造化し、プロボクサーとして危ない距離感を読み、日越バイリンガルとして言葉の壁を越える。この組み合わせを、お金の学びと詐欺予防に活かします。",
-      vi: "Kết hợp tư duy kỹ sư để cấu trúc điều kiện, cảm giác khoảng cách của võ sĩ để đọc rủi ro, và năng lực song ngữ Nhật-Việt để vượt rào cản ngôn ngữ.",
+      vi: "Kết hợp tư duy kỹ sư, cảm giác khoảng cách của võ sĩ và năng lực song ngữ Nhật-Việt để hỗ trợ học tiền bạc và phòng tránh lừa đảo.",
     } satisfies Bi,
   },
   faqSection: {

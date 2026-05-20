@@ -33,27 +33,25 @@ export function QuickChoiceSection() {
             <div className="grid grid-cols-3 overflow-hidden rounded-2xl border border-border bg-white shadow-[0_18px_45px_rgba(11,31,58,0.07)]">
               <div className="border-r border-border p-4">
                 <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">Primary</p>
-                <p className="mt-1 text-sm font-bold text-navy">Risk Check</p>
+                <p className="mt-1 text-sm font-bold text-navy">Situation</p>
               </div>
               <div className="border-r border-border p-4">
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">Language</p>
-                <p className="mt-1 text-sm font-bold text-navy">JP / VN</p>
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">Next Step</p>
+                <p className="mt-1 text-sm font-bold text-navy">Article / PDF / LINE</p>
               </div>
               <div className="p-4">
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">Cost</p>
-                <p className="mt-1 text-sm font-bold text-navy">Start Free</p>
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">Goal</p>
+                <p className="mt-1 text-sm font-bold text-navy">Safer Action</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid overflow-hidden rounded-3xl border border-border bg-white shadow-[0_22px_55px_rgba(11,31,58,0.08)] lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {quickChoice.cards.map((card, index) => (
             <div
               key={card.title.ja}
-              className={`group flex h-full flex-col p-5 transition-colors hover:bg-accent-muted/25 sm:p-6 ${
-                index < quickChoice.cards.length - 1 ? "border-b border-border lg:border-b-0 lg:border-r" : ""
-              }`}
+              className="group flex h-full flex-col rounded-3xl border border-border bg-white p-5 shadow-[0_18px_45px_rgba(11,31,58,0.07)] transition-colors hover:bg-accent-muted/25 sm:p-6"
             >
               <div className="mb-4 flex items-center justify-between gap-3">
                 <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent">
