@@ -4,8 +4,8 @@
 export const LINE_BOT_URL =
   "https://line.me/R/ti/p/@DUMMY_LINE_BOT_ID_REPLACE_ME";
 
-/** PDF教材の案内・購入ページ（note / STORES / Gumroad など） */
-export const PDF_URL = "https://example.com/replace-with-your-pdf-sales-page";
+/** PDF教材ライブラリ。将来の販売ページにもここから誘導します。 */
+export const PDF_URL = "/materials";
 
 /** note など、メインの発信ハブ */
 export const NOTE_PROFILE_URL = "https://note.com/DUMMY_REPLACE_ME";

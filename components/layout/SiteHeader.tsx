@@ -7,6 +7,7 @@ import { SITE_NAME, SITE_TAGLINE, SITE_TAGLINE_VI } from "@/lib/site";
 const nav = [
   { href: "/", labelJa: "ホーム", labelVi: "Trang chủ" },
   { href: "/articles", labelJa: "記事", labelVi: "Bài viết" },
+  { href: "/materials", labelJa: "PDF教材", labelVi: "PDF" },
   { href: "/official-info", labelJa: "公式情報", labelVi: "Nguồn chính thức" },
   { href: "/scam-check", labelJa: "詐欺チェック", labelVi: "Kiểm tra" },
   { href: "/profile", labelJa: "プロフィール", labelVi: "Hồ sơ" },

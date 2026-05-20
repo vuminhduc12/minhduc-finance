@@ -15,8 +15,8 @@ export function PdfPromoSection() {
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-8">
           <Card className="order-2 lg:order-1">
             <h3 className="text-base font-bold text-navy sm:text-lg">
-              <span className="block">{pdfPromo.cardTitle.ja}</span>
-              <span lang="vi" className="mt-1 block text-sm font-semibold text-navy-soft">
+              <span className="lang-ja block">{pdfPromo.cardTitle.ja}</span>
+              <span lang="vi" className="lang-vi text-sm font-semibold text-navy-soft">
                 {pdfPromo.cardTitle.vi}
               </span>
             </h3>
@@ -27,8 +27,8 @@ export function PdfPromoSection() {
                     ・
                   </span>
                   <span>
-                    <span className="block text-foreground">{t.ja}</span>
-                    <span lang="vi" className="mt-0.5 block text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem]">
+                    <span className="lang-ja block text-foreground">{t.ja}</span>
+                    <span lang="vi" className="lang-vi text-foreground">
                       {t.vi}
                     </span>
                   </span>
@@ -36,8 +36,8 @@ export function PdfPromoSection() {
               ))}
             </ul>
             <p className="mt-3 text-[11px] leading-relaxed text-muted sm:mt-4 sm:text-xs">
-              <span className="block">{pdfPromo.footnote.ja}</span>
-              <span lang="vi" className="mt-1 block">{pdfPromo.footnote.vi}</span>
+              <span className="lang-ja block">{pdfPromo.footnote.ja}</span>
+              <span lang="vi" className="lang-vi">{pdfPromo.footnote.vi}</span>
             </p>
           </Card>
           <div className="order-1 lg:order-2">
@@ -49,7 +49,6 @@ export function PdfPromoSection() {
             />
             <ButtonLink
               href={PDF_URL}
-              external
               className="w-full sm:w-auto"
               aria-label={`${cta.pdfContentAndPurchase.ja} ${cta.pdfContentAndPurchase.vi}`}
               subLabelVi={cta.pdfContentAndPurchase.vi}
@@ -57,18 +56,20 @@ export function PdfPromoSection() {
               {cta.pdfContentAndPurchase.ja}
             </ButtonLink>
             <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm">
-              {pdfPromo.purchaseNote.ja}
-              <Link href="/disclaimer" className="font-medium text-accent underline-offset-2 hover:underline">
-                {pdfPromo.disclaimerLink.ja}
-              </Link>
-              {pdfPromo.afterDisclaimer.ja}
-            </p>
-            <p lang="vi" className="mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.75rem] leading-relaxed sm:text-[0.8125rem]">
-              {pdfPromo.purchaseNote.vi}
-              <Link href="/disclaimer" className="font-medium text-accent underline-offset-2 hover:underline">
-                {pdfPromo.disclaimerLink.vi}
-              </Link>
-              {pdfPromo.afterDisclaimer.vi}
+              <span className="lang-ja">
+                {pdfPromo.purchaseNote.ja}
+                <Link href="/disclaimer" className="font-medium text-accent underline-offset-2 hover:underline">
+                  {pdfPromo.disclaimerLink.ja}
+                </Link>
+                {pdfPromo.afterDisclaimer.ja}
+              </span>
+              <span lang="vi" className="lang-vi">
+                {pdfPromo.purchaseNote.vi}
+                <Link href="/disclaimer" className="font-medium text-accent underline-offset-2 hover:underline">
+                  {pdfPromo.disclaimerLink.vi}
+                </Link>
+                {pdfPromo.afterDisclaimer.vi}
+              </span>
             </p>
           </div>
         </div>

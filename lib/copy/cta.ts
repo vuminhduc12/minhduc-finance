@@ -31,8 +31,8 @@ export const cta = {
     vi: "Để sau: chỉ xem các bước",
   },
   pdfContentAndPurchase: {
-    ja: "PDFの内容と購入方法を見る",
-    vi: "Xem nội dung PDF và cách mua",
+    ja: "無料PDF教材を見る",
+    vi: "Xem tài liệu PDF miễn phí",
   },
   pdfConfirmContent: {
     ja: "PDFの内容を確認する",

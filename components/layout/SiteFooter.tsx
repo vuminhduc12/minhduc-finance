@@ -4,6 +4,7 @@ import { BRAND_LEGAL_NAME, SITE_NAME, SITE_TAGLINE, SITE_TAGLINE_VI } from "@/li
 
 const footerNav = [
   { href: "/articles", labelJa: "記事ライブラリ", labelVi: "Thư viện bài viết" },
+  { href: "/materials", labelJa: "PDF教材", labelVi: "Tài liệu PDF" },
   { href: "/official-info", labelJa: "公式情報ハブ", labelVi: "Nguồn chính thức" },
   { href: "/scam-check", labelJa: "詐欺チェック", labelVi: "Kiểm tra lừa đảo" },
   { href: "/privacy", labelJa: "プライバシーポリシー", labelVi: "Chính sách bảo mật" },
