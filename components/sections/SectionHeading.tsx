@@ -29,6 +29,12 @@ function BiLines({
       >
         {text.vi}
       </span>
+      <span
+        lang="en"
+        className={`lang-en block text-[0.88em] font-semibold leading-snug text-navy-soft sm:text-[0.92em] ${viClassName}`}
+      >
+        {text.en ?? text.vi}
+      </span>
     </span>
   );
 }

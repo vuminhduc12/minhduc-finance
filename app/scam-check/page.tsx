@@ -10,6 +10,7 @@ import { ForWhoScamSection } from "@/components/sections/scam-check/ForWhoScamSe
 import { HeroScamCheck } from "@/components/sections/scam-check/HeroScamCheck";
 import { LineBotFeaturesSection } from "@/components/sections/scam-check/LineBotFeaturesSection";
 import { PdfBridgeSection } from "@/components/sections/scam-check/PdfBridgeSection";
+import { RiskCheckTool } from "@/components/sections/scam-check/RiskCheckTool";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Container } from "@/components/ui/Container";
 import { scamCheckCopy } from "@/lib/copy/scam-check";
@@ -33,6 +34,7 @@ export default function ScamCheckPage() {
         <BiBlock text={scamCheckCopy.pageIntro} viSize="sm" className="mx-auto max-w-2xl text-left sm:text-center" />
       </PageIntro>
       <HeroScamCheck />
+      <RiskCheckTool />
       <ForWhoScamSection />
       <DangerSignalsSection />
       <LineBotFeaturesSection />

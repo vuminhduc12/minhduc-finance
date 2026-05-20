@@ -19,6 +19,7 @@ type Props = {
   children: ReactNode;
   /** CTA のベトナム語行（あればボタン内の2行目に表示） */
   subLabelVi?: string;
+  subLabelEn?: string;
   variant?: Variant;
   external?: boolean;
   className?: string;
@@ -29,6 +30,7 @@ export function ButtonLink({
   href,
   children,
   subLabelVi,
+  subLabelEn,
   variant = "primary",
   external,
   className = "",
@@ -42,6 +44,9 @@ export function ButtonLink({
         <span lang="vi" className="lang-vi max-w-[22rem] text-[0.82rem] font-semibold leading-snug opacity-95 sm:text-sm">
           {subLabelVi}
         </span>
+        <span lang="en" className="lang-en max-w-[22rem] text-[0.82rem] font-semibold leading-snug opacity-95 sm:text-sm">
+          {subLabelEn ?? subLabelVi}
+        </span>
       </>
     ) : (
       children
@@ -50,7 +55,7 @@ export function ButtonLink({
   const computedAria =
     ariaLabel ??
     (typeof children === "string" && subLabelVi
-      ? `${children}（${subLabelVi}）`
+      ? `${children}（${subLabelVi}${subLabelEn ? ` / ${subLabelEn}` : ""}）`
       : undefined);
 
   if (external) {

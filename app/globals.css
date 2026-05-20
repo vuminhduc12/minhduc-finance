@@ -36,15 +36,23 @@ html {
 }
 
 .lang-ja,
-.lang-vi {
+.lang-vi,
+.lang-en {
   overflow-wrap: break-word;
 }
 
-html:not([data-lang="ja"]) .lang-ja {
+html:not([data-lang="ja"]) .lang-ja,
+html:not([data-lang="vi"]) .lang-vi,
+html:not([data-lang="en"]) .lang-en {
   display: none !important;
 }
 
-html[data-lang="ja"] .lang-vi {
+html[data-lang="ja"] .lang-vi,
+html[data-lang="ja"] .lang-en,
+html[data-lang="vi"] .lang-ja,
+html[data-lang="vi"] .lang-en,
+html[data-lang="en"] .lang-ja,
+html[data-lang="en"] .lang-vi {
   display: none !important;
 }
 
@@ -56,14 +64,16 @@ html[data-lang="ja"] .lang-vi {
   background: var(--accent-muted);
 }
 
-html:not([data-lang="ja"]) .lang-toggle-vi,
-html[data-lang="ja"] .lang-toggle-ja {
+html[data-lang="vi"] .lang-toggle-vi,
+html[data-lang="ja"] .lang-toggle-ja,
+html[data-lang="en"] .lang-toggle-en {
   background: var(--navy);
   color: #ffffff;
 }
 
-html:not([data-lang="ja"]) .lang-toggle-vi:hover,
-html[data-lang="ja"] .lang-toggle-ja:hover {
+html[data-lang="vi"] .lang-toggle-vi:hover,
+html[data-lang="ja"] .lang-toggle-ja:hover,
+html[data-lang="en"] .lang-toggle-en:hover {
   background: var(--navy);
 }
 

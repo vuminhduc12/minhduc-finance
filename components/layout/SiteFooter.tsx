@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { FlagIcon } from "@/components/brand/FlagIcon";
-import { BRAND_LEGAL_NAME, SITE_NAME, SITE_TAGLINE, SITE_TAGLINE_VI } from "@/lib/site";
+import { BRAND_LEGAL_NAME, SITE_NAME, SITE_TAGLINE, SITE_TAGLINE_EN, SITE_TAGLINE_VI } from "@/lib/site";
 
 const footerNav = [
-  { href: "/articles", labelJa: "記事ライブラリ", labelVi: "Thư viện bài viết" },
-  { href: "/materials", labelJa: "PDF教材", labelVi: "Tài liệu PDF" },
-  { href: "/official-info", labelJa: "公式情報ハブ", labelVi: "Nguồn chính thức" },
-  { href: "/scam-check", labelJa: "詐欺チェック", labelVi: "Kiểm tra lừa đảo" },
-  { href: "/privacy", labelJa: "プライバシーポリシー", labelVi: "Chính sách bảo mật" },
-  { href: "/disclaimer", labelJa: "免責事項", labelVi: "Miễn trừ trách nhiệm" },
-  { href: "/contact", labelJa: "お問い合わせ", labelVi: "Liên hệ" },
+  { href: "/articles", labelJa: "記事ライブラリ", labelVi: "Thư viện bài viết", labelEn: "Article library" },
+  { href: "/materials", labelJa: "PDF教材", labelVi: "Tài liệu PDF", labelEn: "PDF materials" },
+  { href: "/official-info", labelJa: "公式情報ハブ", labelVi: "Nguồn chính thức", labelEn: "Official sources" },
+  { href: "/scam-check", labelJa: "詐欺チェック", labelVi: "Kiểm tra lừa đảo", labelEn: "Scam check" },
+  { href: "/privacy", labelJa: "プライバシーポリシー", labelVi: "Chính sách bảo mật", labelEn: "Privacy policy" },
+  { href: "/disclaimer", labelJa: "免責事項", labelVi: "Miễn trừ trách nhiệm", labelEn: "Disclaimer" },
+  { href: "/contact", labelJa: "お問い合わせ", labelVi: "Liên hệ", labelEn: "Contact" },
 ] as const;
 
 export function SiteFooter() {
@@ -22,6 +22,7 @@ export function SiteFooter() {
               {SITE_NAME}
               <FlagIcon code="jp" className="h-4 w-6" />
               <FlagIcon code="vn" className="h-4 w-6" />
+              <FlagIcon code="us" className="h-4 w-6" title="アメリカ英語" />
             </p>
             <p className="text-sm leading-relaxed text-slate-300">
               <span className="lang-ja">
@@ -30,6 +31,9 @@ export function SiteFooter() {
               <span lang="vi" className="lang-vi">
                 {SITE_TAGLINE_VI}. Nội dung chỉ nhằm mục đích giáo dục và cung cấp thông tin; không bán sản phẩm tài chính, không thay bạn quyết định đầu tư hay pháp lý.
               </span>
+              <span lang="en" className="lang-en">
+                {SITE_TAGLINE_EN}. This site provides education and information only; it does not sell financial products or replace investment, legal, or tax advice.
+              </span>
             </p>
             <p className="text-xs leading-relaxed text-slate-400">
               <span className="lang-ja">
@@ -37,6 +41,9 @@ export function SiteFooter() {
               </span>
               <span lang="vi" className="lang-vi">
                 Đang xây dựng nền tảng học tập đáng tin cậy để phát triển thành đào tạo và hỗ trợ cộng đồng trong tương lai.
+              </span>
+              <span lang="en" className="lang-en">
+                Building a trusted learning base for future training and community support.
               </span>
             </p>
           </div>
@@ -49,6 +56,7 @@ export function SiteFooter() {
               >
                 <span className="lang-ja">{item.labelJa}</span>
                 <span lang="vi" className="lang-vi">{item.labelVi}</span>
+                <span lang="en" className="lang-en">{item.labelEn}</span>
               </Link>
             ))}
           </nav>

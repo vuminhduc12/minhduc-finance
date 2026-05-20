@@ -15,6 +15,7 @@ export function FounderEdgeSection() {
               <FlagIcon code="jp" className="h-4 w-6" />
               {founderEdge.kicker}
               <FlagIcon code="vn" className="h-4 w-6" />
+              <FlagIcon code="us" className="h-4 w-6" title="アメリカ英語" />
             </div>
             <h2
               id="founder-edge-heading"
@@ -24,11 +25,17 @@ export function FounderEdgeSection() {
               <span lang="vi" className="lang-vi block text-[0.72em] font-semibold text-accent-muted">
                 {founderEdge.heading.vi}
               </span>
+              <span lang="en" className="lang-en block text-[0.72em] font-semibold text-accent-muted">
+                {founderEdge.heading.en}
+              </span>
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
               <span className="lang-ja block">{founderEdge.subtitle.ja}</span>
               <span lang="vi" className="lang-vi block text-[0.88em] text-slate-400">
                 {founderEdge.subtitle.vi}
+              </span>
+              <span lang="en" className="lang-en block text-[0.88em] text-slate-400">
+                {founderEdge.subtitle.en}
               </span>
             </p>
             <Link
@@ -59,12 +66,18 @@ export function FounderEdgeSection() {
                     <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-accent-muted">
                       {edge.title.vi}
                     </span>
+                    <span lang="en" className="lang-en block text-[0.82rem] font-semibold text-accent-muted">
+                      {edge.title.en}
+                    </span>
                   </h3>
                   <p className="lang-ja mt-2 text-[0.82rem] leading-relaxed text-slate-300 sm:text-sm">
                     {edge.body.ja}
                   </p>
                   <p lang="vi" className="lang-vi mt-2 text-[0.82rem] leading-relaxed text-slate-300 sm:text-sm">
                     {edge.body.vi}
+                  </p>
+                  <p lang="en" className="lang-en mt-2 text-[0.82rem] leading-relaxed text-slate-300 sm:text-sm">
+                    {edge.body.en}
                   </p>
                 </div>
               </article>

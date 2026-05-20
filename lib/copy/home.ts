@@ -5,47 +5,54 @@ export const homeCopy = {
     trustLine: {
       ja: "金融商品の販売ではなく、学び・詐欺予防・判断材料の整理を行います。",
       vi: "Không bán sản phẩm tài chính; tập trung vào học tập, phòng tránh lừa đảo và sắp xếp thông tin.",
+      en: "No financial product sales; this site focuses on learning, scam prevention, and organizing decision points.",
     } satisfies Bi,
     title: {
       ja: "在日ベトナム人のための金融リテラシー・リスクチェック基盤。",
       vi: "Nền tảng kiến thức tài chính và kiểm tra rủi ro cho người Việt tại Nhật.",
+      en: "Financial literacy and risk-check guidance for Vietnamese residents in Japan.",
     } satisfies Bi,
     lead: {
       ja: "日本の制度、給与、税金、送金、NISA、投資の基礎を、やさしい日本語とベトナム語で整理します。迷っている人が次の行動を選べる導線を作ります。",
       vi: "Giải thích bằng Nhật-Việt dễ hiểu về制度 Nhật, lương, thuế, chuyển tiền, NISA và đầu tư. Trang giúp người đang phân vân chọn bước tiếp theo.",
+      en: "We explain Japanese systems, salary, taxes, remittance, NISA, and investment basics in simple language so unsure users can choose their next step.",
     } satisfies Bi,
     cardRole: {
       ja: "Financial Education Navigator\n学びとリスク確認を案内",
       vi: "Financial Education Navigator\nđịnh hướng học tập và kiểm tra rủi ro",
+      en: "Financial Education Navigator\nguiding learning and risk checks",
     } satisfies Bi,
     trustPoints: [
-      { ja: "SE視点", vi: "Tư duy kỹ sư" },
-      { ja: "プロボクサーの距離感", vi: "Khoảng cách võ sĩ" },
-      { ja: "日越バイリンガル", vi: "Song ngữ Nhật-Việt" },
-      { ja: "在日コミュニティ理解", vi: "Hiểu cộng đồng tại Nhật" },
+      { ja: "SE視点", vi: "Tư duy kỹ sư", en: "Engineer mindset" },
+      { ja: "プロボクサーの距離感", vi: "Khoảng cách võ sĩ", en: "Boxer's distance sense" },
+      { ja: "日越バイリンガル", vi: "Song ngữ Nhật-Việt", en: "JP/VN bilingual" },
+      { ja: "在日コミュニティ理解", vi: "Hiểu cộng đồng tại Nhật", en: "Japan community insight" },
     ] as const satisfies readonly Bi[],
   },
   trustRibbon: {
     items: [
       {
-        label: { ja: "日越併記", vi: "Song ngữ Nhật-Việt" },
+        label: { ja: "日越併記", vi: "Song ngữ Nhật-Việt", en: "Multilingual support" },
         body: {
           ja: "重要な説明はベトナム語でも補足し、日本語だけで不安にならない設計にします。",
           vi: "Nội dung quan trọng có tiếng Việt để bạn không bị cô đơn vì tiếng Nhật.",
+          en: "Important explanations are supported in multiple languages so users are not left alone with Japanese-only information.",
         },
       },
       {
-        label: { ja: "安全確認が先", vi: "An toàn trước" },
+        label: { ja: "安全確認が先", vi: "An toàn trước", en: "Safety first" },
         body: {
           ja: "送金・契約・紹介の前に、危険サインを落ち着いて確認します。",
           vi: "Trước khi chuyển tiền, ký hợp đồng hay giới thiệu, hãy kiểm tra dấu hiệu nguy hiểm.",
+          en: "Before sending money, signing, or introducing others, check the warning signs calmly.",
         },
       },
       {
-        label: { ja: "売り込みより教育", vi: "Giáo dục hơn bán hàng" },
+        label: { ja: "売り込みより教育", vi: "Giáo dục hơn bán hàng", en: "Education over sales" },
         body: {
           ja: "金融商品の販売ではなく、自分で判断するための材料を整理します。",
           vi: "Không bán sản phẩm tài chính; sắp xếp thông tin để bạn tự quyết định.",
+          en: "We do not sell financial products. We organize information so users can make their own decisions.",
         },
       },
     ] as const,
@@ -55,75 +62,87 @@ export const homeCopy = {
     heading: {
       ja: "誰の、どんな不安を解決するサービスなのか",
       vi: "Dịch vụ này giải quyết nỗi lo nào, cho ai?",
+      en: "Who this service helps, and what concerns it solves",
     } satisfies Bi,
     subtitle: {
       ja: "主な対象は、日本で働く・生活する20代後半〜40代前半のベトナム人。収入はあるが、日本語の制度・金融用語・詐欺リスクに不安が残る層です。",
       vi: "Đối tượng chính là người Việt khoảng cuối 20 đến đầu 40 tuổi đang làm việc và sống tại Nhật. Có thu nhập, nhưng vẫn lo về制度 Nhật, từ vựng tài chính và rủi ro lừa đảo.",
+      en: "The primary audience is Vietnamese residents in Japan, mainly from their late 20s to early 40s. They have income, but still feel unsure about Japanese systems, financial terms, and scam risks.",
     } satisfies Bi,
     segments: [
       {
-        label: { ja: "25〜34歳", vi: "25-34 tuổi" },
-        title: { ja: "働き始め・生活を整えたい層", vi: "Người mới ổn định công việc và đời sống" },
+        label: { ja: "25〜34歳", vi: "25-34 tuổi", en: "Ages 25-34" },
+        title: { ja: "働き始め・生活を整えたい層", vi: "Người mới ổn định công việc và đời sống", en: "People starting to stabilize work and daily life" },
         insight: {
           ja: "給与明細、税金、保険、送金、貯金を理解したいが、どこから学べばよいかわからない。",
           vi: "Muốn hiểu bảng lương, thuế, bảo hiểm, chuyển tiền và tiết kiệm, nhưng không biết bắt đầu từ đâu.",
+          en: "They want to understand pay slips, taxes, insurance, remittances, and savings, but do not know where to begin.",
         },
         need: {
           ja: "やさしい言葉で、生活に直結する順番に整理された教材と公式情報への導線が必要。",
           vi: "Cần tài liệu dễ hiểu và lộ trình đến nguồn chính thức theo thứ tự gần với đời sống.",
+          en: "They need simple materials organized in a practical order, with clear routes to official information.",
         },
       },
       {
-        label: { ja: "30〜45歳", vi: "30-45 tuổi" },
-        title: { ja: "家族・将来・資産形成を考え始める層", vi: "Người bắt đầu nghĩ về gia đình, tương lai và tích sản" },
+        label: { ja: "30〜45歳", vi: "30-45 tuổi", en: "Ages 30-45" },
+        title: { ja: "家族・将来・資産形成を考え始める層", vi: "Người bắt đầu nghĩ về gia đình, tương lai và tích sản", en: "People thinking about family, the future, and building assets" },
         insight: {
           ja: "NISA、保険、教育費、帰国・定住などを考えたいが、失敗や詐欺への不安が強い。",
           vi: "Muốn nghĩ về NISA, bảo hiểm, chi phí giáo dục, về nước/định cư nhưng lo thất bại và lừa đảo.",
+          en: "They want to consider NISA, insurance, education costs, returning home, or settling in Japan, but fear mistakes and scams.",
         },
         need: {
           ja: "売り込みではなく、判断材料・比較軸・リスク確認を先に示す中立的な学び場が必要。",
           vi: "Cần nơi học trung lập, không bán hàng, đưa ra tiêu chí so sánh và kiểm tra rủi ro trước.",
+          en: "They need a neutral learning space that shows decision points, comparison criteria, and risk checks before any sales pitch.",
         },
       },
       {
-        label: { ja: "緊急層", vi: "Nhóm khẩn cấp" },
-        title: { ja: "投資話・紹介・送金を急がされている層", vi: "Người đang bị thúc ép đầu tư, giới thiệu hoặc chuyển tiền" },
+        label: { ja: "緊急層", vi: "Nhóm khẩn cấp", en: "Urgent cases" },
+        title: { ja: "投資話・紹介・送金を急がされている層", vi: "Người đang bị thúc ép đầu tư, giới thiệu hoặc chuyển tiền", en: "People being rushed to invest, invite others, or send money" },
         insight: {
           ja: "知人・SNS・同じコミュニティ経由の話ほど断りにくく、冷静な確認が遅れやすい。",
           vi: "Lời mời từ người quen, SNS hoặc cộng đồng càng khó từ chối, khiến việc kiểm tra bình tĩnh bị chậm.",
+          en: "Offers from acquaintances, social media, or the same community can be harder to refuse, making calm checks more likely to be delayed.",
         },
         need: {
           ja: "送金・契約前に一度止まり、危険サインと公式確認先を短時間で整理する導線が必要。",
           vi: "Cần một lối dừng lại trước khi chuyển tiền/ký hợp đồng, để kiểm tra dấu hiệu nguy hiểm và nguồn chính thức.",
+          en: "They need a way to pause before sending money or signing, then quickly review warning signs and official sources.",
         },
       },
     ] as const,
     outcomes: [
       {
-        title: { ja: "利用前", vi: "Trước khi sử dụng" },
+        title: { ja: "利用前", vi: "Trước khi sử dụng", en: "Before using it" },
         body: {
           ja: "日本語の制度説明が難しく、SNSや知人の話に流されやすい。",
           vi: "Khó hiểu giải thích制度 bằng tiếng Nhật và dễ bị cuốn theo SNS/người quen.",
+          en: "Japanese explanations of systems feel difficult, and it is easy to be influenced by social media or acquaintances.",
         },
       },
       {
-        title: { ja: "利用後", vi: "Sau khi sử dụng" },
+        title: { ja: "利用後", vi: "Sau khi sử dụng", en: "After using it" },
         body: {
           ja: "まず確認する習慣ができ、公式情報・PDF・LINEチェックで判断を整理できる。",
           vi: "Có thói quen kiểm tra trước, biết dùng nguồn chính thức, PDF và LINE check để sắp xếp quyết định.",
+          en: "Users build the habit of checking first and can organize decisions with official sources, PDFs, and LINE checks.",
         },
       },
       {
-        title: { ja: "得られる価値", vi: "Giá trị nhận được" },
+        title: { ja: "得られる価値", vi: "Giá trị nhận được", en: "Value gained" },
         body: {
           ja: "損失回避、言葉の理解、家計改善、将来設計、安心して相談できる入口。",
           vi: "Giảm rủi ro mất tiền, hiểu thuật ngữ, cải thiện chi tiêu, lập kế hoạch tương lai và có nơi hỏi an tâm.",
+          en: "Lower loss risk, better understanding of terms, improved household finances, future planning, and a safer place to ask questions.",
         },
       },
     ] as const,
     reason: {
       ja: "この層に必要なのは、難しい専門知識そのものよりも、日本語の制度をベトナム語の生活感覚に翻訳し、危ない話から距離を取るための判断順序です。",
       vi: "Điều nhóm này cần không chỉ là kiến thức chuyên môn khó, mà là thứ tự quyết định: chuyển制度 Nhật sang cảm giác đời sống bằng tiếng Việt và giữ khoảng cách với lời mời nguy hiểm.",
+      en: "What this audience needs is not just technical knowledge. They need Japanese systems translated into everyday context, plus a clear order for stepping back from risky offers.",
     } satisfies Bi,
   },
   founderEdge: {
@@ -131,34 +150,39 @@ export const homeCopy = {
     heading: {
       ja: "このサイトが、ただの情報まとめで終わらない理由",
       vi: "Vì sao đây không chỉ là trang tổng hợp thông tin",
+      en: "Why this site is more than a collection of information",
     } satisfies Bi,
     subtitle: {
       ja: "SE、プロボクサー、日越バイリンガル発信者。この3つを掛け合わせて、在日ベトナム人のお金の不安を構造化します。",
       vi: "Kết hợp kỹ sư, võ sĩ chuyên nghiệp và người truyền đạt song ngữ Nhật-Việt để cấu trúc lại nỗi lo về tiền bạc của người Việt tại Nhật.",
+      en: "It combines a software engineer mindset, professional boxing discipline, and multilingual communication to structure money concerns for Vietnamese residents in Japan.",
     } satisfies Bi,
     edges: [
       {
         code: "SYSTEM",
-        title: { ja: "SEとして、複雑な制度を分解する", vi: "Tư duy kỹ sư: chia nhỏ hệ thống phức tạp" },
+        title: { ja: "SEとして、複雑な制度を分解する", vi: "Tư duy kỹ sư: chia nhỏ hệ thống phức tạp", en: "As a software engineer, break complex systems into steps" },
         body: {
           ja: "給与、税金、送金、NISA、契約条件を、順番に確認できる形へ整理します。",
           vi: "Sắp xếp lương, thuế, chuyển tiền, NISA và điều kiện hợp đồng thành các bước dễ kiểm tra.",
+          en: "Salary, taxes, remittances, NISA, and contract terms are organized into steps users can check in order.",
         },
       },
       {
         code: "RISK",
-        title: { ja: "プロボクサーとして、危険な距離感を読む", vi: "Tư duy võ sĩ: đọc khoảng cách rủi ro" },
+        title: { ja: "プロボクサーとして、危険な距離感を読む", vi: "Tư duy võ sĩ: đọc khoảng cách rủi ro", en: "As a professional boxer, read risky distance" },
         body: {
           ja: "急かす言葉、紹介圧力、感情を動かす勧誘を、いったん距離を取るサインとして扱います。",
           vi: "Nhìn lời thúc ép, áp lực giới thiệu và mời gọi cảm xúc như tín hiệu cần giữ khoảng cách.",
+          en: "Rushed wording, referral pressure, and emotional sales tactics are treated as signs to step back first.",
         },
       },
       {
         code: "BRIDGE",
-        title: { ja: "日越の言葉と文化の間をつなぐ", vi: "Kết nối ngôn ngữ và văn hóa Nhật-Việt" },
+        title: { ja: "日越の言葉と文化の間をつなぐ", vi: "Kết nối ngôn ngữ và văn hóa Nhật-Việt", en: "Bridge language and culture across Japan and Vietnam" },
         body: {
           ja: "日本語の制度説明を、ベトナム語の感覚でも理解できるように再設計します。",
           vi: "Thiết kế lại cách giải thích để người Việt hiểu được trong bối cảnh Nhật.",
+          en: "Japanese system explanations are redesigned so Vietnamese readers can understand them in a real-life context.",
         },
       },
     ] as const,
@@ -167,71 +191,79 @@ export const homeCopy = {
     heading: {
       ja: "あなたはいま、どの状況ですか？",
       vi: "Bây giờ bạn đang ở tình huống nào?",
+      en: "Which situation are you in right now?",
     } satisfies Bi,
     subtitle: {
       ja: "迷っている内容を選ぶと、記事・PDF・公式情報・LINEチェックの最短導線へ進めます。",
       vi: "Chọn tình huống của bạn để đi nhanh đến bài viết, PDF, nguồn chính thức hoặc LINE check.",
+      en: "Choose your situation to get the shortest route to an article, PDF, official source, or LINE check.",
     } satisfies Bi,
     cards: [
       {
-        tag: { ja: "SCAM", vi: "LỪA ĐẢO" },
-        title: { ja: "怪しい投資話を見た", vi: "Tôi thấy lời mời đầu tư đáng ngờ" },
+        tag: { ja: "SCAM", vi: "LỪA ĐẢO", en: "SCAM" },
+        title: { ja: "怪しい投資話を見た", vi: "Tôi thấy lời mời đầu tư đáng ngờ", en: "I saw a suspicious investment offer" },
         body: {
           ja: "送金・契約の前に危険サインを確認し、必要ならLINEチェックへ進みます。",
           vi: "Trước khi chuyển tiền/ký hợp đồng, kiểm tra dấu hiệu nguy hiểm và đi đến LINE check nếu cần.",
+          en: "Before sending money or signing, check the warning signs and use the LINE check if needed.",
         },
         href: "/scam-check",
-        cta: { ja: "危険サインを確認", vi: "Kiểm tra dấu hiệu" },
+        cta: { ja: "危険サインを確認", vi: "Kiểm tra dấu hiệu", en: "Check warning signs" },
       },
       {
-        tag: { ja: "SALARY", vi: "LƯƠNG/THUẾ" },
-        title: { ja: "給与・税金がわからない", vi: "Tôi không hiểu lương/thuế" },
+        tag: { ja: "SALARY", vi: "LƯƠNG/THUẾ", en: "SALARY/TAX" },
+        title: { ja: "給与・税金がわからない", vi: "Tôi không hiểu lương/thuế", en: "I do not understand salary or taxes" },
         body: {
           ja: "給与明細、税金、社会保険を公式情報と記事から確認します。",
           vi: "Kiểm tra bảng lương, thuế và bảo hiểm xã hội qua bài viết và nguồn chính thức.",
+          en: "Check pay slips, taxes, and social insurance through articles and official sources.",
         },
         href: "/articles/salary-tax-basics",
-        cta: { ja: "給与・税金の記事へ", vi: "Đọc bài lương/thuế" },
+        cta: { ja: "給与・税金の記事へ", vi: "Đọc bài lương/thuế", en: "Read salary/tax article" },
       },
       {
-        tag: { ja: "NISA", vi: "NISA" },
-        title: { ja: "NISAを始めたい", vi: "Tôi muốn bắt đầu NISA" },
+        tag: { ja: "NISA", vi: "NISA", en: "NISA" },
+        title: { ja: "NISAを始めたい", vi: "Tôi muốn bắt đầu NISA", en: "I want to start NISA" },
         body: {
           ja: "メリットだけでなく、投資リスクと金融庁の公式情報も確認します。",
           vi: "Không chỉ xem lợi ích, mà còn kiểm tra rủi ro đầu tư và nguồn chính thức FSA.",
+          en: "Review not only the benefits, but also investment risks and official FSA information.",
         },
         href: "/articles/nisa-first-step",
-        cta: { ja: "NISA導線へ", vi: "Đi đến NISA" },
+        cta: { ja: "NISA導線へ", vi: "Đi đến NISA", en: "Go to NISA guide" },
       },
       {
-        tag: { ja: "REMIT", vi: "CHUYỂN TIỀN" },
-        title: { ja: "ベトナムへ送金したい", vi: "Tôi muốn gửi tiền về Việt Nam" },
+        tag: { ja: "REMIT", vi: "CHUYỂN TIỀN", en: "REMITTANCE" },
+        title: { ja: "ベトナムへ送金したい", vi: "Tôi muốn gửi tiền về Việt Nam", en: "I want to send money to Vietnam" },
         body: {
           ja: "手数料、為替、送金先、怪しい依頼を送金前に確認します。",
           vi: "Kiểm tra phí, tỷ giá, người nhận và lời nhờ đáng ngờ trước khi chuyển tiền.",
+          en: "Check fees, exchange rates, recipients, and suspicious requests before sending money.",
         },
         href: "/articles/remittance-checklist",
-        cta: { ja: "送金前チェックへ", vi: "Checklist chuyển tiền" },
+        cta: { ja: "送金前チェックへ", vi: "Checklist chuyển tiền", en: "Remittance checklist" },
       },
       {
-        tag: { ja: "PDF", vi: "PDF" },
-        title: { ja: "PDFでまず学びたい", vi: "Tôi muốn học bằng PDF trước" },
+        tag: { ja: "PDF", vi: "PDF", en: "PDF" },
+        title: { ja: "PDFでまず学びたい", vi: "Tôi muốn học bằng PDF trước", en: "I want to learn with PDFs first" },
         body: {
           ja: "家計、税金、NISA、詐欺予防などの無料PDFから自分のペースで学びます。",
           vi: "Học theo nhịp riêng qua PDF miễn phí về chi tiêu, thuế, NISA và phòng tránh lừa đảo.",
+          en: "Learn at your own pace with free PDFs on budgeting, taxes, NISA, and scam prevention.",
         },
         href: "/materials",
-        cta: { ja: "無料PDFを見る", vi: "Xem PDF miễn phí" },
+        cta: { ja: "無料PDFを見る", vi: "Xem PDF miễn phí", en: "View free PDFs" },
       },
       {
-        tag: { ja: "B2B", vi: "TỔ CHỨC" },
-        title: { ja: "会社・学校で使いたい", vi: "Muốn dùng cho công ty/trường học" },
+        tag: { ja: "B2B", vi: "TỔ CHỨC", en: "ORGANIZATION" },
+        title: { ja: "会社・学校で使いたい", vi: "Muốn dùng cho công ty/trường học", en: "I want to use this at a company or school" },
         body: {
           ja: "ベトナム人向けの金融トラブル予防資料・勉強会の相談へ進みます。",
           vi: "Liên hệ về tài liệu/workshop phòng tránh rắc rối tài chính cho người Việt.",
+          en: "Ask about materials or workshops for preventing financial trouble among Vietnamese communities.",
         },
         href: "/contact",
-        cta: { ja: "相談する", vi: "Liên hệ" },
+        cta: { ja: "相談する", vi: "Liên hệ", en: "Contact us" },
       },
     ] as const,
   },

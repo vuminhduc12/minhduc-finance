@@ -24,6 +24,9 @@ export function BiBlock({
       <p lang="vi" className={`lang-vi leading-relaxed ${viSize[size].replace("mt-1 ", "").replace("mt-1.5 ", "").replace("mt-2 ", "")}`}>
         {text.vi}
       </p>
+      <p lang="en" className={`lang-en leading-relaxed ${viSize[size].replace("mt-1 ", "").replace("mt-1.5 ", "").replace("mt-2 ", "")}`}>
+        {text.en ?? text.vi}
+      </p>
     </div>
   );
 }
@@ -35,6 +38,9 @@ export function BiSubheading({ text, className = "" }: { text: Bi; className?: s
       <span className="lang-ja block">{text.ja}</span>
       <span lang="vi" className="lang-vi block text-[0.88em] font-semibold leading-snug text-navy-soft sm:text-[0.9em]">
         {text.vi}
+      </span>
+      <span lang="en" className="lang-en block text-[0.88em] font-semibold leading-snug text-navy-soft sm:text-[0.9em]">
+        {text.en ?? text.vi}
       </span>
     </span>
   );

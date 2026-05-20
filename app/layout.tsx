@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" data-lang="vi" className={`${notoSansJp.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-background pb-16 font-sans text-foreground antialiased md:pb-0">
+      <body className="flex min-h-full flex-col bg-background pb-20 font-sans text-foreground antialiased md:pb-0">
         <SkipLink />
         <SiteHeader />
         <AudienceStrip />

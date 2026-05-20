@@ -23,11 +23,13 @@ export function TrustRibbonSection() {
                     <>
                       <FlagIcon code="jp" className="h-4 w-6" />
                       <FlagIcon code="vn" className="h-4 w-6" />
+                      <FlagIcon code="us" className="h-4 w-6" title="アメリカ英語" />
                     </>
                   ) : null}
                   <h2 className="text-sm font-bold text-navy sm:text-base">
                     <span className="lang-ja">{item.label.ja}</span>
                     <span lang="vi" className="lang-vi">{item.label.vi}</span>
+                    <span lang="en" className="lang-en">{item.label.en}</span>
                   </h2>
                 </div>
               </div>
@@ -36,6 +38,9 @@ export function TrustRibbonSection() {
               </p>
               <p lang="vi" className="lang-vi mt-2 text-[0.78rem] leading-relaxed text-muted sm:text-sm">
                 {item.body.vi}
+              </p>
+              <p lang="en" className="lang-en mt-2 text-[0.78rem] leading-relaxed text-muted sm:text-sm">
+                {item.body.en}
               </p>
             </div>
           ))}

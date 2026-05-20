@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { FlagIcon } from "@/components/brand/FlagIcon";
 import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { PageIntro } from "@/components/layout/PageIntro";
@@ -25,12 +26,16 @@ export const metadata: Metadata = {
 
 const sourceById = new Map(officialSources.map((source) => [source.id, source]));
 
+function enText(text: { vi: string; en?: string }) {
+  return text.en ?? text.vi;
+}
+
 const priorityLabels = {
-  money: { ja: "お金", vi: "Tiền bạc" },
-  tax: { ja: "税金", vi: "Thuế" },
-  visa: { ja: "在留", vi: "Lưu trú" },
-  consumer: { ja: "トラブル", vi: "Rắc rối" },
-  life: { ja: "生活", vi: "Đời sống" },
+  money: { ja: "お金", vi: "Tiền bạc", en: "Money" },
+  tax: { ja: "税金", vi: "Thuế", en: "Tax" },
+  visa: { ja: "在留", vi: "Lưu trú", en: "Residence" },
+  consumer: { ja: "トラブル", vi: "Rắc rối", en: "Trouble" },
+  life: { ja: "生活", vi: "Đời sống", en: "Life" },
 } as const;
 
 export default function OfficialInfoPage() {
@@ -52,6 +57,7 @@ export default function OfficialInfoPage() {
                 <FlagIcon code="vn" className="h-4 w-6" />
                 Official Source Hub
                 <FlagIcon code="jp" className="h-4 w-6" />
+                <FlagIcon code="us" className="h-4 w-6" title="アメリカ英語" />
               </p>
               <h1 className="mt-3 text-balance text-[1.75rem] font-bold leading-tight text-navy sm:text-4xl">
                 <BiSubheading text={officialHubCopy.title} />
@@ -63,9 +69,9 @@ export default function OfficialInfoPage() {
               />
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 {[
-                  { ja: "一次情報へ誘導", vi: "Đi đến nguồn gốc" },
-                  { ja: "目的別に整理", vi: "Sắp xếp theo mục đích" },
-                  { ja: "転載より安全", vi: "An toàn hơn sao chép" },
+                  { ja: "一次情報へ誘導", vi: "Đi đến nguồn gốc", en: "Guide to primary sources" },
+                  { ja: "目的別に整理", vi: "Sắp xếp theo mục đích", en: "Organized by purpose" },
+                  { ja: "転載より安全", vi: "An toàn hơn sao chép", en: "Safer than copied summaries" },
                 ].map((item) => (
                   <div
                     key={item.ja}
@@ -73,6 +79,7 @@ export default function OfficialInfoPage() {
                   >
                     <span className="lang-ja">{item.ja}</span>
                     <span lang="vi" className="lang-vi">{item.vi}</span>
+                    <span lang="en" className="lang-en">{item.en}</span>
                   </div>
                 ))}
               </div>
@@ -82,10 +89,12 @@ export default function OfficialInfoPage() {
               <p className="mt-2 text-sm font-bold text-navy">
                 <span className="lang-ja">ミライくんの確認ルール</span>
                 <span lang="vi" className="lang-vi">Quy tắc kiểm tra của Mirai</span>
+                <span lang="en" className="lang-en">Mirai checking rule</span>
               </p>
               <p className="mt-1 text-xs leading-relaxed text-muted">
                 <span className="lang-ja">大事な判断は、解説記事だけでなく公式サイトでも確認。</span>
                 <span lang="vi" className="lang-vi">Việc quan trọng phải kiểm tra lại trên trang chính thức.</span>
+                <span lang="en" className="lang-en">For important decisions, check official sites, not only explanation articles.</span>
               </p>
             </Card>
           </div>
@@ -101,6 +110,7 @@ export default function OfficialInfoPage() {
             <h2 id="official-routes" className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
               <span className="lang-ja">目的から公式情報へ進む</span>
               <span lang="vi" className="lang-vi">Đi từ mục đích đến nguồn chính thức</span>
+              <span lang="en" className="lang-en">Go from purpose to official sources</span>
             </h2>
           </div>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -114,10 +124,12 @@ export default function OfficialInfoPage() {
                     <h3 className="text-balance text-base font-bold leading-snug text-navy">
                       <span className="lang-ja">{useCase.label.ja}</span>
                       <span lang="vi" className="lang-vi">{useCase.label.vi}</span>
+                      <span lang="en" className="lang-en">{enText(useCase.label)}</span>
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">
                       <span className="lang-ja">{useCase.guide.ja}</span>
                       <span lang="vi" className="lang-vi">{useCase.guide.vi}</span>
+                      <span lang="en" className="lang-en">{enText(useCase.guide)}</span>
                     </p>
                   </div>
                 </div>
@@ -133,6 +145,7 @@ export default function OfficialInfoPage() {
                       >
                         <span className="lang-ja">{source.agency.ja}</span>
                         <span lang="vi" className="lang-vi">{source.agency.vi}</span>
+                        <span lang="en" className="lang-en">{enText(source.agency)}</span>
                       </Link>
                     );
                   })}
@@ -153,11 +166,13 @@ export default function OfficialInfoPage() {
               <h2 id="official-sources" className="mt-2 text-balance text-2xl font-bold text-navy sm:text-3xl">
                 <span className="lang-ja">確認先一覧</span>
                 <span lang="vi" className="lang-vi">Danh sách nơi cần kiểm tra</span>
+                <span lang="en" className="lang-en">Official places to check</span>
               </h2>
             </div>
             <p className="max-w-lg text-sm leading-relaxed text-muted">
               <span className="lang-ja">外部サイトは新しいタブで開きます。制度変更があるため、最終判断は公式ページの日付と本文で確認してください。</span>
               <span lang="vi" className="lang-vi">Trang ngoài sẽ mở ở tab mới. Vì quy định có thể thay đổi, hãy kiểm tra ngày cập nhật và nội dung gốc.</span>
+              <span lang="en" className="lang-en">External sites open in a new tab. Because rules can change, confirm the update date and original text before deciding.</span>
             </p>
           </div>
 
@@ -170,20 +185,24 @@ export default function OfficialInfoPage() {
                       <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
                         <span className="lang-ja">{source.agency.ja}</span>
                         <span lang="vi" className="lang-vi">{source.agency.vi}</span>
+                        <span lang="en" className="lang-en">{enText(source.agency)}</span>
                       </p>
                       <h3 className="mt-1 text-balance text-lg font-bold leading-snug text-navy">
                         <span className="lang-ja">{source.topic.ja}</span>
                         <span lang="vi" className="lang-vi">{source.topic.vi}</span>
+                        <span lang="en" className="lang-en">{enText(source.topic)}</span>
                       </h3>
                     </div>
                     <span className="w-fit shrink-0 rounded-full bg-navy px-2.5 py-1 text-[0.65rem] font-bold text-white">
                       <span className="lang-ja">{priorityLabels[source.priority].ja}</span>
                       <span lang="vi" className="lang-vi">{priorityLabels[source.priority].vi}</span>
+                      <span lang="en" className="lang-en">{priorityLabels[source.priority].en ?? priorityLabels[source.priority].vi}</span>
                     </span>
                   </div>
                   <p className="mt-3 text-sm leading-relaxed text-muted">
                     <span className="lang-ja">{source.description.ja}</span>
                     <span lang="vi" className="lang-vi">{source.description.vi}</span>
+                    <span lang="en" className="lang-en">{enText(source.description)}</span>
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {source.tags.map((tag) => (
@@ -193,18 +212,21 @@ export default function OfficialInfoPage() {
                       >
                         <span className="lang-ja">{tag.ja}</span>
                         <span lang="vi" className="lang-vi">{tag.vi}</span>
+                        <span lang="en" className="lang-en">{enText(tag)}</span>
                       </span>
                     ))}
                   </div>
-                  <a
+                  <TrackedLink
                     href={source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    external
+                    eventName="official_info_click"
+                    eventPayload={{ sourceId: source.id, agency: source.agency.ja }}
                     className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-navy px-4 py-2 text-sm font-bold text-white shadow-[0_12px_28px_rgba(11,31,58,0.18)] hover:bg-navy-soft"
                   >
                     <span className="lang-ja">公式サイトを開く</span>
                     <span lang="vi" className="lang-vi">Mở trang chính thức</span>
-                  </a>
+                    <span lang="en" className="lang-en">Open official site</span>
+                  </TrackedLink>
                 </article>
               </Card>
             ))}

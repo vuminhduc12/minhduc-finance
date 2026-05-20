@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: article.title.vi,
-    description: article.excerpt.vi,
+    title: article.title.en ?? article.title.vi,
+    description: article.excerpt.en ?? article.excerpt.vi,
     alternates: { canonical: `/articles/${article.slug}` },
     openGraph: {
-      title: article.title.vi,
-      description: article.excerpt.vi,
+      title: article.title.en ?? article.title.vi,
+      description: article.excerpt.en ?? article.excerpt.vi,
     },
   };
 }
@@ -53,21 +53,27 @@ export default async function ArticleDetailPage({ params }: Props) {
           >
             <span className="lang-ja">記事ライブラリへ戻る</span>
             <span lang="vi" className="lang-vi">Quay lại thư viện bài viết</span>
+            <span lang="en" className="lang-en">Back to article library</span>
           </Link>
           <div className="mt-5 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
               <span className="lang-ja">{article.categoryLabel.ja}</span>
               <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
+              <span lang="en" className="lang-en">{article.categoryLabel.en ?? article.categoryLabel.vi}</span>
             </p>
             <h1 className="mt-3 text-balance text-[1.75rem] font-bold leading-tight text-navy sm:text-4xl">
               <span className="lang-ja block">{article.title.ja}</span>
               <span lang="vi" className="lang-vi block text-[0.82em] font-semibold text-navy-soft">
                 {article.title.vi}
               </span>
+              <span lang="en" className="lang-en block text-[0.82em] font-semibold text-navy-soft">
+                {article.title.en ?? article.title.vi}
+              </span>
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
               <span className="lang-ja">{article.excerpt.ja}</span>
               <span lang="vi" className="lang-vi">{article.excerpt.vi}</span>
+              <span lang="en" className="lang-en">{article.excerpt.en ?? article.excerpt.vi}</span>
             </p>
             <div className="mt-5 flex flex-wrap gap-2 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-navy-soft">
               <span className="rounded-full border border-border bg-white px-3 py-1.5">
@@ -93,6 +99,7 @@ export default async function ArticleDetailPage({ params }: Props) {
               <p key={`${article.slug}-${index}`} className="text-[0.95rem] leading-relaxed text-foreground sm:text-base">
                 <span className="lang-ja block">{paragraph.ja}</span>
                 <span lang="vi" className="lang-vi block text-navy-soft">{paragraph.vi}</span>
+                <span lang="en" className="lang-en block text-navy-soft">{paragraph.en ?? paragraph.vi}</span>
               </p>
             ))}
           </div>
@@ -101,6 +108,7 @@ export default async function ArticleDetailPage({ params }: Props) {
             <p className="text-sm leading-relaxed text-muted">
               <span className="lang-ja">この記事本文は準備中です。</span>
               <span lang="vi" className="lang-vi">Nội dung bài viết này đang được chuẩn bị.</span>
+              <span lang="en" className="lang-en">This article body is being prepared.</span>
             </p>
           </div>
         )}

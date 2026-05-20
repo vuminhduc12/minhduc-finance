@@ -21,8 +21,12 @@ export function HeroScamCheck() {
               <FlagIcon code="jp" className="h-4 w-6" />
               <span className="lang-ja">{hero.eyebrow.ja}</span>
               <FlagIcon code="vn" className="h-4 w-6" />
+              <FlagIcon code="us" className="h-4 w-6" title="アメリカ英語" />
               <span lang="vi" className="lang-vi text-[0.7rem] font-semibold leading-snug text-navy-soft sm:text-xs">
                 {hero.eyebrow.vi}
+              </span>
+              <span lang="en" className="lang-en text-[0.7rem] font-semibold leading-snug text-navy-soft sm:text-xs">
+                {hero.eyebrow.en}
               </span>
             </p>
             <h1
@@ -36,6 +40,9 @@ export function HeroScamCheck() {
               <p lang="vi" className="lang-vi text-foreground">
                 {hero.lead.vi}
               </p>
+              <p lang="en" className="lang-en text-foreground">
+                {hero.lead.en}
+              </p>
             </div>
             <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
               <ButtonLink
@@ -44,6 +51,7 @@ export function HeroScamCheck() {
                 className="sm:w-auto"
                 aria-label={`${cta.lineCheckNowShort.ja} ${cta.lineCheckNowShort.vi}`}
                 subLabelVi={cta.lineCheckNowShort.vi}
+                subLabelEn={cta.lineCheckNowShort.en}
               >
                 {cta.lineCheckNowShort.ja}
               </ButtonLink>
@@ -53,6 +61,7 @@ export function HeroScamCheck() {
                 className="sm:w-auto"
                 aria-label={`${cta.flowOnlyLater.ja} ${cta.flowOnlyLater.vi}`}
                 subLabelVi={cta.flowOnlyLater.vi}
+                subLabelEn={cta.flowOnlyLater.en}
               >
                 {cta.flowOnlyLater.ja}
               </ButtonLink>
@@ -63,10 +72,12 @@ export function HeroScamCheck() {
             <p className="mt-2 text-sm font-bold text-navy">
               <span className="lang-ja">ミライくんが一緒に確認</span>
               <span lang="vi" className="lang-vi">Mirai cùng bạn kiểm tra</span>
+              <span lang="en" className="lang-en">Mirai checks with you</span>
             </p>
             <p className="mt-1 text-xs leading-relaxed text-muted">
               <span className="lang-ja">急がされる話ほど、いったん止まって整理します。</span>
               <span lang="vi" className="lang-vi">Lời mời càng gấp, càng cần dừng lại để sắp xếp.</span>
+              <span lang="en" className="lang-en">The more rushed an offer feels, the more you should pause and organize it.</span>
             </p>
           </div>
         </div>

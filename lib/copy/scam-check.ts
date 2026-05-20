@@ -4,16 +4,19 @@ export const scamCheckCopy = {
   pageIntro: {
     ja: "送金・契約・紹介の前に、LINEで危険サインを短く整理できます（無料）。",
     vi: "Trước khi chuyển tiền, ký hợp đồng hoặc giới thiệu người khác, bạn có thể kiểm tra dấu hiệu nguy hiểm trên LINE (miễn phí).",
+    en: "Before sending money, signing a contract, or introducing someone else, use LINE to quickly sort out the warning signs for free.",
   } satisfies Bi,
   hero: {
-    eyebrow: { ja: "LINE · 詐欺チェック", vi: "LINE · Kiểm tra lừa đảo" } satisfies Bi,
+    eyebrow: { ja: "LINE · 詐欺チェック", vi: "LINE · Kiểm tra lừa đảo", en: "LINE · Scam check" } satisfies Bi,
     title: {
       ja: "「今すぐ決めて」と言われたら、送金や契約の前に3分だけ。",
       vi: "Nếu ai đó nói “quyết ngay bây giờ”, hãy dành 3 phút trước khi chuyển tiền hay ký hợp đồng.",
+      en: "If someone says “decide now,” take three minutes before you send money or sign anything.",
     } satisfies Bi,
     lead: {
       ja: "あなたを責めるためではなく、守るためのチェックです。正解を断定するものではなく、危険サイン、足りない情報、専門家へ相談すべき可能性を落ち着いて整理します。",
       vi: "Đây không phải để trách bạn, mà để bảo vệ bạn. Không phán quyết đúng sai, mà giúp bình tĩnh sắp xếp dấu hiệu nguy hiểm, thông tin còn thiếu và khả năng nên hỏi chuyên gia.",
+      en: "This check is not about blaming you. It is here to protect you by sorting out warning signs, missing information, and whether expert support may be needed.",
     } satisfies Bi,
   },
   forWho: {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -36,6 +37,7 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
             >
               <span className="lang-ja">記事一覧へ</span>
               <span lang="vi" className="lang-vi">Xem bài viết</span>
+              <span lang="en" className="lang-en">View articles</span>
             </Link>
           ) : null}
         </div>
@@ -46,6 +48,7 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
                 <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent-muted">
                   <span className="lang-ja">{article.categoryLabel.ja}</span>
                   <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
+                  <span lang="en" className="lang-en">{article.categoryLabel.en ?? article.categoryLabel.vi}</span>
                 </p>
               </div>
               <div className="flex flex-1 flex-col p-4 sm:p-5">
@@ -58,6 +61,9 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
                   <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-navy-soft">
                     {article.title.vi}
                   </span>
+                  <span lang="en" className="lang-en block text-[0.82rem] font-semibold text-navy-soft">
+                    {article.title.en ?? article.title.vi}
+                  </span>
                 </h3>
                 <p className="lang-ja mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                   {article.excerpt.ja}
@@ -65,38 +71,50 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
                 <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                   {article.excerpt.vi}
                 </p>
+                <p lang="en" className="lang-en mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+                  {article.excerpt.en ?? article.excerpt.vi}
+                </p>
                 <div className="mt-auto pt-4">
                   {article.status !== "published" ? (
                     <span className="inline-flex min-h-10 w-full items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-center text-xs font-bold text-muted">
                       <span className="lang-ja">準備中</span>
                       <span lang="vi" className="lang-vi">Đang chuẩn bị</span>
+                      <span lang="en" className="lang-en">Coming soon</span>
                     </span>
                   ) : article.url?.startsWith("/") ? (
-                    <Link
+                    <TrackedLink
                       href={article.url}
+                      eventName="article_click"
+                      eventPayload={{ slug: article.slug, source: "internal" }}
                       className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
                     >
                       <span className="lang-ja">記事を読む</span>
                       <span lang="vi" className="lang-vi">Đọc bài viết</span>
-                    </Link>
+                      <span lang="en" className="lang-en">Read article</span>
+                    </TrackedLink>
                   ) : article.url ? (
-                    <a
+                    <TrackedLink
                       href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      external
+                      eventName="article_click"
+                      eventPayload={{ slug: article.slug, source: article.source ?? "external" }}
                       className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
                     >
                       <span className="lang-ja">元の記事を読む</span>
                       <span lang="vi" className="lang-vi">Đọc bài gốc</span>
-                    </a>
+                      <span lang="en" className="lang-en">Read original</span>
+                    </TrackedLink>
                   ) : (
-                    <Link
+                    <TrackedLink
                       href={`/articles/${article.slug}`}
+                      eventName="article_click"
+                      eventPayload={{ slug: article.slug, source: "fallback" }}
                       className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
                     >
                       <span className="lang-ja">サイト内で読む</span>
                       <span lang="vi" className="lang-vi">Đọc trong site</span>
-                    </Link>
+                      <span lang="en" className="lang-en">Read on site</span>
+                    </TrackedLink>
                   )}
                 </div>
               </div>
@@ -111,6 +129,10 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
           <span lang="vi" className="lang-vi">
             Dữ liệu bài viết: {feed.source === "remote" ? "đang liên kết feed ngoài" : "đang hiển thị JSON miễn phí nội bộ"}
             {feed.updatedAt ? ` / cập nhật: ${feed.updatedAt}` : ""}
+          </span>
+          <span lang="en" className="lang-en">
+            Article data: {feed.source === "remote" ? "connected to external feed" : "showing free local JSON"}
+            {feed.updatedAt ? ` / updated: ${feed.updatedAt}` : ""}
           </span>
         </p>
       </Container>

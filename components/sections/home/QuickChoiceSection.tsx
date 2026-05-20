@@ -21,11 +21,17 @@ export function QuickChoiceSection() {
               <span lang="vi" className="lang-vi block text-[0.88em] font-semibold text-navy-soft">
                 {quickChoice.heading.vi}
               </span>
+              <span lang="en" className="lang-en block text-[0.88em] font-semibold text-navy-soft">
+                {quickChoice.heading.en}
+              </span>
             </h2>
             <p className="mt-3 max-w-xl text-[0.93rem] leading-relaxed text-muted sm:text-base">
               <span className="lang-ja block">{quickChoice.subtitle.ja}</span>
               <span lang="vi" className="lang-vi block text-[0.88em] text-navy-soft">
                 {quickChoice.subtitle.vi}
+              </span>
+              <span lang="en" className="lang-en block text-[0.88em] text-navy-soft">
+                {quickChoice.subtitle.en}
               </span>
             </p>
           </div>
@@ -57,6 +63,7 @@ export function QuickChoiceSection() {
                 <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent">
                   <span className="lang-ja">{card.tag.ja}</span>
                   <span lang="vi" className="lang-vi">{card.tag.vi}</span>
+                  <span lang="en" className="lang-en">{card.tag.en}</span>
                 </span>
                 <span className="text-3xl font-bold leading-none text-accent-muted" aria-hidden>
                   0{index + 1}
@@ -67,12 +74,18 @@ export function QuickChoiceSection() {
                 <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-navy-soft">
                   {card.title.vi}
                 </span>
+                <span lang="en" className="lang-en block text-[0.82rem] font-semibold text-navy-soft">
+                  {card.title.en}
+                </span>
               </h3>
               <p className="lang-ja mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                 {card.body.ja}
               </p>
               <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                 {card.body.vi}
+              </p>
+              <p lang="en" className="lang-en mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+                {card.body.en}
               </p>
               <Link
                 href={card.href}
@@ -81,6 +94,9 @@ export function QuickChoiceSection() {
                 <span className="lang-ja">{card.cta.ja}</span>
                 <span lang="vi" className="lang-vi">
                   {card.cta.vi}
+                </span>
+                <span lang="en" className="lang-en">
+                  {card.cta.en}
                 </span>
               </Link>
             </div>

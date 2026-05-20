@@ -1,4 +1,4 @@
-type FlagCode = "jp" | "vn";
+type FlagCode = "jp" | "vn" | "us";
 
 type Props = {
   code: FlagCode;
@@ -7,7 +7,9 @@ type Props = {
 };
 
 export function FlagIcon({ code, className = "", title }: Props) {
-  const label = title ?? (code === "jp" ? "日本の国旗" : "ベトナムの国旗");
+  const label =
+    title ??
+    (code === "jp" ? "日本の国旗" : code === "vn" ? "ベトナムの国旗" : "アメリカの国旗");
 
   if (code === "jp") {
     return (
@@ -20,6 +22,38 @@ export function FlagIcon({ code, className = "", title }: Props) {
         <rect width="90" height="60" rx="7" fill="#fff" />
         <rect width="90" height="60" rx="7" fill="none" stroke="#DDE5EF" />
         <circle cx="45" cy="30" r="18" fill="#BC002D" />
+      </svg>
+    );
+  }
+
+  if (code === "us") {
+    return (
+      <svg
+        viewBox="0 0 90 60"
+        role="img"
+        aria-label={label}
+        className={className}
+      >
+        <rect width="90" height="60" rx="7" fill="#fff" />
+        {Array.from({ length: 7 }).map((_, index) => (
+          <rect
+            key={index}
+            y={index * (60 / 7)}
+            width="90"
+            height={60 / 14}
+            fill="#B22234"
+          />
+        ))}
+        <rect width="38" height="32.3" rx="4" fill="#3C3B6E" />
+        {Array.from({ length: 18 }).map((_, index) => (
+          <circle
+            key={index}
+            cx={6 + (index % 6) * 5.2}
+            cy={5.3 + Math.floor(index / 6) * 8.2}
+            r="1.15"
+            fill="#fff"
+          />
+        ))}
       </svg>
     );
   }

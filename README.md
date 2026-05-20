@@ -77,6 +77,22 @@ npm run lint
 
 取得は `next: { revalidate: 300 }` で5分ごとに再検証します。完全なDBなしで、無料枠に近い運用ができます。
 
+## 計測イベント
+
+`lib/analytics.ts` の `trackEvent` で、Plausible または Google Analytics (`gtag`) がある場合にイベント送信します。未設定の開発環境ではコンソールに出力します。
+
+主なイベント:
+
+| イベント | 内容 |
+|----------|------|
+| `article_click` | 記事カードのクリック |
+| `pdf_click` | PDF教材のクリック |
+| `official_info_click` | 公式情報リンクのクリック |
+| `line_click` | LINE導線のクリック |
+| `risk_answer` | 危険度チェックの回答 |
+| `risk_result` | 危険度チェック完了時の結果 |
+| `risk_reset` | 危険度チェックのリセット |
+
 ## デプロイ
 
 Next.js の標準的なホスティング（例: [Vercel](https://vercel.com)）にそのまま載せられます。詳細は [Next.js のデプロイ手順](https://nextjs.org/docs/app/building-your-application/deploying)を参照してください。

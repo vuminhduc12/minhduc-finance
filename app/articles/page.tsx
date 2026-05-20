@@ -24,6 +24,7 @@ export default function ArticlesPage() {
           text={{
             ja: "金融教育メディアとして、検索・再訪問につながるテーマ別の記事をここに蓄積していきます。",
             vi: "Lưu trữ bài viết theo chủ đề để người đọc có thể tìm kiếm và quay lại thường xuyên.",
+            en: "A topic-based article library designed for search, learning, and repeat visits.",
           }}
           viSize="sm"
           className="mx-auto max-w-2xl text-left sm:text-center"
@@ -40,6 +41,9 @@ export default function ArticlesPage() {
               <span lang="vi" className="lang-vi text-[0.72em] font-semibold text-navy-soft">
                 Thư viện bài viết
               </span>
+              <span lang="en" className="lang-en text-[0.72em] font-semibold text-navy-soft">
+                Article library
+              </span>
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
               <span className="lang-ja">
@@ -47,6 +51,9 @@ export default function ArticlesPage() {
               </span>
               <span lang="vi" className="lang-vi">
                 Sắp xếp các câu hỏi gần đời sống theo chủ đề: phòng tránh lừa đảo, chuyển tiền, NISA và thanh toán.
+              </span>
+              <span lang="en" className="lang-en">
+                Practical money questions organized by topic: scam prevention, remittances, NISA, and payments.
               </span>
             </p>
           </div>
@@ -59,6 +66,9 @@ export default function ArticlesPage() {
                 <span className="lang-ja">{category.label.ja}</span>
                 <span lang="vi" className="lang-vi">
                   {category.label.vi}
+                </span>
+                <span lang="en" className="lang-en">
+                  {category.label.en ?? category.label.vi}
                 </span>
               </span>
             ))}

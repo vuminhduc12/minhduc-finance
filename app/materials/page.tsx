@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { BiBlock, BiSubheading } from "@/components/ui/Bilingual";
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
 };
 
 const accessLabels = {
-  free: { ja: "無料", vi: "Miễn phí" },
-  paid: { ja: "有料予定", vi: "Dự kiến trả phí" },
-  member: { ja: "会員限定予定", vi: "Dự kiến hội viên" },
+  free: { ja: "無料", vi: "Miễn phí", en: "Free" },
+  paid: { ja: "有料予定", vi: "Dự kiến trả phí", en: "Paid later" },
+  member: { ja: "会員限定予定", vi: "Dự kiến hội viên", en: "Members later" },
 } as const;
 
 const statusLabels = {
-  ready: { ja: "公開中", vi: "Đang mở" },
-  draft: { ja: "PDF配置待ち", vi: "Chờ đặt file PDF" },
-  future: { ja: "準備中", vi: "Đang chuẩn bị" },
+  ready: { ja: "公開中", vi: "Đang mở", en: "Published" },
+  draft: { ja: "PDF配置待ち", vi: "Chờ đặt file PDF", en: "Waiting for PDF" },
+  future: { ja: "準備中", vi: "Đang chuẩn bị", en: "Coming soon" },
 } as const;
 
 function materialCta(material: PdfMaterial) {
@@ -40,7 +40,7 @@ function materialCta(material: PdfMaterial) {
     return {
       href: material.href,
       external: true,
-      label: { ja: "PDFを読む", vi: "Đọc PDF" },
+      label: { ja: "PDFを読む", vi: "Đọc PDF", en: "Read PDF" },
     };
   }
 
@@ -48,14 +48,14 @@ function materialCta(material: PdfMaterial) {
     return {
       href: "/contact",
       external: false,
-      label: { ja: "PDF配置後に公開", vi: "Sẽ mở sau khi đặt file PDF" },
+      label: { ja: "PDF配置後に公開", vi: "Sẽ mở sau khi đặt file PDF", en: "Published after PDF is placed" },
     };
   }
 
   return {
     href: "/contact",
     external: false,
-    label: { ja: "公開予定を相談する", vi: "Hỏi về lịch phát hành" },
+    label: { ja: "公開予定を相談する", vi: "Hỏi về lịch phát hành", en: "Ask about release plans" },
   };
 }
 
@@ -91,10 +91,12 @@ export default function MaterialsPage() {
               <p className="mt-2 text-sm font-bold text-navy">
                 <span className="lang-ja">まず無料で学ぶ</span>
                 <span lang="vi" className="lang-vi">Học miễn phí trước</span>
+                <span lang="en" className="lang-en">Start learning for free</span>
               </p>
               <p className="mt-1 text-xs leading-relaxed text-muted">
                 <span className="lang-ja">反応がある教材だけ、あとで販売・会員機能に育てます。</span>
                 <span lang="vi" className="lang-vi">Tài liệu có nhu cầu sẽ phát triển thành trả phí hoặc hội viên.</span>
+                <span lang="en" className="lang-en">Materials with demand can grow into paid or member content later.</span>
               </p>
             </Card>
           </div>
@@ -110,6 +112,7 @@ export default function MaterialsPage() {
             <h2 id="materials-list-heading" className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
               <span className="lang-ja">公開予定のPDF教材</span>
               <span lang="vi" className="lang-vi">Tài liệu PDF dự kiến mở</span>
+              <span lang="en" className="lang-en">PDF materials to publish</span>
             </h2>
           </div>
 
@@ -122,10 +125,12 @@ export default function MaterialsPage() {
                     <span className="rounded-full bg-navy px-2.5 py-1 text-[0.65rem] font-bold text-white">
                       <span className="lang-ja">{accessLabels[material.access].ja}</span>
                       <span lang="vi" className="lang-vi">{accessLabels[material.access].vi}</span>
+                      <span lang="en" className="lang-en">{accessLabels[material.access].en ?? accessLabels[material.access].vi}</span>
                     </span>
                     <span className="rounded-full border border-border bg-accent-muted/55 px-2.5 py-1 text-[0.65rem] font-bold text-navy">
                       <span className="lang-ja">{statusLabels[material.status].ja}</span>
                       <span lang="vi" className="lang-vi">{statusLabels[material.status].vi}</span>
+                      <span lang="en" className="lang-en">{statusLabels[material.status].en ?? statusLabels[material.status].vi}</span>
                     </span>
                     {material.pages ? (
                       <span className="rounded-full border border-border bg-white px-2.5 py-1 text-[0.65rem] font-bold text-navy-soft">
@@ -137,18 +142,22 @@ export default function MaterialsPage() {
                   <h3 className="mt-4 text-balance text-lg font-bold leading-snug text-navy">
                     <span className="lang-ja">{material.title.ja}</span>
                     <span lang="vi" className="lang-vi">{material.title.vi}</span>
+                    <span lang="en" className="lang-en">{material.title.en ?? material.title.vi}</span>
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">
                     <span className="lang-ja">{material.description.ja}</span>
                     <span lang="vi" className="lang-vi">{material.description.vi}</span>
+                    <span lang="en" className="lang-en">{material.description.en ?? material.description.vi}</span>
                   </p>
                   <p className="mt-3 rounded-2xl border border-border bg-white/70 p-3 text-xs leading-relaxed text-navy-soft">
                     <span className="font-bold text-navy">
                       <span className="lang-ja">対象: </span>
                       <span lang="vi" className="lang-vi">Dành cho: </span>
+                      <span lang="en" className="lang-en">For: </span>
                     </span>
                     <span className="lang-ja">{material.audience.ja}</span>
                     <span lang="vi" className="lang-vi">{material.audience.vi}</span>
+                    <span lang="en" className="lang-en">{material.audience.en ?? material.audience.vi}</span>
                   </p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -159,33 +168,40 @@ export default function MaterialsPage() {
                       >
                         <span className="lang-ja">{tag.ja}</span>
                         <span lang="vi" className="lang-vi">{tag.vi}</span>
+                        <span lang="en" className="lang-en">{tag.en ?? tag.vi}</span>
                       </span>
                     ))}
                   </div>
 
                   <div className="mt-auto pt-5">
                     {cta.external ? (
-                      <a
+                      <TrackedLink
                         href={cta.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        external
+                        eventName="pdf_click"
+                        eventPayload={{ materialId: material.id, filename: material.filename }}
                         className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-navy px-4 py-2 text-center text-sm font-bold text-white shadow-[0_12px_28px_rgba(11,31,58,0.18)] hover:bg-navy-soft"
                       >
                         <span className="lang-ja">{cta.label.ja}</span>
                         <span lang="vi" className="lang-vi">{cta.label.vi}</span>
-                      </a>
+                        <span lang="en" className="lang-en">{cta.label.en ?? cta.label.vi}</span>
+                      </TrackedLink>
                     ) : (
-                      <Link
+                      <TrackedLink
                         href={cta.href}
+                        eventName="pdf_click"
+                        eventPayload={{ materialId: material.id, filename: material.filename, status: material.status }}
                         className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border-2 border-navy bg-white/70 px-4 py-2 text-center text-sm font-bold text-navy hover:bg-navy hover:text-white"
                       >
                         <span className="lang-ja">{cta.label.ja}</span>
                         <span lang="vi" className="lang-vi">{cta.label.vi}</span>
-                      </Link>
+                        <span lang="en" className="lang-en">{cta.label.en ?? cta.label.vi}</span>
+                      </TrackedLink>
                     )}
                     <p className="mt-2 text-[0.68rem] leading-relaxed text-muted">
                       <span className="lang-ja">ファイル名: {material.filename}</span>
                       <span lang="vi" className="lang-vi">Tên file: {material.filename}</span>
+                      <span lang="en" className="lang-en">File name: {material.filename}</span>
                     </p>
                   </div>
                 </Card>
@@ -204,6 +220,7 @@ export default function MaterialsPage() {
             <h2 id="materials-growth-heading" className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
               <span className="lang-ja">無料から販売・会員へ拡張する設計</span>
               <span lang="vi" className="lang-vi">Thiết kế mở rộng từ miễn phí sang trả phí/hội viên</span>
+              <span lang="en" className="lang-en">A design that can grow from free PDFs to paid and member access</span>
             </h2>
           </div>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -215,10 +232,12 @@ export default function MaterialsPage() {
                 <h3 className="mt-4 text-base font-bold text-navy">
                   <span className="lang-ja">{step.title.ja}</span>
                   <span lang="vi" className="lang-vi">{step.title.vi}</span>
+                  <span lang="en" className="lang-en">{step.title.en}</span>
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   <span className="lang-ja">{step.body.ja}</span>
                   <span lang="vi" className="lang-vi">{step.body.vi}</span>
+                  <span lang="en" className="lang-en">{step.body.en}</span>
                 </p>
               </Card>
             ))}
@@ -235,6 +254,7 @@ export default function MaterialsPage() {
             <h2 className="mt-2 text-xl font-bold sm:text-2xl">
               <span className="lang-ja">無料PDFだけ public/pdfs に置く</span>
               <span lang="vi" className="lang-vi">Chỉ đặt PDF miễn phí trong public/pdfs</span>
+              <span lang="en" className="lang-en">Place only free PDFs in public/pdfs</span>
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-200">
               <span className="lang-ja">
@@ -242,6 +262,9 @@ export default function MaterialsPage() {
               </span>
               <span lang="vi" className="lang-vi">
                 PDF trong public có thể đọc nếu biết URL. Tài liệu trả phí hoặc hội viên nên chuyển sang storage được bảo vệ như Supabase Storage, S3 hoặc Cloudflare R2 và quản lý bằng đăng nhập, lịch sử mua, URL có thời hạn.
+              </span>
+              <span lang="en" className="lang-en">
+                PDFs under public can be read by anyone who knows the URL. Paid or member-only materials should later move to protected storage such as Supabase Storage, S3, or Cloudflare R2, with login, purchase history, and expiring URLs.
               </span>
             </p>
           </div>
