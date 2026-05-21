@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { SiteSectionIcon, type SiteSectionIconType } from "@/components/brand/SiteSectionIcon";
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
 
 type NavItem = {
   href: string;
+  icon: SiteSectionIconType;
   labelJa: string;
   labelVi: string;
   labelEn: string;
@@ -79,11 +81,14 @@ export function MobileMenu({ nav }: Props) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-sm font-semibold text-navy transition-colors hover:bg-accent-muted/50"
+                className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-navy transition-colors hover:bg-accent-muted/50"
               >
-                <span className="lang-ja">{item.labelJa}</span>
-                <span lang="vi" className="lang-vi">{item.labelVi}</span>
-                <span lang="en" className="lang-en">{item.labelEn}</span>
+                <SiteSectionIcon type={item.icon} size="sm" />
+                <span className="min-w-0">
+                  <span className="lang-ja">{item.labelJa}</span>
+                  <span lang="vi" className="lang-vi">{item.labelVi}</span>
+                  <span lang="en" className="lang-en">{item.labelEn}</span>
+                </span>
               </Link>
             ))}
           </nav>

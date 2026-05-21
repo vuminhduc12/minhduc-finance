@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { ArticleVisual } from "@/components/sections/ArticleVisual";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -46,15 +47,14 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
         <div className="mt-6 grid gap-3 md:grid-cols-3 md:gap-4">
           {items.map((article) => (
             <Card key={article.slug} className="flex h-full flex-col overflow-hidden p-0">
-              <div className="min-w-0 border-b border-border bg-navy px-4 py-3 text-white">
-                <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent-muted">
-                  <span className="lang-ja">{article.categoryLabel.ja}</span>
-                  <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
-                  <span lang="en" className="lang-en">{article.categoryLabel.en ?? article.categoryLabel.vi}</span>
-                </p>
-              </div>
+              <ArticleVisual category={article.category} className="border-b border-border" />
               <div className="flex flex-1 flex-col p-4 sm:p-5">
-                <div className="mb-3 flex items-center justify-between text-[0.68rem] font-bold uppercase tracking-[0.14em] text-muted">
+                <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-muted">
+                  <span className="rounded-full bg-accent-muted/65 px-2.5 py-1 text-navy">
+                    <span className="lang-ja">{article.categoryLabel.ja}</span>
+                    <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
+                    <span lang="en" className="lang-en">{article.categoryLabel.en}</span>
+                  </span>
                   <span>{article.readTime}</span>
                   <span>{article.status === "published" ? "Published" : "Planned"}</span>
                 </div>

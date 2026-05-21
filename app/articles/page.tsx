@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleHubSection } from "@/components/sections/ArticleHubSection";
+import { ArticleVisual } from "@/components/sections/ArticleVisual";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { BiBlock } from "@/components/ui/Bilingual";
 import { Container } from "@/components/ui/Container";
@@ -57,20 +58,23 @@ export default function ArticlesPage() {
               </span>
             </p>
           </div>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {articleCategories.map((category) => (
-              <span
+              <div
                 key={category.id}
-                className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-bold text-navy shadow-sm"
+                className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm"
               >
-                <span className="lang-ja">{category.label.ja}</span>
-                <span lang="vi" className="lang-vi">
-                  {category.label.vi}
-                </span>
-                <span lang="en" className="lang-en">
-                  {category.label.en ?? category.label.vi}
-                </span>
-              </span>
+                <ArticleVisual category={category.id} className="min-h-[6.5rem]" />
+                <div className="p-3 text-xs font-bold leading-snug text-navy">
+                  <span className="lang-ja">{category.label.ja}</span>
+                  <span lang="vi" className="lang-vi">
+                    {category.label.vi}
+                  </span>
+                  <span lang="en" className="lang-en">
+                    {category.label.en}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </Container>

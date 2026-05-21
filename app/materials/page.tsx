@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
-import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { PageIntro } from "@/components/layout/PageIntro";
+import { ResourceHubVisual, ResourceIcon, type ResourceIconVariant } from "@/components/sections/ResourceHubVisual";
 import { BiBlock, BiSubheading } from "@/components/ui/Bilingual";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -197,6 +197,18 @@ function materialVersion(material: PdfMaterial) {
   return material.filename.includes("detailed_expert_full") ? "detailed" : "standard";
 }
 
+function materialCategoryIcon(prefix: string): ResourceIconVariant {
+  if (prefix === "01" || prefix === "11" || prefix === "12" || prefix === "13") return "budget";
+  if (prefix === "02") return "tax";
+  if (prefix === "03" || prefix === "04" || prefix === "05") return "investment";
+  if (prefix === "06") return "bank";
+  if (prefix === "07") return "insurance";
+  if (prefix === "08") return "home";
+  if (prefix === "10") return "scam";
+  if (prefix === "14") return "family";
+  return "future";
+}
+
 function materialCta(material: PdfMaterial) {
   if (material.status === "ready") {
     return {
@@ -255,18 +267,20 @@ export default function MaterialsPage() {
                 className="mt-4 max-w-2xl text-sm text-muted sm:text-base"
               />
             </div>
-            <Card className="hidden text-center lg:block">
-              <MiraiMascot compact variant="explain" className="mx-auto h-44 w-44" title="PDF教材を説明するミライくん" />
-              <p className="mt-2 text-sm font-bold text-navy">
-                <span className="lang-ja">まず無料で学ぶ</span>
-                <span lang="vi" className="lang-vi">Học miễn phí trước</span>
-                <span lang="en" className="lang-en">Start learning for free</span>
-              </p>
-              <p className="mt-1 text-xs leading-relaxed text-muted">
-                <span className="lang-ja">反応がある教材だけ、あとで販売・会員機能に育てます。</span>
-                <span lang="vi" className="lang-vi">Tài liệu có nhu cầu sẽ phát triển thành trả phí hoặc hội viên.</span>
-                <span lang="en" className="lang-en">Materials with demand can grow into paid or member content later.</span>
-              </p>
+            <Card className="hidden lg:block">
+              <ResourceHubVisual variant="materials" />
+              <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                {[
+                  { icon: "pdf", label: "PDF" },
+                  { icon: "budget", label: "Money" },
+                  { icon: "scam", label: "Risk" },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-border bg-white/78 p-2">
+                    <ResourceIcon variant={item.icon as ResourceIconVariant} className="mx-auto h-8 w-8 rounded-xl" />
+                    <p className="mt-1 text-[0.68rem] font-bold text-navy">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </Card>
           </div>
         </Container>
@@ -308,28 +322,42 @@ export default function MaterialsPage() {
 
           <div className="mt-6 space-y-5">
             {categorizedMaterials.map((category) => (
-              <section
+              <details
                 key={category.prefix}
-                className="rounded-2xl border border-border bg-white/78 p-4 shadow-[0_18px_45px_rgba(11,31,58,0.05)] sm:p-5"
-                aria-labelledby={`pdf-category-${category.prefix}`}
+                className="group rounded-2xl border border-border bg-white/78 shadow-[0_18px_45px_rgba(11,31,58,0.05)] open:bg-white/92"
+                open={category.prefix === "01" || category.prefix === "10"}
               >
-                <div className="grid gap-3 lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)] lg:items-start">
-                  <div className="min-w-0">
-                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent">
-                      Series {category.prefix}
-                    </p>
-                    <h3 id={`pdf-category-${category.prefix}`} className="mt-1 text-lg font-bold leading-snug text-navy sm:text-xl">
-                      <span className="lang-ja">{category.title.ja}</span>
-                      <span lang="vi" className="lang-vi">{category.title.vi}</span>
-                      <span lang="en" className="lang-en">{category.title.en}</span>
-                    </h3>
-                    <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted">
-                      <span className="lang-ja">{category.description.ja}</span>
-                      <span lang="vi" className="lang-vi">{category.description.vi}</span>
-                      <span lang="en" className="lang-en">{category.description.en}</span>
-                    </p>
+                <summary className="cursor-pointer list-none p-4 marker:content-none sm:p-5 [&::-webkit-details-marker]:hidden">
+                  <div className="flex min-w-0 items-start justify-between gap-3">
+                    <div className="flex min-w-0 items-start gap-3">
+                      <ResourceIcon variant={materialCategoryIcon(category.prefix)} />
+                      <div className="min-w-0">
+                        <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent">
+                          Series {category.prefix} / {category.materials.length} PDFs
+                        </p>
+                        <h3 className="mt-1 text-lg font-bold leading-snug text-navy sm:text-xl">
+                          <span className="lang-ja">{category.title.ja}</span>
+                          <span lang="vi" className="lang-vi">{category.title.vi}</span>
+                          <span lang="en" className="lang-en">{category.title.en}</span>
+                        </h3>
+                        <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted">
+                          <span className="lang-ja">{category.description.ja}</span>
+                          <span lang="vi" className="lang-vi">{category.description.vi}</span>
+                          <span lang="en" className="lang-en">{category.description.en}</span>
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-white text-base font-bold text-navy transition-transform group-open:rotate-180"
+                      aria-hidden
+                    >
+                      ↓
+                    </span>
                   </div>
-                  <div className="grid gap-3 md:grid-cols-2">
+                </summary>
+
+                <div className="border-t border-border px-4 pb-4 sm:px-5 sm:pb-5">
+                  <div className="grid gap-3 pt-4 md:grid-cols-2">
                     {category.materials.map((material) => {
                       const cta = materialCta(material);
                       const language = languageLabels[materialLanguage(material)];
@@ -400,7 +428,7 @@ export default function MaterialsPage() {
                     })}
                   </div>
                 </div>
-              </section>
+              </details>
             ))}
           </div>
         </Container>

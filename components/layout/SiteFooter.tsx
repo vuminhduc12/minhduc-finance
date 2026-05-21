@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { FlagIcon } from "@/components/brand/FlagIcon";
+import { SiteSectionIcon } from "@/components/brand/SiteSectionIcon";
 import { BRAND_LEGAL_NAME, SITE_NAME, SITE_TAGLINE, SITE_TAGLINE_EN, SITE_TAGLINE_VI } from "@/lib/site";
 
 const footerNav = [
-  { href: "/articles", labelJa: "記事ライブラリ", labelVi: "Thư viện bài viết", labelEn: "Article library" },
-  { href: "/materials", labelJa: "PDF教材", labelVi: "Tài liệu PDF", labelEn: "PDF materials" },
-  { href: "/official-info", labelJa: "公式情報ハブ", labelVi: "Nguồn chính thức", labelEn: "Official sources" },
-  { href: "/scam-check", labelJa: "詐欺チェック", labelVi: "Kiểm tra lừa đảo", labelEn: "Scam check" },
-  { href: "/privacy", labelJa: "プライバシーポリシー", labelVi: "Chính sách bảo mật", labelEn: "Privacy policy" },
-  { href: "/disclaimer", labelJa: "免責事項", labelVi: "Miễn trừ trách nhiệm", labelEn: "Disclaimer" },
-  { href: "/contact", labelJa: "お問い合わせ", labelVi: "Liên hệ", labelEn: "Contact" },
+  { href: "/articles", icon: "articles", labelJa: "記事ライブラリ", labelVi: "Thư viện bài viết", labelEn: "Article library" },
+  { href: "/materials", icon: "materials", labelJa: "PDF教材", labelVi: "Tài liệu PDF", labelEn: "PDF materials" },
+  { href: "/official-info", icon: "official", labelJa: "公式情報ハブ", labelVi: "Nguồn chính thức", labelEn: "Official sources" },
+  { href: "/scam-check", icon: "scam", labelJa: "詐欺チェック", labelVi: "Kiểm tra lừa đảo", labelEn: "Scam check" },
+  { href: "/privacy", icon: "privacy", labelJa: "プライバシーポリシー", labelVi: "Chính sách bảo mật", labelEn: "Privacy policy" },
+  { href: "/disclaimer", icon: "disclaimer", labelJa: "免責事項", labelVi: "Miễn trừ trách nhiệm", labelEn: "Disclaimer" },
+  { href: "/contact", icon: "contact", labelJa: "お問い合わせ", labelVi: "Liên hệ", labelEn: "Contact" },
 ] as const;
 
 export function SiteFooter() {
@@ -52,11 +53,14 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-slate-300 underline-offset-4 hover:text-white hover:underline"
+                className="flex items-center gap-2 text-sm text-slate-300 underline-offset-4 hover:text-white hover:underline"
               >
-                <span className="lang-ja">{item.labelJa}</span>
-                <span lang="vi" className="lang-vi">{item.labelVi}</span>
-                <span lang="en" className="lang-en">{item.labelEn}</span>
+                <SiteSectionIcon type={item.icon} size="xs" />
+                <span>
+                  <span className="lang-ja">{item.labelJa}</span>
+                  <span lang="vi" className="lang-vi">{item.labelVi}</span>
+                  <span lang="en" className="lang-en">{item.labelEn}</span>
+                </span>
               </Link>
             ))}
           </nav>

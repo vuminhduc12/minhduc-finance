@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteSectionIcon } from "@/components/brand/SiteSectionIcon";
 import { BiBlock } from "@/components/ui/Bilingual";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -28,16 +29,16 @@ export default function ContactPage() {
       </PageIntro>
       <section className="pb-10 pt-2 sm:pb-12 sm:pt-3 md:pb-14" aria-labelledby="contact-title">
         <Container className="max-w-3xl">
-          <h1
-            id="contact-title"
-            className="text-[1.5rem] font-bold leading-snug text-navy sm:text-3xl"
-          >
-            <span className="lang-ja block">お問い合わせ</span>
-            <span lang="vi" className="lang-vi text-lg font-semibold text-navy-soft sm:text-xl">
-              Liên hệ
-            </span>
-            <span lang="en" className="lang-en text-lg font-semibold text-navy-soft sm:text-xl">
-              Contact
+          <h1 id="contact-title" className="flex items-center gap-3 text-[1.5rem] font-bold leading-snug text-navy sm:text-3xl">
+            <SiteSectionIcon type="contact" size="md" />
+            <span>
+              <span className="lang-ja block">お問い合わせ</span>
+              <span lang="vi" className="lang-vi text-lg font-semibold text-navy-soft sm:text-xl">
+                Liên hệ
+              </span>
+              <span lang="en" className="lang-en text-lg font-semibold text-navy-soft sm:text-xl">
+                Contact
+              </span>
             </span>
           </h1>
           <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm md:text-base">
@@ -66,13 +67,16 @@ export default function ContactPage() {
 
           <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
             <Card>
-              <h2 className="text-sm font-bold text-navy sm:text-base">
-                <span className="lang-ja block">メール窓口</span>
-                <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
-                  Email liên hệ
-                </span>
-                <span lang="en" className="lang-en text-xs font-semibold text-navy-soft">
-                  Email contact
+              <h2 className="flex items-center gap-2 text-sm font-bold text-navy sm:text-base">
+                <SiteSectionIcon type="contact" size="sm" />
+                <span>
+                  <span className="lang-ja block">メール窓口</span>
+                  <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
+                    Email liên hệ
+                  </span>
+                  <span lang="en" className="lang-en text-xs font-semibold text-navy-soft">
+                    Email contact
+                  </span>
                 </span>
               </h2>
               <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted sm:text-sm">
@@ -98,13 +102,16 @@ export default function ContactPage() {
               </ButtonLink>
             </Card>
             <Card>
-              <h2 className="text-sm font-bold text-navy sm:text-base">
-                <span className="lang-ja block">対応できるご連絡</span>
-                <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
-                  Các nội dung có thể liên hệ
-                </span>
-                <span lang="en" className="lang-en text-xs font-semibold text-navy-soft">
-                  Requests we can receive
+              <h2 className="flex items-center gap-2 text-sm font-bold text-navy sm:text-base">
+                <SiteSectionIcon type="profile" size="sm" />
+                <span>
+                  <span className="lang-ja block">対応できるご連絡</span>
+                  <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
+                    Các nội dung có thể liên hệ
+                  </span>
+                  <span lang="en" className="lang-en text-xs font-semibold text-navy-soft">
+                    Requests we can receive
+                  </span>
                 </span>
               </h2>
               <ul className="mt-2 space-y-2 text-[0.8125rem] sm:mt-3 sm:text-sm">
@@ -158,13 +165,16 @@ export default function ContactPage() {
           </div>
 
           <Card className="mt-6 sm:mt-8">
-            <h2 className="text-sm font-bold text-navy sm:text-base">
-              <span className="lang-ja block">お受けできないご依頼</span>
-              <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
-                Những yêu cầu chúng tôi không nhận
-              </span>
-              <span lang="en" className="lang-en text-xs font-semibold text-navy-soft">
-                Requests we cannot accept
+            <h2 className="flex items-center gap-2 text-sm font-bold text-navy sm:text-base">
+              <SiteSectionIcon type="disclaimer" size="sm" />
+              <span>
+                <span className="lang-ja block">お受けできないご依頼</span>
+                <span lang="vi" className="lang-vi text-xs font-semibold text-navy-soft">
+                  Những yêu cầu chúng tôi không nhận
+                </span>
+                <span lang="en" className="lang-en text-xs font-semibold text-navy-soft">
+                  Requests we cannot accept
+                </span>
               </span>
             </h2>
             <ul className="mt-2 list-inside list-disc space-y-1.5 text-[0.8125rem] text-muted sm:mt-3 sm:text-sm">

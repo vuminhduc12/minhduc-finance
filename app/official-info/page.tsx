@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { FlagIcon } from "@/components/brand/FlagIcon";
-import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { PageIntro } from "@/components/layout/PageIntro";
+import { ResourceHubVisual, ResourceIcon, type ResourceIconVariant } from "@/components/sections/ResourceHubVisual";
 import { BiBlock, BiSubheading } from "@/components/ui/Bilingual";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -37,6 +37,20 @@ const priorityLabels = {
   consumer: { ja: "トラブル", vi: "Rắc rối", en: "Trouble" },
   life: { ja: "生活", vi: "Đời sống", en: "Life" },
 } as const;
+
+function priorityIcon(priority: keyof typeof priorityLabels): ResourceIconVariant {
+  if (priority === "money") return "money";
+  if (priority === "tax") return "tax";
+  if (priority === "visa") return "visa";
+  if (priority === "consumer") return "consumer";
+  return "life";
+}
+
+function useCaseIcon(id: string): ResourceIconVariant {
+  if (id === "scam") return "scam";
+  if (id === "nisa-tax") return "investment";
+  return "visa";
+}
 
 export default function OfficialInfoPage() {
   return (
@@ -84,18 +98,20 @@ export default function OfficialInfoPage() {
                 ))}
               </div>
             </div>
-            <Card className="hidden text-center lg:block">
-              <MiraiMascot compact variant="calm" className="mx-auto h-44 w-44" title="公式情報を落ち着いて確認するミライくん" />
-              <p className="mt-2 text-sm font-bold text-navy">
-                <span className="lang-ja">ミライくんの確認ルール</span>
-                <span lang="vi" className="lang-vi">Quy tắc kiểm tra của Mirai</span>
-                <span lang="en" className="lang-en">Mirai checking rule</span>
-              </p>
-              <p className="mt-1 text-xs leading-relaxed text-muted">
-                <span className="lang-ja">大事な判断は、解説記事だけでなく公式サイトでも確認。</span>
-                <span lang="vi" className="lang-vi">Việc quan trọng phải kiểm tra lại trên trang chính thức.</span>
-                <span lang="en" className="lang-en">For important decisions, check official sites, not only explanation articles.</span>
-              </p>
+            <Card className="hidden lg:block">
+              <ResourceHubVisual variant="official" />
+              <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                {[
+                  { icon: "money", label: "Money" },
+                  { icon: "tax", label: "Tax" },
+                  { icon: "visa", label: "Visa" },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-border bg-white/78 p-2">
+                    <ResourceIcon variant={item.icon as ResourceIconVariant} className="mx-auto h-8 w-8 rounded-xl" />
+                    <p className="mt-1 text-[0.68rem] font-bold text-navy">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </Card>
           </div>
         </Container>
@@ -117,10 +133,11 @@ export default function OfficialInfoPage() {
             {officialUseCases.map((useCase, index) => (
               <Card key={useCase.id} className="flex min-w-0 flex-col">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-navy text-xs font-bold text-white">
-                    0{index + 1}
-                  </span>
+                  <ResourceIcon variant={useCaseIcon(useCase.id)} />
                   <div className="min-w-0">
+                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-accent">
+                      Route 0{index + 1}
+                    </p>
                     <h3 className="text-balance text-base font-bold leading-snug text-navy">
                       <span className="lang-ja">{useCase.label.ja}</span>
                       <span lang="vi" className="lang-vi">{useCase.label.vi}</span>
@@ -181,17 +198,20 @@ export default function OfficialInfoPage() {
               <Card key={source.id} className="flex min-w-0 flex-col">
                 <article id={source.id} className="flex h-full flex-col">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="min-w-0">
-                      <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
-                        <span className="lang-ja">{source.agency.ja}</span>
-                        <span lang="vi" className="lang-vi">{source.agency.vi}</span>
-                        <span lang="en" className="lang-en">{enText(source.agency)}</span>
-                      </p>
-                      <h3 className="mt-1 text-balance text-lg font-bold leading-snug text-navy">
-                        <span className="lang-ja">{source.topic.ja}</span>
-                        <span lang="vi" className="lang-vi">{source.topic.vi}</span>
-                        <span lang="en" className="lang-en">{enText(source.topic)}</span>
-                      </h3>
+                    <div className="flex min-w-0 items-start gap-3">
+                      <ResourceIcon variant={priorityIcon(source.priority)} />
+                      <div className="min-w-0">
+                        <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+                          <span className="lang-ja">{source.agency.ja}</span>
+                          <span lang="vi" className="lang-vi">{source.agency.vi}</span>
+                          <span lang="en" className="lang-en">{enText(source.agency)}</span>
+                        </p>
+                        <h3 className="mt-1 text-balance text-lg font-bold leading-snug text-navy">
+                          <span className="lang-ja">{source.topic.ja}</span>
+                          <span lang="vi" className="lang-vi">{source.topic.vi}</span>
+                          <span lang="en" className="lang-en">{enText(source.topic)}</span>
+                        </h3>
+                      </div>
                     </div>
                     <span className="w-fit shrink-0 rounded-full bg-navy px-2.5 py-1 text-[0.65rem] font-bold text-white">
                       <span className="lang-ja">{priorityLabels[source.priority].ja}</span>

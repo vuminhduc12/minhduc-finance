@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteSectionIcon } from "@/components/brand/SiteSectionIcon";
 import { LINE_BOT_URL } from "@/lib/constants";
 
 export function MobileActionBar() {
@@ -9,26 +10,32 @@ export function MobileActionBar() {
           href={LINE_BOT_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-11 flex-col items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-[0.72rem] font-bold leading-snug text-white"
+          className="inline-flex min-h-11 flex-row items-center justify-center gap-2 rounded-xl bg-navy px-3 py-2 text-center text-[0.72rem] font-bold leading-snug text-white"
         >
-          <span className="lang-ja">危険チェック</span>
-          <span lang="vi" className="lang-vi">
-            Kiểm tra rủi ro
-          </span>
-          <span lang="en" className="lang-en">
-            Risk check
+          <SiteSectionIcon type="scam" size="xs" className="bg-white/95" />
+          <span>
+            <span className="lang-ja">危険チェック</span>
+            <span lang="vi" className="lang-vi">
+              Kiểm tra rủi ro
+            </span>
+            <span lang="en" className="lang-en">
+              Risk check
+            </span>
           </span>
         </a>
         <Link
           href="/contact"
-          className="inline-flex min-h-11 flex-col items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-center text-[0.72rem] font-bold leading-snug text-navy"
+          className="inline-flex min-h-11 flex-row items-center justify-center gap-2 rounded-xl border border-border bg-white px-3 py-2 text-center text-[0.72rem] font-bold leading-snug text-navy"
         >
-          <span className="lang-ja">相談する</span>
-          <span lang="vi" className="lang-vi">
-            Liên hệ
-          </span>
-          <span lang="en" className="lang-en">
-            Contact
+          <SiteSectionIcon type="contact" size="xs" />
+          <span>
+            <span className="lang-ja">相談する</span>
+            <span lang="vi" className="lang-vi">
+              Liên hệ
+            </span>
+            <span lang="en" className="lang-en">
+              Contact
+            </span>
           </span>
         </Link>
       </div>
