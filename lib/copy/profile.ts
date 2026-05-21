@@ -89,6 +89,47 @@ export const profileCopy = {
         },
       },
     ] as const,
+    visualGuide: {
+      heading: {
+        ja: "このページの見方",
+        vi: "Cách đọc trang này",
+        en: "How to read this page",
+      } satisfies Bi,
+      body: {
+        ja: "経歴だけでなく、どんな距離感でお金の不安に向き合うかを確認できます。",
+        vi: "Không chỉ xem kinh nghiệm, bạn có thể hiểu cách tôi giữ khoảng cách với nỗi lo tiền bạc.",
+        en: "This is not only a resume. It shows how I approach money concerns with the right distance.",
+      } satisfies Bi,
+      items: [
+        {
+          icon: "shield",
+          title: { ja: "危険を先に見る", vi: "Nhìn rủi ro trước", en: "Check risk first" },
+          body: {
+            ja: "怪しい話は、送金や契約の前に止まって整理します。",
+            vi: "Lời mời đáng ngờ cần dừng lại trước khi chuyển tiền hoặc ký.",
+            en: "Suspicious offers should be paused before payment or signing.",
+          },
+        },
+        {
+          icon: "book",
+          title: { ja: "言葉をかみ砕く", vi: "Giải thích dễ hiểu", en: "Break down terms" },
+          body: {
+            ja: "制度や金融用語を生活に近い順番で説明します。",
+            vi: "Giải thích chế độ và thuật ngữ tài chính theo thứ tự gần đời sống.",
+            en: "Explain systems and financial terms in a practical order.",
+          },
+        },
+        {
+          icon: "bridge",
+          title: { ja: "公式情報へつなぐ", vi: "Kết nối nguồn chính thức", en: "Connect to official sources" },
+          body: {
+            ja: "記事だけで終わらせず、確認先まで進める形にします。",
+            vi: "Không dừng ở bài viết, mà dẫn đến nơi kiểm tra chính thức.",
+            en: "Go beyond articles and point users to places they can verify.",
+          },
+        },
+      ] as const,
+    },
   },
   sections: [
     {

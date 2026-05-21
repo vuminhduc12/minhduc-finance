@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MiraiMascot } from "@/components/brand/MiraiMascot";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -7,6 +8,36 @@ import { NOTE_PROFILE_URL, LINE_BOT_URL, PDF_URL } from "@/lib/constants";
 import { cta } from "@/lib/copy/cta";
 import { profileCopy } from "@/lib/copy/profile";
 import type { ProfileSection } from "@/lib/copy/profile";
+
+type ProfileVisualIcon = "shield" | "book" | "bridge";
+
+function VisualIcon({ type }: { type: ProfileVisualIcon }) {
+  if (type === "book") {
+    return (
+      <svg viewBox="0 0 48 48" className="h-8 w-8" aria-hidden>
+        <path d="M8 12c7 0 12 1.8 16 5.5C28 13.8 33 12 40 12v24c-7 0-12 1.8-16 5.5C20 37.8 15 36 8 36V12z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M24 17.5v24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "bridge") {
+    return (
+      <svg viewBox="0 0 48 48" className="h-8 w-8" aria-hidden>
+        <path d="M7 33h34" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+        <path d="M10 33c3-12 10-18 14-18s11 6 14 18" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+        <path d="M14 33V22m20 11V22M24 33V16" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 48 48" className="h-8 w-8" aria-hidden>
+      <path d="M24 6 39 12v11c0 9.5-5.5 16.5-15 20-9.5-3.5-15-10.5-15-20V12l15-6z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+      <path d="m17 24 5 5 10-11" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 function SectionTitle({ id, title }: { id: string; title: { ja: string; vi: string; en: string } }) {
   return (
@@ -231,6 +262,48 @@ export function ProfileBody() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-white/86 shadow-[0_18px_45px_rgba(11,31,58,0.06)]">
+            <div className="grid gap-0 lg:grid-cols-[260px_1fr]">
+              <div className="flex items-center justify-center border-b border-border bg-accent-muted/45 p-5 lg:border-b-0 lg:border-r">
+                <MiraiMascot compact variant="explain" className="h-36 w-36 sm:h-40 sm:w-40" title="プロフィールの読み方を案内するミライくん" />
+              </div>
+              <div className="p-4 sm:p-6">
+                <div className="max-w-2xl">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Visual Guide</p>
+                  <h2 className="mt-2 text-xl font-bold leading-snug text-navy sm:text-2xl">
+                    <span className="lang-ja">{hero.visualGuide.heading.ja}</span>
+                    <span lang="vi" className="lang-vi">{hero.visualGuide.heading.vi}</span>
+                    <span lang="en" className="lang-en">{hero.visualGuide.heading.en}</span>
+                  </h2>
+                  <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted sm:text-sm">
+                    <span className="lang-ja">{hero.visualGuide.body.ja}</span>
+                    <span lang="vi" className="lang-vi">{hero.visualGuide.body.vi}</span>
+                    <span lang="en" className="lang-en">{hero.visualGuide.body.en}</span>
+                  </p>
+                </div>
+                <div className="mt-5 grid gap-3 md:grid-cols-3">
+                  {hero.visualGuide.items.map((item) => (
+                    <div key={item.title.ja} className="min-w-0 border-t border-border pt-4 md:border-l md:border-t-0 md:pl-4 md:pt-0">
+                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-navy text-accent-muted">
+                        <VisualIcon type={item.icon} />
+                      </div>
+                      <h3 className="text-sm font-bold leading-snug text-navy">
+                        <span className="lang-ja">{item.title.ja}</span>
+                        <span lang="vi" className="lang-vi">{item.title.vi}</span>
+                        <span lang="en" className="lang-en">{item.title.en}</span>
+                      </h3>
+                      <p className="mt-2 text-[0.75rem] leading-relaxed text-muted sm:text-[0.8125rem]">
+                        <span className="lang-ja">{item.body.ja}</span>
+                        <span lang="vi" className="lang-vi">{item.body.vi}</span>
+                        <span lang="en" className="lang-en">{item.body.en}</span>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </Container>
