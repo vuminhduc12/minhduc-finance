@@ -6,6 +6,7 @@ export function SkipLink() {
     >
       <span className="lang-ja">メインコンテンツへスキップ</span>
       <span lang="vi" className="lang-vi">Bỏ qua đến nội dung chính</span>
+      <span lang="en" className="lang-en">Skip to main content</span>
     </a>
   );
 }

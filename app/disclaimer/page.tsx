@@ -21,6 +21,7 @@ export default function DisclaimerPage() {
       <PageIntro>
         <span className="lang-ja">教育・情報提供サイトとしての範囲と、利用前に確認していただきたい注意事項です。</span>
         <span lang="vi" className="lang-vi">Phạm vi của website giáo dục/thông tin và các điểm cần kiểm tra trước khi sử dụng.</span>
+        <span lang="en" className="lang-en">The scope of this education and information site, and points to confirm before using it.</span>
       </PageIntro>
       <Container className="max-w-3xl pt-2 sm:pt-3">
         <BiBlock
@@ -31,7 +32,34 @@ export default function DisclaimerPage() {
         <h1 id="disclaimer-title" className="text-[1.5rem] font-bold leading-snug text-navy sm:text-3xl">
           <span className="lang-ja">免責事項</span>
           <span lang="vi" className="lang-vi">Miễn trừ trách nhiệm</span>
+          <span lang="en" className="lang-en">Disclaimer</span>
         </h1>
+        <div lang="en" className="lang-en">
+          <h2 className="mt-10 text-xl font-bold text-navy">1. Nature of the information</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            Text, charts, and Bot guidance on this site are provided for education and information. We try to improve accuracy, but information may contain errors or become outdated. Always confirm important decisions with primary sources such as official system explanations, contracts, exchange or financial institution materials.
+          </p>
+
+          <h2 className="mt-10 text-xl font-bold text-navy">2. Investment decisions</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            This site does not recommend buying or selling specific financial products. Investment results vary depending on market conditions and personal circumstances, and may include loss of principal. Past information and general explanations do not guarantee future results.
+          </p>
+
+          <h2 className="mt-10 text-xl font-bold text-navy">3. Legal, tax, and contract decisions</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            This site and LINE Bot do not provide detailed contract review, legal judgment, tax judgment, or representation in individual disputes. Before making important decisions such as remittance, contracts, introductions, or borrowing, consult public support or professionals if you remain uncertain.
+          </p>
+
+          <h2 className="mt-10 text-xl font-bold text-navy">4. External services</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            This site may link to external services such as LINE, note, payment services, and file delivery. Availability, security, and terms of use for external services are the responsibility of each provider.
+          </p>
+
+          <h2 className="mt-10 text-xl font-bold text-navy">5. Damages</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            Except where required by law, the operator is not responsible for damages arising from use of this site or inability to use it.
+          </p>
+        </div>
         <div className="lang-ja">
 
           <h2 className="mt-10 text-xl font-bold text-navy">1. 情報の性質</h2>

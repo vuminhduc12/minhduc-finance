@@ -7,12 +7,15 @@ import { cta } from "@/lib/copy/cta";
 import { profileCopy } from "@/lib/copy/profile";
 import type { ProfileSection } from "@/lib/copy/profile";
 
-function SectionTitle({ id, title }: { id: string; title: { ja: string; vi: string } }) {
+function SectionTitle({ id, title }: { id: string; title: { ja: string; vi: string; en: string } }) {
   return (
     <h2 id={id} className="text-lg font-bold leading-snug text-navy sm:text-xl md:text-2xl">
-      <span className="block">{title.ja}</span>
-      <span lang="vi" className="mt-1.5 block text-base font-semibold leading-snug text-navy-soft sm:text-lg">
+      <span className="lang-ja block">{title.ja}</span>
+      <span lang="vi" className="lang-vi mt-1.5 block text-base font-semibold leading-snug text-navy-soft sm:text-lg">
         {title.vi}
+      </span>
+      <span lang="en" className="lang-en mt-1.5 block text-base font-semibold leading-snug text-navy-soft sm:text-lg">
+        {title.en}
       </span>
     </h2>
   );
@@ -24,31 +27,43 @@ function renderSection(section: ProfileSection) {
       return (
         <>
           {section.paragraphsJa.map((p) => (
-            <p key={p} className="text-[0.8125rem] leading-relaxed text-muted sm:text-sm md:text-base">
+            <p key={p} className="lang-ja text-[0.8125rem] leading-relaxed text-muted sm:text-sm md:text-base">
               {p}
             </p>
           ))}
           <p
             lang="vi"
-            className="border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
+            className="lang-vi border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
           >
             {section.summaryVi}
+          </p>
+          <p
+            lang="en"
+            className="lang-en border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
+          >
+            {section.summaryEn}
           </p>
         </>
       );
     case "bullets":
       return (
         <>
-          <ul className="list-inside list-disc space-y-2 text-[0.8125rem] text-muted sm:text-sm md:text-base">
+          <ul className="lang-ja list-inside list-disc space-y-2 text-[0.8125rem] text-muted sm:text-sm md:text-base">
             {section.bulletsJa.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
           <p
             lang="vi"
-            className="mt-3 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
+            className="lang-vi mt-3 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
           >
             {section.summaryVi}
+          </p>
+          <p
+            lang="en"
+            className="lang-en mt-3 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
+          >
+            {section.summaryEn}
           </p>
         </>
       );
@@ -58,21 +73,30 @@ function renderSection(section: ProfileSection) {
           {section.cards.map((card, i) => (
             <Card key={card.title.ja} className={i === 0 ? "border-accent-muted" : ""}>
               <h3 className="text-sm font-bold text-navy sm:text-base">
-                <span className="block">{card.title.ja}</span>
-                <span lang="vi" className="mt-1 block text-xs font-semibold text-navy-soft sm:text-sm">
+                <span className="lang-ja block">{card.title.ja}</span>
+                <span lang="vi" className="lang-vi mt-1 block text-xs font-semibold text-navy-soft sm:text-sm">
                   {card.title.vi}
                 </span>
+                <span lang="en" className="lang-en mt-1 block text-xs font-semibold text-navy-soft sm:text-sm">
+                  {card.title.en}
+                </span>
               </h3>
-              <ul className="mt-2 list-inside list-disc space-y-1.5 text-[0.8125rem] text-muted sm:mt-3 sm:text-sm">
+              <ul className="lang-ja mt-2 list-inside list-disc space-y-1.5 text-[0.8125rem] text-muted sm:mt-3 sm:text-sm">
                 {card.itemsJa.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
               <p
                 lang="vi"
-                className="mt-3 border-l-2 border-accent/25 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]"
+                className="lang-vi mt-3 border-l-2 border-accent/25 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]"
               >
                 {card.summaryVi}
+              </p>
+              <p
+                lang="en"
+                className="lang-en mt-3 border-l-2 border-accent/25 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]"
+              >
+                {card.summaryEn}
               </p>
             </Card>
           ))}
@@ -107,25 +131,32 @@ export function ProfileBody() {
                 </svg>
               </div>
               <h1 className="mt-5 text-xl font-bold text-navy sm:mt-6 sm:text-2xl">Vu Minh Duc</h1>
-              <p className="mt-2 whitespace-pre-line text-[0.8125rem] font-medium leading-snug text-navy-soft sm:text-sm">
+              <p className="lang-ja mt-2 whitespace-pre-line text-[0.8125rem] font-medium leading-snug text-navy-soft sm:text-sm">
                 {hero.role.ja}
               </p>
-              <p lang="vi" className="mt-2 whitespace-pre-line text-[0.7rem] leading-relaxed text-muted sm:text-[0.75rem]">
+              <p lang="vi" className="lang-vi mt-2 whitespace-pre-line text-[0.7rem] leading-relaxed text-muted sm:text-[0.75rem]">
                 {hero.role.vi}
               </p>
-              <p className="mt-3 max-w-xs text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm">
+              <p lang="en" className="lang-en mt-2 whitespace-pre-line text-[0.7rem] leading-relaxed text-muted sm:text-[0.75rem]">
+                {hero.role.en}
+              </p>
+              <p className="lang-ja mt-3 max-w-xs text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm">
                 {hero.tagline.ja}
               </p>
-              <p lang="vi" className="mt-2 max-w-xs border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
+              <p lang="vi" className="lang-vi mt-2 max-w-xs border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
                 {hero.tagline.vi}
+              </p>
+              <p lang="en" className="lang-en mt-2 max-w-xs border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
+                {hero.tagline.en}
               </p>
               <div className="mt-5 flex w-full max-w-xs flex-col gap-2.5 sm:mt-6">
                 <ButtonLink
                   href={LINE_BOT_URL}
                   external
                   className="w-full"
-                  aria-label={`${cta.lineOrganizeFree.ja} ${cta.lineOrganizeFree.vi}`}
+                  aria-label={`${cta.lineOrganizeFree.ja} ${cta.lineOrganizeFree.vi} ${cta.lineOrganizeFree.en}`}
                   subLabelVi={cta.lineOrganizeFree.vi}
+                  subLabelEn={cta.lineOrganizeFree.en}
                 >
                   {cta.lineOrganizeFree.ja}
                 </ButtonLink>
@@ -134,8 +165,9 @@ export function ProfileBody() {
                   external
                   variant="secondary"
                   className="w-full"
-                  aria-label={`${cta.pdfConfirmContent.ja} ${cta.pdfConfirmContent.vi}`}
+                  aria-label={`${cta.pdfConfirmContent.ja} ${cta.pdfConfirmContent.vi} ${cta.pdfConfirmContent.en}`}
                   subLabelVi={cta.pdfConfirmContent.vi}
+                  subLabelEn={cta.pdfConfirmContent.en}
                 >
                   {cta.pdfConfirmContent.ja}
                 </ButtonLink>
@@ -144,12 +176,18 @@ export function ProfileBody() {
             <div className="min-w-0 space-y-5 sm:space-y-6">
               {hero.intro.map((para) => (
                 <div key={para.ja}>
-                  <p className="text-[0.8125rem] leading-relaxed text-muted sm:text-sm md:text-base">{para.ja}</p>
+                  <p className="lang-ja text-[0.8125rem] leading-relaxed text-muted sm:text-sm md:text-base">{para.ja}</p>
                   <p
                     lang="vi"
-                    className="mt-2 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
+                    className="lang-vi mt-2 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
                   >
                     {para.vi}
+                  </p>
+                  <p
+                    lang="en"
+                    className="lang-en mt-2 border-l-2 border-accent/35 pl-3 text-[0.75rem] leading-relaxed text-navy-soft sm:text-[0.8125rem] md:text-sm"
+                  >
+                    {para.en}
                   </p>
                 </div>
               ))}
@@ -170,8 +208,9 @@ export function ProfileBody() {
                     href={NOTE_PROFILE_URL}
                     external
                     className="sm:w-auto"
-                    aria-label={`${cta.noteOpenShort.ja} ${cta.noteOpenShort.vi}`}
+                    aria-label={`${cta.noteOpenShort.ja} ${cta.noteOpenShort.vi} ${cta.noteOpenShort.en}`}
                     subLabelVi={cta.noteOpenShort.vi}
+                    subLabelEn={cta.noteOpenShort.en}
                   >
                     {cta.noteOpenShort.ja}
                   </ButtonLink>
@@ -179,8 +218,9 @@ export function ProfileBody() {
                     href="/contact"
                     variant="secondary"
                     className="sm:w-auto"
-                    aria-label={`${cta.contact.ja} ${cta.contact.vi}`}
+                    aria-label={`${cta.contact.ja} ${cta.contact.vi} ${cta.contact.en}`}
                     subLabelVi={cta.contact.vi}
+                    subLabelEn={cta.contact.en}
                   >
                     {cta.contact.ja}
                   </ButtonLink>
@@ -191,8 +231,9 @@ export function ProfileBody() {
                   <ButtonLink
                     href={LINE_BOT_URL}
                     external
-                    aria-label={`${cta.lineOrganizeFree.ja} ${cta.lineOrganizeFree.vi}`}
+                    aria-label={`${cta.lineOrganizeFree.ja} ${cta.lineOrganizeFree.vi} ${cta.lineOrganizeFree.en}`}
                     subLabelVi={cta.lineOrganizeFree.vi}
+                    subLabelEn={cta.lineOrganizeFree.en}
                   >
                     {cta.lineOrganizeFree.ja}
                   </ButtonLink>
@@ -200,8 +241,9 @@ export function ProfileBody() {
                     href={PDF_URL}
                     external
                     variant="secondary"
-                    aria-label={`${cta.pdfConfirmContent.ja} ${cta.pdfConfirmContent.vi}`}
+                    aria-label={`${cta.pdfConfirmContent.ja} ${cta.pdfConfirmContent.vi} ${cta.pdfConfirmContent.en}`}
                     subLabelVi={cta.pdfConfirmContent.vi}
+                    subLabelEn={cta.pdfConfirmContent.en}
                   >
                     {cta.pdfConfirmContent.ja}
                   </ButtonLink>
@@ -212,6 +254,9 @@ export function ProfileBody() {
                     <span>{cta.topBack.ja}</span>
                     <span lang="vi" className="mt-0.5 text-[0.7rem] font-normal text-navy-soft sm:text-xs">
                       {cta.topBack.vi}
+                    </span>
+                    <span lang="en" className="lang-en mt-0.5 text-[0.7rem] font-normal text-navy-soft sm:text-xs">
+                      {cta.topBack.en}
                     </span>
                   </Link>
                 </div>

@@ -243,6 +243,7 @@ export default function OfficialInfoPage() {
             <h2 className="mt-2 text-xl font-bold sm:text-2xl">
               <span className="lang-ja">自動取得より、公式リンクと確認ルールを優先</span>
               <span lang="vi" className="lang-vi">Ưu tiên liên kết chính thức và quy tắc kiểm tra</span>
+              <span lang="en" className="lang-en">Prioritize official links and checking rules over automatic scraping</span>
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-200">
               <span className="lang-ja">
@@ -250,6 +251,9 @@ export default function OfficialInfoPage() {
               </span>
               <span lang="vi" className="lang-vi">
                 Không sao chép hoặc tự động lấy toàn bộ nội dung từ trang công. Trang này ưu tiên đường dẫn đến nguồn gốc; sau này chỉ tự động hiển thị tin mới nếu có RSS hoặc API công khai phù hợp.
+              </span>
+              <span lang="en" className="lang-en">
+                This site does not copy or automatically scrape full content from public websites. It prioritizes direct paths to primary sources; automatic updates will be considered only when suitable RSS feeds or public APIs are available.
               </span>
             </p>
           </div>

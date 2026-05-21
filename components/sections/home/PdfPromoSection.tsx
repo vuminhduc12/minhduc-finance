@@ -19,6 +19,9 @@ export function PdfPromoSection() {
               <span lang="vi" className="lang-vi text-sm font-semibold text-navy-soft">
                 {pdfPromo.cardTitle.vi}
               </span>
+              <span lang="en" className="lang-en text-sm font-semibold text-navy-soft">
+                {pdfPromo.cardTitle.en}
+              </span>
             </h3>
             <ul className="mt-3 space-y-2 text-[0.8125rem] text-muted sm:mt-4 sm:space-y-2.5 sm:text-sm">
               {pdfPromo.themes.map((t) => (
@@ -31,6 +34,9 @@ export function PdfPromoSection() {
                     <span lang="vi" className="lang-vi text-foreground">
                       {t.vi}
                     </span>
+                    <span lang="en" className="lang-en text-foreground">
+                      {t.en}
+                    </span>
                   </span>
                 </li>
               ))}
@@ -38,6 +44,7 @@ export function PdfPromoSection() {
             <p className="mt-3 text-[11px] leading-relaxed text-muted sm:mt-4 sm:text-xs">
               <span className="lang-ja block">{pdfPromo.footnote.ja}</span>
               <span lang="vi" className="lang-vi">{pdfPromo.footnote.vi}</span>
+              <span lang="en" className="lang-en">{pdfPromo.footnote.en}</span>
             </p>
           </Card>
           <div className="order-1 lg:order-2">
@@ -50,8 +57,9 @@ export function PdfPromoSection() {
             <ButtonLink
               href={PDF_URL}
               className="w-full sm:w-auto"
-              aria-label={`${cta.pdfContentAndPurchase.ja} ${cta.pdfContentAndPurchase.vi}`}
+              aria-label={`${cta.pdfContentAndPurchase.ja} ${cta.pdfContentAndPurchase.vi} ${cta.pdfContentAndPurchase.en}`}
               subLabelVi={cta.pdfContentAndPurchase.vi}
+              subLabelEn={cta.pdfContentAndPurchase.en}
             >
               {cta.pdfContentAndPurchase.ja}
             </ButtonLink>
@@ -69,6 +77,13 @@ export function PdfPromoSection() {
                   {pdfPromo.disclaimerLink.vi}
                 </Link>
                 {pdfPromo.afterDisclaimer.vi}
+              </span>
+              <span lang="en" className="lang-en">
+                {pdfPromo.purchaseNote.en}
+                <Link href="/disclaimer" className="font-medium text-accent underline-offset-2 hover:underline">
+                  {pdfPromo.disclaimerLink.en}
+                </Link>
+                {pdfPromo.afterDisclaimer.en}
               </span>
             </p>
           </div>

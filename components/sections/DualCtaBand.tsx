@@ -26,9 +26,12 @@ export function DualCtaBand({
           id="dual-cta-heading"
           className="mb-6 text-center text-[1.35rem] font-bold leading-snug text-navy sm:mb-7 sm:text-2xl md:text-[1.75rem]"
         >
-          <span className="block">{headingBi.ja}</span>
-          <span lang="vi" className="mt-2 block text-base font-semibold leading-snug text-navy-soft sm:text-lg">
+          <span className="lang-ja block">{headingBi.ja}</span>
+          <span lang="vi" className="lang-vi mt-2 block text-base font-semibold leading-snug text-navy-soft sm:text-lg">
             {headingBi.vi}
+          </span>
+          <span lang="en" className="lang-en mt-2 block text-base font-semibold leading-snug text-navy-soft sm:text-lg">
+            {headingBi.en}
           </span>
         </h2>
         <div className="mx-auto flex max-w-2xl flex-col gap-2.5 sm:flex-row sm:justify-center sm:gap-4">
@@ -36,8 +39,9 @@ export function DualCtaBand({
             href={LINE_BOT_URL}
             external
             className="w-full sm:w-auto sm:min-w-[220px]"
-            aria-label={`${cta.lineOrganizeFree.ja} ${cta.lineOrganizeFree.vi}`}
+            aria-label={`${cta.lineOrganizeFree.ja} ${cta.lineOrganizeFree.vi} ${cta.lineOrganizeFree.en}`}
             subLabelVi={cta.lineOrganizeFree.vi}
+            subLabelEn={cta.lineOrganizeFree.en}
           >
             {cta.lineOrganizeFree.ja}
           </ButtonLink>
@@ -46,16 +50,20 @@ export function DualCtaBand({
             external
             variant="secondary"
             className="w-full sm:w-auto sm:min-w-[220px]"
-            aria-label={`${cta.pdfConfirmContent.ja} ${cta.pdfConfirmContent.vi}`}
+            aria-label={`${cta.pdfConfirmContent.ja} ${cta.pdfConfirmContent.vi} ${cta.pdfConfirmContent.en}`}
             subLabelVi={cta.pdfConfirmContent.vi}
+            subLabelEn={cta.pdfConfirmContent.en}
           >
             {cta.pdfConfirmContent.ja}
           </ButtonLink>
         </div>
         <p className="mx-auto mt-5 max-w-lg text-center text-[0.8125rem] leading-relaxed text-muted sm:mt-6 sm:text-sm">
-          <span className="block">{footnoteBi.ja}</span>
-          <span lang="vi" className="mt-1.5 block text-[0.8125rem] text-navy-soft">
+          <span className="lang-ja block">{footnoteBi.ja}</span>
+          <span lang="vi" className="lang-vi mt-1.5 block text-[0.8125rem] text-navy-soft">
             {footnoteBi.vi}
+          </span>
+          <span lang="en" className="lang-en mt-1.5 block text-[0.8125rem] text-navy-soft">
+            {footnoteBi.en}
           </span>
         </p>
       </Container>

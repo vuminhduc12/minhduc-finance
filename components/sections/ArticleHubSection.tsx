@@ -24,10 +24,12 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
             titleBi={{
               ja: "信頼を積み上げる記事ライブラリ",
               vi: "Thư viện bài viết để xây dựng niềm tin",
+              en: "An article library that builds trust",
             }}
             subtitleBi={{
               ja: "iSenpai や生活情報サイトのように、検索・再訪問につながるテーマ別コンテンツを育てます。",
               vi: "Xây dựng nội dung theo chủ đề để người đọc tìm kiếm và quay lại thường xuyên.",
+              en: "Topic-based content designed for search, learning, and repeat visits.",
             }}
           />
           {showHeaderLink ? (

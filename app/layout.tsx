@@ -73,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" data-lang="vi" className={`${notoSansJp.variable} h-full`}>
+    <html lang="vi" data-lang="vi" className={`${notoSansJp.variable} h-full`} suppressHydrationWarning>
       <body className="flex min-h-full flex-col bg-background pb-20 font-sans text-foreground antialiased md:pb-0">
         <SkipLink />
         <SiteHeader />
