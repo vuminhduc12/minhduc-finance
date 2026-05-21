@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -111,27 +112,45 @@ export function ProfileBody() {
   const { hero, sections } = profileCopy;
   return (
     <div className="pb-8">
-      <section className="border-b border-border bg-gradient-to-b from-white to-accent-muted/20 py-10 sm:py-12 md:py-14">
+      <section className="border-b border-border bg-[linear-gradient(180deg,#ffffff_0%,#f3fbf9_58%,#ffffff_100%)] py-8 sm:py-10 md:py-12">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[260px_1fr] lg:items-start lg:gap-10">
-            <aside className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <div
-                role="img"
-                aria-label="顔写真のプレースホルダー。差し替え用です。"
-                className="flex h-36 w-36 items-center justify-center rounded-full bg-slate-100 text-slate-400 ring-4 ring-accent-muted sm:h-40 sm:w-40"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-16 w-16 opacity-70 sm:h-20 sm:w-20"
-                  aria-hidden
-                >
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.14fr)_minmax(330px,0.86fr)] lg:items-center lg:gap-8">
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-navy shadow-[0_22px_55px_rgba(11,31,58,0.16)]">
+              <div className="relative aspect-[4/3] min-h-[250px] sm:min-h-[340px]">
+                <Image
+                  src="/profile/vu-minh-duc-profile.png"
+                  alt="Vu Minh Duc profile visual"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover object-[50%_50%]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/92 via-navy/38 to-transparent px-4 pb-4 pt-20 sm:px-6 sm:pb-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-muted">Founder / SE / Boxer</p>
+                  <p className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl">Vu Minh Duc</p>
+                  <p className="mt-1 max-w-lg text-xs font-medium leading-relaxed text-slate-200 sm:text-sm">
+                    Financial education writer for Vietnamese residents in Japan
+                  </p>
+                </div>
               </div>
-              <h1 className="mt-5 text-xl font-bold text-navy sm:mt-6 sm:text-2xl">Vu Minh Duc</h1>
-              <p className="lang-ja mt-2 whitespace-pre-line text-[0.8125rem] font-medium leading-snug text-navy-soft sm:text-sm">
+            </div>
+
+            <aside className="min-w-0 rounded-2xl border border-border bg-white/88 p-4 shadow-[0_18px_45px_rgba(11,31,58,0.07)] sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Profile</p>
+              <h1 className="mt-2 text-[1.65rem] font-bold leading-tight text-navy sm:text-3xl">Vu Minh Duc</h1>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {hero.trustBadges.map((badge) => (
+                  <span
+                    key={badge.ja}
+                    className="rounded-full border border-accent/20 bg-accent-muted/45 px-3 py-1 text-[0.7rem] font-bold text-navy"
+                  >
+                    <span className="lang-ja">{badge.ja}</span>
+                    <span lang="vi" className="lang-vi">{badge.vi}</span>
+                    <span lang="en" className="lang-en">{badge.en}</span>
+                  </span>
+                ))}
+              </div>
+              <p className="lang-ja mt-4 whitespace-pre-line text-[0.8125rem] font-semibold leading-snug text-navy-soft sm:text-sm">
                 {hero.role.ja}
               </p>
               <p lang="vi" className="lang-vi mt-2 whitespace-pre-line text-[0.7rem] leading-relaxed text-muted sm:text-[0.75rem]">
@@ -140,16 +159,18 @@ export function ProfileBody() {
               <p lang="en" className="lang-en mt-2 whitespace-pre-line text-[0.7rem] leading-relaxed text-muted sm:text-[0.75rem]">
                 {hero.role.en}
               </p>
-              <p className="lang-ja mt-3 max-w-xs text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm">
+              <div className="mt-4 border-t border-border pt-4">
+              <p className="lang-ja text-[0.8125rem] leading-relaxed text-muted sm:text-sm">
                 {hero.tagline.ja}
               </p>
-              <p lang="vi" className="lang-vi mt-2 max-w-xs border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
+              <p lang="vi" className="lang-vi mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
                 {hero.tagline.vi}
               </p>
-              <p lang="en" className="lang-en mt-2 max-w-xs border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
+              <p lang="en" className="lang-en mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
                 {hero.tagline.en}
               </p>
-              <div className="mt-5 flex w-full max-w-xs flex-col gap-2.5 sm:mt-6">
+              </div>
+              <div className="mt-5 grid gap-2.5">
                 <ButtonLink
                   href={LINE_BOT_URL}
                   external
@@ -173,7 +194,10 @@ export function ProfileBody() {
                 </ButtonLink>
               </div>
             </aside>
-            <div className="min-w-0 space-y-5 sm:space-y-6">
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.48fr)] lg:items-start lg:gap-8">
+            <div className="min-w-0 space-y-4 rounded-2xl border border-border bg-white/74 p-4 shadow-[0_18px_45px_rgba(11,31,58,0.05)] sm:p-6">
               {hero.intro.map((para) => (
                 <div key={para.ja}>
                   <p className="lang-ja text-[0.8125rem] leading-relaxed text-muted sm:text-sm md:text-base">{para.ja}</p>
@@ -192,14 +216,51 @@ export function ProfileBody() {
                 </div>
               ))}
             </div>
+            <div className="grid gap-3">
+              {hero.focus.map((item) => (
+                <div key={item.label.ja} className="rounded-2xl border border-border bg-card/95 p-4 shadow-sm">
+                  <p className="text-sm font-bold text-navy">
+                    <span className="lang-ja">{item.label.ja}</span>
+                    <span lang="vi" className="lang-vi">{item.label.vi}</span>
+                    <span lang="en" className="lang-en">{item.label.en}</span>
+                  </p>
+                  <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted">
+                    <span className="lang-ja">{item.body.ja}</span>
+                    <span lang="vi" className="lang-vi">{item.body.vi}</span>
+                    <span lang="en" className="lang-en">{item.body.en}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
       <Container className="py-10 sm:py-12 md:py-14">
-        <div className="mx-auto max-w-3xl space-y-10 sm:space-y-12 md:space-y-14">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[220px_1fr] lg:items-start lg:gap-8">
+          <nav className="hidden rounded-2xl border border-border bg-white/82 p-4 text-sm shadow-sm lg:sticky lg:top-24 lg:block">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Profile Map</p>
+            <div className="mt-3 space-y-2">
+              {sections.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}-heading`}
+                  className="block rounded-xl px-3 py-2 font-semibold text-navy-soft hover:bg-accent-muted/55 hover:text-navy"
+                >
+                  <span className="lang-ja">{section.title.ja}</span>
+                  <span lang="vi" className="lang-vi">{section.title.vi}</span>
+                  <span lang="en" className="lang-en">{section.title.en}</span>
+                </a>
+              ))}
+            </div>
+          </nav>
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
           {sections.map((section) => (
-            <section key={section.id} aria-labelledby={`${section.id}-heading`}>
+            <section
+              key={section.id}
+              aria-labelledby={`${section.id}-heading`}
+              className="border-t border-border pt-8 first:border-t-0 first:pt-0 sm:pt-10"
+            >
               <SectionTitle id={`${section.id}-heading`} title={section.title} />
               <div className="mt-3 space-y-3 sm:mt-4 sm:space-y-4">{renderSection(section)}</div>
               {section.id === "media" ? (
@@ -251,8 +312,8 @@ export function ProfileBody() {
                     href="/"
                     className="inline-flex min-h-12 flex-col items-center justify-center text-center text-[0.8125rem] font-semibold text-navy underline-offset-4 hover:underline sm:min-h-11 sm:text-sm md:text-base"
                   >
-                    <span>{cta.topBack.ja}</span>
-                    <span lang="vi" className="mt-0.5 text-[0.7rem] font-normal text-navy-soft sm:text-xs">
+                    <span className="lang-ja">{cta.topBack.ja}</span>
+                    <span lang="vi" className="lang-vi mt-0.5 text-[0.7rem] font-normal text-navy-soft sm:text-xs">
                       {cta.topBack.vi}
                     </span>
                     <span lang="en" className="lang-en mt-0.5 text-[0.7rem] font-normal text-navy-soft sm:text-xs">
@@ -263,6 +324,7 @@ export function ProfileBody() {
               ) : null}
             </section>
           ))}
+          </div>
         </div>
       </Container>
     </div>

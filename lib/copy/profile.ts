@@ -58,6 +58,37 @@ export const profileCopy = {
         en: "I cover practical topics such as mutual funds, asset-building basics, NISA, pay slips, taxes, international remittance, and the difference between investing and speculation.",
       },
     ] as const satisfies readonly Bi[],
+    trustBadges: [
+      { ja: "SE視点", vi: "Tư duy kỹ sư", en: "Engineer mindset" },
+      { ja: "プロボクサー", vi: "Võ sĩ chuyên nghiệp", en: "Professional boxer" },
+      { ja: "日越バイリンガル", vi: "Song ngữ Nhật-Việt", en: "JP/VN bilingual" },
+    ] as const satisfies readonly Bi[],
+    focus: [
+      {
+        label: { ja: "守る", vi: "Bảo vệ", en: "Protect" },
+        body: {
+          ja: "送金・契約・紹介の前に危険サインを整理します。",
+          vi: "Sắp xếp dấu hiệu nguy hiểm trước khi chuyển tiền, ký hợp đồng hoặc giới thiệu.",
+          en: "Organize warning signs before payment, signing, or referrals.",
+        },
+      },
+      {
+        label: { ja: "わかる", vi: "Hiểu", en: "Understand" },
+        body: {
+          ja: "給与・税金・NISA・送金などを生活に近い言葉で説明します。",
+          vi: "Giải thích lương, thuế, NISA, chuyển tiền bằng ngôn ngữ gần đời sống.",
+          en: "Explain salary, taxes, NISA, and remittance in practical language.",
+        },
+      },
+      {
+        label: { ja: "つなぐ", vi: "Kết nối", en: "Connect" },
+        body: {
+          ja: "記事、PDF、LINE、公式情報への次の一歩を作ります。",
+          vi: "Tạo bước tiếp theo đến bài viết, PDF, LINE và nguồn chính thức.",
+          en: "Create next steps to articles, PDFs, LINE, and official sources.",
+        },
+      },
+    ] as const,
   },
   sections: [
     {

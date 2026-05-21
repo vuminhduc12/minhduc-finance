@@ -8,7 +8,7 @@ export const LINE_BOT_URL =
 export const PDF_URL = "/materials";
 
 /** note など、メインの発信ハブ */
-export const NOTE_PROFILE_URL = "https://note.com/DUMMY_REPLACE_ME";
+export const NOTE_PROFILE_URL = "https://note.com/duc_vu_minh";
 
 /** お問い合わせ */
 export const CONTACT_MAILTO =
