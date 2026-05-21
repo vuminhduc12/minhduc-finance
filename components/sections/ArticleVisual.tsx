@@ -20,9 +20,9 @@ export function ArticleVisual({ category, className = "" }: Props) {
     <div className={`relative overflow-hidden ${style.bg} ${style.fg} ${className}`}>
       <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/55" aria-hidden />
       <div className="absolute -bottom-10 left-6 h-28 w-28 rounded-full bg-white/40" aria-hidden />
-      <div className="relative flex h-full min-h-[7.5rem] flex-col justify-between p-4">
+      <div className="relative flex h-full min-h-[5.25rem] flex-col justify-between p-3 sm:min-h-[7.5rem] sm:p-4">
         <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] opacity-80">{style.label}</p>
-        <svg viewBox="0 0 64 64" className="h-14 w-14" aria-hidden>
+        <svg viewBox="0 0 64 64" className="h-10 w-10 sm:h-14 sm:w-14" aria-hidden>
           {category === "risk" ? (
             <>
               <path d="M32 8 52 16v14c0 13-7.5 22.5-20 27-12.5-4.5-20-14-20-27V16l20-8z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />

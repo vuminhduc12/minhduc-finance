@@ -14,6 +14,7 @@ type Props = {
 export async function ArticleHubSection({ limit, showHeaderLink = true }: Props) {
   const feed = await getArticleFeed();
   const items = typeof limit === "number" ? feed.items.slice(0, limit) : feed.items;
+  const anchoredCategories = new Set<string>();
 
   return (
     <section className="bg-white/80 py-10 sm:py-12 md:py-14" aria-labelledby="article-hub-heading">
@@ -45,83 +46,94 @@ export async function ArticleHubSection({ limit, showHeaderLink = true }: Props)
           ) : null}
         </div>
         <div className="mt-6 grid gap-3 md:grid-cols-3 md:gap-4">
-          {items.map((article) => (
-            <Card key={article.slug} className="flex h-full flex-col overflow-hidden p-0">
-              <ArticleVisual category={article.category} className="border-b border-border" />
-              <div className="flex flex-1 flex-col p-4 sm:p-5">
-                <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-muted">
-                  <span className="rounded-full bg-accent-muted/65 px-2.5 py-1 text-navy">
-                    <span className="lang-ja">{article.categoryLabel.ja}</span>
-                    <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
-                    <span lang="en" className="lang-en">{article.categoryLabel.en}</span>
-                  </span>
-                  <span>{article.readTime}</span>
-                  <span>{article.status === "published" ? "Published" : "Planned"}</span>
-                </div>
-                <h3 className="text-base font-bold leading-snug text-navy sm:text-lg">
-                  <span className="lang-ja block">{article.title.ja}</span>
-                  <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-navy-soft">
-                    {article.title.vi}
-                  </span>
-                  <span lang="en" className="lang-en block text-[0.82rem] font-semibold text-navy-soft">
-                    {article.title.en ?? article.title.vi}
-                  </span>
-                </h3>
-                <p className="lang-ja mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
-                  {article.excerpt.ja}
-                </p>
-                <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
-                  {article.excerpt.vi}
-                </p>
-                <p lang="en" className="lang-en mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
-                  {article.excerpt.en ?? article.excerpt.vi}
-                </p>
-                <div className="mt-auto pt-4">
-                  {article.status !== "published" ? (
-                    <span className="inline-flex min-h-10 w-full items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-center text-xs font-bold text-muted">
-                      <span className="lang-ja">準備中</span>
-                      <span lang="vi" className="lang-vi">Đang chuẩn bị</span>
-                      <span lang="en" className="lang-en">Coming soon</span>
+          {items.map((article) => {
+            const anchorId = anchoredCategories.has(article.category)
+              ? undefined
+              : `article-category-${article.category}`;
+            anchoredCategories.add(article.category);
+
+            return (
+              <Card
+                key={article.slug}
+                id={anchorId}
+                className="flex h-full scroll-mt-32 flex-col overflow-hidden p-0 sm:scroll-mt-36"
+              >
+                <ArticleVisual category={article.category} className="border-b border-border" />
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-muted">
+                    <span className="rounded-full bg-accent-muted/65 px-2.5 py-1 text-navy">
+                      <span className="lang-ja">{article.categoryLabel.ja}</span>
+                      <span lang="vi" className="lang-vi">{article.categoryLabel.vi}</span>
+                      <span lang="en" className="lang-en">{article.categoryLabel.en}</span>
                     </span>
-                  ) : article.url?.startsWith("/") ? (
-                    <TrackedLink
-                      href={article.url}
-                      eventName="article_click"
-                      eventPayload={{ slug: article.slug, source: "internal" }}
-                      className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
-                    >
-                      <span className="lang-ja">記事を読む</span>
-                      <span lang="vi" className="lang-vi">Đọc bài viết</span>
-                      <span lang="en" className="lang-en">Read article</span>
-                    </TrackedLink>
-                  ) : article.url ? (
-                    <TrackedLink
-                      href={article.url}
-                      external
-                      eventName="article_click"
-                      eventPayload={{ slug: article.slug, source: article.source ?? "external" }}
-                      className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
-                    >
-                      <span className="lang-ja">元の記事を読む</span>
-                      <span lang="vi" className="lang-vi">Đọc bài gốc</span>
-                      <span lang="en" className="lang-en">Read original</span>
-                    </TrackedLink>
-                  ) : (
-                    <TrackedLink
-                      href={`/articles/${article.slug}`}
-                      eventName="article_click"
-                      eventPayload={{ slug: article.slug, source: "fallback" }}
-                      className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
-                    >
-                      <span className="lang-ja">サイト内で読む</span>
-                      <span lang="vi" className="lang-vi">Đọc trong site</span>
-                      <span lang="en" className="lang-en">Read on site</span>
-                    </TrackedLink>
-                  )}
+                    <span>{article.readTime}</span>
+                    <span>{article.status === "published" ? "Published" : "Planned"}</span>
+                  </div>
+                  <h3 className="text-base font-bold leading-snug text-navy sm:text-lg">
+                    <span className="lang-ja block">{article.title.ja}</span>
+                    <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-navy-soft">
+                      {article.title.vi}
+                    </span>
+                    <span lang="en" className="lang-en block text-[0.82rem] font-semibold text-navy-soft">
+                      {article.title.en ?? article.title.vi}
+                    </span>
+                  </h3>
+                  <p className="lang-ja mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+                    {article.excerpt.ja}
+                  </p>
+                  <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+                    {article.excerpt.vi}
+                  </p>
+                  <p lang="en" className="lang-en mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+                    {article.excerpt.en ?? article.excerpt.vi}
+                  </p>
+                  <div className="mt-auto pt-4">
+                    {article.status !== "published" ? (
+                      <span className="inline-flex min-h-10 w-full items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-center text-xs font-bold text-muted">
+                        <span className="lang-ja">準備中</span>
+                        <span lang="vi" className="lang-vi">Đang chuẩn bị</span>
+                        <span lang="en" className="lang-en">Coming soon</span>
+                      </span>
+                    ) : article.url?.startsWith("/") ? (
+                      <TrackedLink
+                        href={article.url}
+                        eventName="article_click"
+                        eventPayload={{ slug: article.slug, source: "internal" }}
+                        className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
+                      >
+                        <span className="lang-ja">記事を読む</span>
+                        <span lang="vi" className="lang-vi">Đọc bài viết</span>
+                        <span lang="en" className="lang-en">Read article</span>
+                      </TrackedLink>
+                    ) : article.url ? (
+                      <TrackedLink
+                        href={article.url}
+                        external
+                        eventName="article_click"
+                        eventPayload={{ slug: article.slug, source: article.source ?? "external" }}
+                        className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
+                      >
+                        <span className="lang-ja">元の記事を読む</span>
+                        <span lang="vi" className="lang-vi">Đọc bài gốc</span>
+                        <span lang="en" className="lang-en">Read original</span>
+                      </TrackedLink>
+                    ) : (
+                      <TrackedLink
+                        href={`/articles/${article.slug}`}
+                        eventName="article_click"
+                        eventPayload={{ slug: article.slug, source: "fallback" }}
+                        className="inline-flex min-h-10 w-full items-center justify-center rounded-xl bg-navy px-3 py-2 text-center text-xs font-bold text-white hover:bg-navy-soft"
+                      >
+                        <span className="lang-ja">サイト内で読む</span>
+                        <span lang="vi" className="lang-vi">Đọc trong site</span>
+                        <span lang="en" className="lang-en">Read on site</span>
+                      </TrackedLink>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            );
+          })}
         </div>
         <p className="mt-5 text-xs leading-relaxed text-muted">
           <span className="lang-ja">

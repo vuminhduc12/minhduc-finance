@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArticleHubSection } from "@/components/sections/ArticleHubSection";
 import { ArticleVisual } from "@/components/sections/ArticleVisual";
 import { PageIntro } from "@/components/layout/PageIntro";
@@ -58,14 +59,15 @@ export default function ArticlesPage() {
               </span>
             </p>
           </div>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {articleCategories.map((category) => (
-              <div
+              <Link
                 key={category.id}
-                className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm"
+                href={`#article-category-${category.id}`}
+                className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-accent/45 hover:shadow-md"
               >
-                <ArticleVisual category={category.id} className="min-h-[6.5rem]" />
-                <div className="p-3 text-xs font-bold leading-snug text-navy">
+                <ArticleVisual category={category.id} />
+                <div className="p-3 text-xs font-bold leading-snug text-navy group-hover:text-accent-hover">
                   <span className="lang-ja">{category.label.ja}</span>
                   <span lang="vi" className="lang-vi">
                     {category.label.vi}
@@ -74,7 +76,7 @@ export default function ArticlesPage() {
                     {category.label.en}
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </Container>
