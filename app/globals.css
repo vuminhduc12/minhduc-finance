@@ -41,9 +41,15 @@ html {
   overflow-wrap: break-word;
 }
 
-html:not([data-lang="ja"]) .lang-ja,
-html:not([data-lang="vi"]) .lang-vi,
-html:not([data-lang="en"]) .lang-en {
+html[data-lang="bilingual"] .lang-en {
+  display: none !important;
+}
+
+html[data-lang="bilingual"] .nav-compact .lang-vi {
+  display: none !important;
+}
+
+html[data-lang="bilingual"] .header-compact .lang-vi {
   display: none !important;
 }
 
@@ -66,14 +72,16 @@ html[data-lang="en"] .lang-vi {
 
 html[data-lang="vi"] .lang-toggle-vi,
 html[data-lang="ja"] .lang-toggle-ja,
-html[data-lang="en"] .lang-toggle-en {
+html[data-lang="en"] .lang-toggle-en,
+html[data-lang="bilingual"] .lang-toggle-bilingual {
   background: var(--navy);
   color: #ffffff;
 }
 
 html[data-lang="vi"] .lang-toggle-vi:hover,
 html[data-lang="ja"] .lang-toggle-ja:hover,
-html[data-lang="en"] .lang-toggle-en:hover {
+html[data-lang="en"] .lang-toggle-en:hover,
+html[data-lang="bilingual"] .lang-toggle-bilingual:hover {
   background: var(--navy);
 }
 

@@ -286,6 +286,54 @@ export default function MaterialsPage() {
         </Container>
       </section>
 
+      <section className="border-b border-border bg-white/76 py-8 sm:py-10" aria-labelledby="materials-audience-heading">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">AUDIENCE</p>
+            <h2 id="materials-audience-heading" className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
+              <span className="lang-ja">対象者別に教材を選ぶ</span>
+              <span lang="vi" className="lang-vi">Chọn tài liệu theo đối tượng</span>
+              <span lang="en" className="lang-en">Choose materials by audience</span>
+            </h2>
+          </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {[
+              {
+                icon: "family" as const,
+                title: { ja: "ベトナム人向け", vi: "Cho người Việt", en: "For Vietnamese residents" },
+                body: { ja: "日本語＋ベトナム語で、日本の生活・制度・お金を学ぶ入口です。", vi: "Học đời sống, chế độ và tiền bạc ở Nhật bằng Nhật-Việt.", en: "Japanese and Vietnamese materials for life and money in Japan." },
+              },
+              {
+                icon: "visa" as const,
+                title: { ja: "外国人全般向け", vi: "Cho người nước ngoài nói chung", en: "For foreign residents" },
+                body: { ja: "英語版は、国籍を問わず使える基礎教材として整理します。", vi: "Bản tiếng Anh dùng như tài liệu nền tảng cho người nước ngoài.", en: "English editions are organized for foreign residents in general." },
+              },
+              {
+                icon: "bank" as const,
+                title: { ja: "日本人・企業向け", vi: "Cho người Nhật / doanh nghiệp", en: "For Japanese teams and companies" },
+                body: { ja: "研修・勉強会・社内共有に使える日本語版を準備します。", vi: "Chuẩn bị bản tiếng Nhật cho workshop và chia sẻ nội bộ.", en: "Japanese editions for training, workshops, and internal sharing." },
+              },
+            ].map((item) => (
+              <Card key={item.title.ja} className="flex min-w-0 gap-3">
+                <ResourceIcon variant={item.icon} />
+                <div className="min-w-0">
+                  <h3 className="text-sm font-bold text-navy sm:text-base">
+                    <span className="lang-ja">{item.title.ja}</span>
+                    <span lang="vi" className="lang-vi">{item.title.vi}</span>
+                    <span lang="en" className="lang-en">{item.title.en}</span>
+                  </h3>
+                  <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted sm:text-sm">
+                    <span className="lang-ja">{item.body.ja}</span>
+                    <span lang="vi" className="lang-vi">{item.body.vi}</span>
+                    <span lang="en" className="lang-en">{item.body.en}</span>
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="py-10 sm:py-12 md:py-14" aria-labelledby="materials-list-heading">
         <Container>
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.42fr)] lg:items-end">

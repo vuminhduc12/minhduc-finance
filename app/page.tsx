@@ -3,15 +3,11 @@ import { ArticleHubSection } from "@/components/sections/ArticleHubSection";
 import { DualCtaBand } from "@/components/sections/DualCtaBand";
 import { FaqList } from "@/components/sections/FaqList";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { FounderEdgeSection } from "@/components/sections/home/FounderEdgeSection";
 import { HeroHome } from "@/components/sections/home/HeroHome";
-import { LearningPathSection } from "@/components/sections/home/LearningPathSection";
 import { OperatorTeaserSection } from "@/components/sections/home/OperatorTeaserSection";
-import { PainPointsSection } from "@/components/sections/home/PainPointsSection";
 import { PdfPromoSection } from "@/components/sections/home/PdfPromoSection";
 import { QuickChoiceSection } from "@/components/sections/home/QuickChoiceSection";
 import { ScamCheckPromoSection } from "@/components/sections/home/ScamCheckPromoSection";
-import { TargetInsightSection } from "@/components/sections/home/TargetInsightSection";
 import { TrustRibbonSection } from "@/components/sections/home/TrustRibbonSection";
 import { WhatYouCanDoSection } from "@/components/sections/home/WhatYouCanDoSection";
 import { Container } from "@/components/ui/Container";
@@ -29,17 +25,13 @@ export default function HomePage() {
   return (
     <>
       <HeroHome />
-      <TrustRibbonSection />
-      <TargetInsightSection />
-      <QuickChoiceSection />
-      <FounderEdgeSection />
-      <PainPointsSection />
       <WhatYouCanDoSection />
-      <LearningPathSection />
-      <ArticleHubSection limit={3} />
-      <ScamCheckPromoSection />
+      <QuickChoiceSection />
       <PdfPromoSection />
+      <ScamCheckPromoSection />
+      <ArticleHubSection limit={3} />
       <OperatorTeaserSection />
+      <TrustRibbonSection />
       <section className="py-10 sm:py-12 md:py-14" aria-labelledby="home-faq-heading">
         <Container>
           <SectionHeading

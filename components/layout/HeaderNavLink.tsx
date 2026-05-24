@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SiteSectionIcon, type SiteSectionIconType } from "@/components/brand/SiteSectionIcon";
+import type { SiteSectionIconType } from "@/components/brand/SiteSectionIcon";
 
 type Props = {
   href: string;
@@ -12,7 +12,7 @@ type Props = {
   labelEn: string;
 };
 
-export function HeaderNavLink({ href, icon, labelJa, labelVi, labelEn }: Props) {
+export function HeaderNavLink({ href, labelJa, labelVi, labelEn }: Props) {
   const pathname = usePathname();
   const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -20,13 +20,12 @@ export function HeaderNavLink({ href, icon, labelJa, labelVi, labelEn }: Props) 
     <Link
       href={href}
       aria-current={isActive ? "page" : undefined}
-      className={`inline-flex min-h-9 items-center gap-2 rounded-xl px-3 py-2 text-left text-[0.84rem] font-semibold leading-tight transition-colors ${
+      className={`nav-compact inline-flex min-h-9 items-center rounded-xl px-2.5 py-2 text-left text-[0.82rem] font-semibold leading-tight transition-colors 2xl:px-3 ${
         isActive
           ? "bg-accent-muted text-navy ring-1 ring-accent/20"
           : "text-navy-soft hover:bg-accent-muted/60 hover:text-navy"
       }`}
     >
-      <SiteSectionIcon type={icon} size="xs" />
       <span className="min-w-0 whitespace-nowrap">
         <span className="lang-ja">{labelJa}</span>
         <span lang="vi" className="lang-vi">{labelVi}</span>

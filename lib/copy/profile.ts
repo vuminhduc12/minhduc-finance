@@ -37,30 +37,30 @@ export const profileCopy = {
   } satisfies Bi,
   hero: {
     role: {
-      ja: "Founder / SE / プロボクサー\n在日ベトナム人向け金融教育ライター\n詐欺予防・生活金融リテラシー発信",
-      vi: "Founder / Kỹ sư / Võ sĩ chuyên nghiệp\nNgười viết giáo dục tài chính cho người Việt tại Nhật\nChia sẻ về phòng tránh lừa đảo và kiến thức tiền bạc đời sống",
-      en: "Founder / Software Engineer / Professional boxer\nFinancial education writer for Vietnamese residents in Japan\nSharing scam prevention and daily money literacy",
+      ja: "在日ベトナム人向け金融教育ライター\n日本の制度・生活費・投資基礎を整理\n詐欺予防と公式情報確認を重視",
+      vi: "Người viết giáo dục tài chính cho người Việt tại Nhật\nSắp xếp chế độ Nhật, chi phí sống và kiến thức đầu tư cơ bản\nƯu tiên phòng tránh lừa đảo và kiểm tra nguồn chính thức",
+      en: "Financial education writer for Vietnamese residents in Japan\nExplaining Japanese systems, living costs, and investing basics\nFocused on scam prevention and official-source checks",
     } satisfies Bi,
     tagline: {
-      ja: "日本語とベトナム語の間にある情報差を減らし、将来は相談・研修・法人支援へ広げることを目指しています。",
-      vi: "Giảm khoảng cách thông tin giữa tiếng Nhật và tiếng Việt, hướng tới tư vấn, workshop và hỗ trợ tổ chức trong tương lai.",
+      ja: "日本語とベトナム語の間にある情報差を減らし、安心して確認できる学び場を作ります。",
+      vi: "Giảm khoảng cách thông tin giữa tiếng Nhật và tiếng Việt, tạo nơi học có thể kiểm tra an tâm.",
       en: "I aim to reduce the information gap between Japanese and Vietnamese, then expand into consultation, workshops, and organizational support.",
     } satisfies Bi,
     intro: [
       {
-        ja: "こんにちは、Vu Minh Ducです。日本で働くベトナムの方が、言葉の壁や情報差のせいで、お金の判断だけ不利になる状況を減らしたいと考えています。まずは教育メディアとして信頼を作り、3年後の法人化につながる事業へ育てていきます。",
-        vi: "Xin chào, tôi là Vu Minh Duc. Tôi muốn giảm tình trạng người Việt ở Nhật bị bất lợi trong quyết định tiền bạc chỉ vì rào cản ngôn ngữ và thiếu thông tin. Trước hết xây dựng niềm tin như một media giáo dục, hướng tới doanh nghiệp trong 3 năm tới.",
+        ja: "こんにちは、Vu Minh Ducです。日本で暮らすベトナムの方が、言葉の壁や情報差のせいで、お金の判断だけ不利にならないようにしたいと考えています。",
+        vi: "Xin chào, tôi là Vu Minh Duc. Tôi muốn người Việt sống ở Nhật không bị bất lợi trong quyết định tiền bạc chỉ vì rào cản ngôn ngữ hoặc thiếu thông tin.",
         en: "Hello, I am Vu Minh Duc. I want to reduce situations where Vietnamese people working in Japan are disadvantaged in money decisions because of language barriers or information gaps. I am first building trust as an educational media project, with the goal of growing it into a business over the next three years.",
       },
       {
-        ja: "投資信託（S&P500やオールカントリーなど）や資産運用の基礎、NISAの考え方、給与明細の読み方、税金、国際送金、投資と投機の違いまで、生活に近いテーマを中心に発信しています。",
-        vi: "Tôi chia sẻ các chủ đề gần với đời sống: quỹ đầu tư (S&P500, toàn cầu…), nền tảng quản lý tài sản, cách nghĩ về NISA, đọc phiếu lương, thuế, chuyển tiền quốc tế, khác nhau giữa đầu tư và đầu cơ.",
+        ja: "給与明細、税金、送金、NISA、投資信託、投資と投機の違いなど、生活に近いテーマを中心に発信しています。",
+        vi: "Tôi chia sẻ các chủ đề gần đời sống: phiếu lương, thuế, chuyển tiền, NISA, quỹ đầu tư và sự khác nhau giữa đầu tư và đầu cơ.",
         en: "I cover practical topics such as mutual funds, asset-building basics, NISA, pay slips, taxes, international remittance, and the difference between investing and speculation.",
       },
     ] as const satisfies readonly Bi[],
     trustBadges: [
-      { ja: "SE視点", vi: "Tư duy kỹ sư", en: "Engineer mindset" },
-      { ja: "プロボクサー", vi: "Võ sĩ chuyên nghiệp", en: "Professional boxer" },
+      { ja: "日本での生活経験", vi: "Kinh nghiệm sống tại Nhật", en: "Life experience in Japan" },
+      { ja: "金融・制度の基礎整理", vi: "Sắp xếp nền tảng tài chính/chế độ", en: "Financial and system basics" },
       { ja: "日越バイリンガル", vi: "Song ngữ Nhật-Việt", en: "JP/VN bilingual" },
     ] as const satisfies readonly Bi[],
     focus: [
@@ -149,8 +149,9 @@ export const profileCopy = {
       title: { ja: "なぜこの活動をしているか", vi: "Vì sao tôi làm việc này?", en: "Why I do this" },
       kind: "paragraphs",
       paragraphsJa: [
-        "現場のSEとして論理的に考えることと、プロボクサーとして身体を守り切りにいくことには、共通点があります。それは「準備」と「距離感」です。お金の話も同じで、準備不足のまま距離が近すぎると、冷静さを失いやすくなります。",
-        "コミュニティで助け合う文化は好きです。ただ、お金の判断まで感情だけに寄せてしまうと、傷つく人が出ます。だから学びの場では言葉を丁寧にし、確認できる導線（詐欺チェックなど）を先に置きたいと思っています。",
+        "日本で生活し、働く中で、制度や金融用語の分かりにくさを感じてきました。言葉が分からないだけで、必要以上に不安になる人を減らしたいです。",
+        "プロボクサーとして挑戦を続ける中で、経営者・投資家・日本で働く多くの方と出会いました。その経験から、お金の知識や判断力の重要性を強く感じるようになりました。",
+        "コミュニティで助け合う文化は大切です。ただ、お金の判断まで感情だけに寄せると、傷つく人が出ます。だから、送金や契約の前に確認できる導線を先に置きます。",
       ],
       summaryVi:
         "Từ kinh nghiệm kỹ sư (tư duy logic) và boxing (bảo vệ bản thân), tôi tin vào “chuẩn bị” và “khoảng cách hợp lý”. Chuyện tiền bạc cũng vậy: thiếu chuẩn bị + quá gần gũi dễ làm mất bình tĩnh. Tôi thích cộng đồng hỗ trợ nhau, nhưng nếu cảm xúc chi phối hết phần tiền, sẽ có người tổn thương — nên tôi đặt lời giải thích rõ ràng và lối “kiểm tra” lên trước.",

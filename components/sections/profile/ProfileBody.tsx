@@ -157,10 +157,10 @@ export function ProfileBody() {
                   className="object-cover object-[50%_50%]"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/92 via-navy/38 to-transparent px-4 pb-4 pt-20 sm:px-6 sm:pb-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-muted">Founder / SE / Boxer</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-muted">Financial Education / JP-VN</p>
                   <p className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl">Vu Minh Duc</p>
                   <p className="mt-1 max-w-lg text-xs font-medium leading-relaxed text-slate-200 sm:text-sm">
-                    Financial education writer for Vietnamese residents in Japan
+                    Money literacy and scam prevention for Vietnamese residents in Japan
                   </p>
                 </div>
               </div>
@@ -200,6 +200,23 @@ export function ProfileBody() {
               <p lang="en" className="lang-en mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.7rem] leading-relaxed text-navy-soft sm:text-[0.75rem]">
                 {hero.tagline.en}
               </p>
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-2">
+                {[
+                  { label: { ja: "対応言語", vi: "Ngôn ngữ", en: "Languages" }, value: "JP / VN / EN" },
+                  { label: { ja: "教材", vi: "Tài liệu", en: "Materials" }, value: "公開中" },
+                  { label: { ja: "相談", vi: "Tư vấn", en: "Support" }, value: "受付中" },
+                  { label: { ja: "実績", vi: "Thành tích", en: "Track record" }, value: "準備中" },
+                ].map((item) => (
+                  <div key={item.label.ja} className="rounded-2xl border border-border bg-white p-3 text-center">
+                    <p className="text-sm font-bold text-navy">{item.value}</p>
+                    <p className="mt-0.5 text-[0.68rem] font-bold text-muted">
+                      <span className="lang-ja">{item.label.ja}</span>
+                      <span lang="vi" className="lang-vi">{item.label.vi}</span>
+                      <span lang="en" className="lang-en">{item.label.en}</span>
+                    </p>
+                  </div>
+                ))}
               </div>
               <div className="mt-5 grid gap-2.5">
                 <ButtonLink
