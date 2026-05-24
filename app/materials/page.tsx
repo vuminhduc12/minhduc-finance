@@ -7,14 +7,13 @@ import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import {
   materialsCopy,
-  pdfExpansionSteps,
   pdfMaterials,
   type PdfMaterial,
 } from "@/lib/pdf-materials";
 
 const title = "PDF教材ライブラリ";
 const description =
-  "在日ベトナム人向けの無料PDF教材ライブラリ。詐欺予防、NISA、税金・年金・在留手続きの基礎を低コストに公開し、将来の販売・会員機能にも拡張できる教材ページです。";
+  "在日ベトナム人向けの無料PDF教材ライブラリ。詐欺予防、NISA、税金・年金・在留手続きの基礎をやさしい言葉で整理します。";
 
 export const metadata: Metadata = {
   title,
@@ -25,8 +24,8 @@ export const metadata: Metadata = {
 
 const accessLabels = {
   free: { ja: "無料", vi: "Miễn phí", en: "Free" },
-  paid: { ja: "有料予定", vi: "Dự kiến trả phí", en: "Paid later" },
-  member: { ja: "会員限定予定", vi: "Dự kiến hội viên", en: "Members later" },
+  paid: { ja: "準備中", vi: "Đang chuẩn bị", en: "Preparing" },
+  member: { ja: "準備中", vi: "Đang chuẩn bị", en: "Preparing" },
 } as const;
 
 const statusLabels = {
@@ -482,60 +481,26 @@ export default function MaterialsPage() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-white/78 py-10 sm:py-12 md:py-14" aria-labelledby="materials-growth-heading">
-        <Container>
-          <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
-              GROWTH DESIGN
-            </p>
-            <h2 id="materials-growth-heading" className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
-              <span className="lang-ja">無料から販売・会員へ拡張する設計</span>
-              <span lang="vi" className="lang-vi">Thiết kế mở rộng từ miễn phí sang trả phí/hội viên</span>
-              <span lang="en" className="lang-en">A design that can grow from free PDFs to paid and member access</span>
-            </h2>
-          </div>
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            {pdfExpansionSteps.map((step, index) => (
-              <Card key={step.title.ja} className="min-w-0">
-                <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-navy text-sm font-bold text-white">
-                  0{index + 1}
-                </span>
-                <h3 className="mt-4 text-base font-bold text-navy">
-                  <span className="lang-ja">{step.title.ja}</span>
-                  <span lang="vi" className="lang-vi">{step.title.vi}</span>
-                  <span lang="en" className="lang-en">{step.title.en}</span>
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  <span className="lang-ja">{step.body.ja}</span>
-                  <span lang="vi" className="lang-vi">{step.body.vi}</span>
-                  <span lang="en" className="lang-en">{step.body.en}</span>
-                </p>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="py-10 sm:py-12">
         <Container>
           <div className="rounded-3xl border border-border bg-navy p-5 text-white shadow-[0_18px_45px_rgba(11,31,58,0.14)] sm:p-7">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-muted">
-              STORAGE RULE
+              IMPORTANT
             </p>
             <h2 className="mt-2 text-xl font-bold sm:text-2xl">
-              <span className="lang-ja">無料PDFだけ public/pdfs に置く</span>
-              <span lang="vi" className="lang-vi">Chỉ đặt PDF miễn phí trong public/pdfs</span>
-              <span lang="en" className="lang-en">Place only free PDFs in public/pdfs</span>
+              <span className="lang-ja">教材は、判断のきっかけとして使ってください</span>
+              <span lang="vi" className="lang-vi">Hãy dùng tài liệu như bước đầu để tự kiểm tra</span>
+              <span lang="en" className="lang-en">Use these materials as a starting point for checking</span>
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-200">
               <span className="lang-ja">
-                public配下のPDFはURLを知っていれば誰でも読めます。有料・会員限定にする教材は、将来Supabase Storage、S3、Cloudflare R2などの保護ストレージへ移し、ログイン・購入履歴・期限付きURLで管理します。
+                PDFは教育・情報提供を目的にしています。税金、在留資格、契約、投資判断などで迷う場合は、公式情報や専門家にも確認してください。
               </span>
               <span lang="vi" className="lang-vi">
-                PDF trong public có thể đọc nếu biết URL. Tài liệu trả phí hoặc hội viên nên chuyển sang storage được bảo vệ như Supabase Storage, S3 hoặc Cloudflare R2 và quản lý bằng đăng nhập, lịch sử mua, URL có thời hạn.
+                PDF chỉ nhằm mục đích giáo dục và cung cấp thông tin. Nếu bạn phân vân về thuế, tư cách lưu trú, hợp đồng hoặc đầu tư, hãy kiểm tra thêm nguồn chính thức hoặc chuyên gia.
               </span>
               <span lang="en" className="lang-en">
-                PDFs under public can be read by anyone who knows the URL. Paid or member-only materials should later move to protected storage such as Supabase Storage, S3, or Cloudflare R2, with login, purchase history, and expiring URLs.
+                PDFs are for education and information only. For taxes, residence status, contracts, or investment decisions, also check official sources or a qualified professional.
               </span>
             </p>
           </div>

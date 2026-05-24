@@ -19,9 +19,9 @@ export type PdfMaterial = {
 
 export const materialsCopy = {
   pageIntro: {
-    ja: "まずは無料PDFから始め、反応がある教材だけ将来の販売・会員機能へ拡張します。",
-    vi: "Bắt đầu bằng PDF miễn phí, sau đó mở rộng những tài liệu có nhu cầu sang bán hàng hoặc hội viên.",
-    en: "Start with free PDFs, then expand only the materials with real demand into paid or member-only content later.",
+    ja: "日本で暮らす中で必要になりやすい、お金・制度・詐欺予防の基礎をPDFで確認できます。",
+    vi: "Bạn có thể kiểm tra kiến thức cơ bản về tiền bạc, chế độ và phòng tránh lừa đảo khi sống ở Nhật.",
+    en: "Check basic PDF materials on money, Japanese systems, and scam prevention for life in Japan.",
   } satisfies Bi,
   title: {
     ja: "PDF教材ライブラリ",
@@ -29,9 +29,9 @@ export const materialsCopy = {
     en: "PDF Materials Library",
   } satisfies Bi,
   lead: {
-    ja: "PDF本体は低コストに配信し、教材情報はデータで管理します。将来は同じデータを使ってStripe決済、会員限定、購入履歴に接続できます。",
-    vi: "PDF được phân phối chi phí thấp, còn thông tin tài liệu được quản lý bằng dữ liệu. Sau này có thể nối cùng dữ liệu này với Stripe, hội viên và lịch sử mua.",
-    en: "PDF files are delivered at low cost, while material information is managed as data. Later, the same data can connect to Stripe payments, member-only access, and purchase history.",
+    ja: "給与、税金、送金、NISA、詐欺予防などをテーマ別に整理しています。まずは自分に近いテーマから読んでください。",
+    vi: "Tài liệu được sắp xếp theo chủ đề như lương, thuế, chuyển tiền, NISA và phòng tránh lừa đảo. Hãy bắt đầu từ chủ đề gần với bạn.",
+    en: "Materials are organized by themes such as salary, taxes, remittance, NISA, and scam prevention. Start with the topic closest to your situation.",
   } satisfies Bi,
 } as const;
 
@@ -299,30 +299,3 @@ export const pdfMaterials = [
     tags: [{ ja: "帰国", vi: "Về nước", en: "Returning home" }, { ja: "老後", vi: "Tuổi già", en: "Retirement" }],
   }),
 ] satisfies readonly PdfMaterial[];
-
-export const pdfExpansionSteps = [
-  {
-    title: { ja: "今: 無料PDF", vi: "Hiện tại: PDF miễn phí", en: "Now: Free PDFs" },
-    body: {
-      ja: "PDFを public/pdfs に置くだけで公開できます。サーバー代やDBは不要です。",
-      vi: "Chỉ cần đặt PDF vào public/pdfs là có thể công khai. Không cần server riêng hay database.",
-      en: "PDFs can be published simply by placing them in public/pdfs. No separate server or database is needed.",
-    },
-  },
-  {
-    title: { ja: "次: 反応を見る", vi: "Tiếp theo: đo phản ứng", en: "Next: Measure response" },
-    body: {
-      ja: "よく読まれるテーマを見て、有料教材やLINE相談の候補を絞ります。",
-      vi: "Xem chủ đề nào được đọc nhiều để chọn tài liệu trả phí hoặc tư vấn LINE.",
-      en: "Use reading behavior to identify which topics are candidates for paid materials or LINE consultation.",
-    },
-  },
-  {
-    title: { ja: "将来: 販売・会員", vi: "Tương lai: bán hàng/hội viên", en: "Future: Paid and member access" },
-    body: {
-      ja: "PDFをSupabase StorageやS3/R2へ移し、Stripe決済・ログイン・期限付きURLで保護します。",
-      vi: "Chuyển PDF sang Supabase Storage hoặc S3/R2, bảo vệ bằng Stripe, đăng nhập và URL có thời hạn.",
-      en: "Move PDFs to protected storage such as Supabase Storage, S3, or R2, then protect access with Stripe, login, and expiring URLs.",
-    },
-  },
-] as const;
