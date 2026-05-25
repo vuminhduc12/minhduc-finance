@@ -446,3 +446,201 @@ export const homeCopy = {
     } satisfies Bi,
   },
 } as const;
+
+export const homeBrandCopy = {
+  hero: {
+    badge: {
+      ja: "在日ベトナム人向けの金融教育サイト",
+      vi: "Trang học tiền bạc cho người Việt tại Nhật",
+      en: "Financial education for Vietnamese residents in Japan",
+    } satisfies Bi,
+    title: {
+      ja: "日本で働くベトナム人のための、お金と詐欺予防の学び場",
+      vi: "Nơi học về tiền bạc và phòng tránh lừa đảo cho người Việt làm việc tại Nhật",
+      en: "A learning hub for money, investing, and scam prevention in Japan",
+    } satisfies Bi,
+    lead: {
+      ja: "給与・税金・NISA・送金・保険・投資の基本を、やさしい日本語とベトナム語で整理します。金融商品の販売ではなく、自分で判断するための知識と安全確認をサポートします。",
+      vi: "Sắp xếp kiến thức cơ bản về lương, thuế, NISA, chuyển tiền, bảo hiểm và đầu tư bằng Nhật-Việt dễ hiểu. Không bán sản phẩm tài chính; trang này hỗ trợ bạn tự kiểm tra và tự quyết định.",
+      en: "Simple guidance on salary, taxes, remittances, NISA, investing, and scam prevention for life in Japan.",
+    } satisfies Bi,
+    lineCta: {
+      ja: "LINEで無料チェックする",
+      vi: "Kiểm tra miễn phí trên LINE",
+      en: "Free LINE check",
+    } satisfies Bi,
+    pdfCta: {
+      ja: "無料PDFで学ぶ",
+      vi: "Tài liệu PDF miễn phí",
+      en: "Free PDF materials",
+    } satisfies Bi,
+    profileCta: {
+      ja: "プロフィールを見る",
+      vi: "Xem hồ sơ",
+      en: "View profile",
+    } satisfies Bi,
+    note: {
+      ja: "金融商品の販売ではなく、教育・詐欺予防・公式情報確認を目的にしています。",
+      vi: "Không bán sản phẩm tài chính. Trang này ưu tiên giáo dục, phòng tránh lừa đảo và kiểm tra nguồn chính thức.",
+      en: "Education only. No product sales or guaranteed returns.",
+    } satisfies Bi,
+    focusHeading: {
+      ja: "まず確認できる5つのテーマ",
+      vi: "5 chủ đề có thể kiểm tra trước",
+      en: "Five topics to check first",
+    } satisfies Bi,
+    focusItems: [
+      { icon: "budget", label: { ja: "給与・生活費", vi: "Lương / chi phí", en: "Salary and living costs" } },
+      { icon: "tax", label: { ja: "税金・制度", vi: "Thuế / chế độ", en: "Taxes and systems" } },
+      { icon: "bank", label: { ja: "送金", vi: "Chuyển tiền", en: "Remittance" } },
+      { icon: "investment", label: { ja: "NISA・投資", vi: "NISA / đầu tư", en: "NISA and investing" } },
+      { icon: "scam", label: { ja: "詐欺予防", vi: "Tránh lừa đảo", en: "Scam prevention" } },
+    ] as const,
+    pauseTitle: {
+      ja: "迷ったら、送金・契約の前に止まる。",
+      vi: "Nếu phân vân, hãy dừng trước khi chuyển tiền hoặc ký.",
+      en: "If unsure, pause before payment or signing.",
+    } satisfies Bi,
+    pauseBody: {
+      ja: "LINEチェック、PDF、公式情報の順で確認できます。",
+      vi: "Có thể kiểm tra qua LINE, PDF và nguồn chính thức.",
+      en: "Use the LINE check, PDFs, and official sources.",
+    } satisfies Bi,
+    stats: [
+      { label: { ja: "対応言語", vi: "Ngôn ngữ", en: "Languages" }, value: "JP / VN / EN" },
+      { label: { ja: "教材", vi: "Tài liệu", en: "Materials" }, value: "PDF" },
+    ] as const,
+  },
+  services: {
+    heading: {
+      ja: "このサイトでできること",
+      vi: "Bạn có thể làm gì trên trang này",
+      en: "What this site helps you do",
+    } satisfies Bi,
+    subtitle: {
+      ja: "金融教育・詐欺予防・学習コミュニティの3つに絞って、安心して確認できる入口を作ります。",
+      vi: "Tập trung vào giáo dục tài chính, phòng tránh lừa đảo và học tập cộng đồng.",
+      en: "Focused on financial education, scam prevention, and community learning.",
+    } satisfies Bi,
+    items: [
+      {
+        icon: "investment",
+        label: "SERVICE 01",
+        title: { ja: "Financial Education", vi: "Giáo dục tài chính", en: "Financial Education" },
+        body: {
+          ja: "給与明細、税金、社会保険、NISA、家計管理、送金などを、生活に近い言葉でやさしく解説します。",
+          vi: "Giải thích dễ hiểu về phiếu lương, thuế, bảo hiểm xã hội, NISA, quản lý chi tiêu và chuyển tiền.",
+          en: "Simple explanations of pay slips, taxes, social insurance, NISA, budgeting, and remittances.",
+        },
+      },
+      {
+        icon: "scam",
+        label: "SERVICE 02",
+        title: { ja: "Scam & Risk Check", vi: "Kiểm tra rủi ro lừa đảo", en: "Scam & Risk Check" },
+        body: {
+          ja: "SNS、知人紹介、投資話、送金依頼などで迷ったときに、危険サインを一度整理します。",
+          vi: "Khi phân vân về SNS, lời giới thiệu, lời mời đầu tư hoặc yêu cầu chuyển tiền, hãy kiểm tra dấu hiệu nguy hiểm.",
+          en: "Check warning signs around social media, referrals, investment offers, and remittance requests.",
+        },
+      },
+      {
+        icon: "family",
+        label: "SERVICE 03",
+        title: { ja: "Community & Learning", vi: "Cộng đồng và học tập", en: "Community & Learning" },
+        body: {
+          ja: "無料PDF、記事、LINE確認を入口に、今後の勉強会やコミュニティ学習につなげます。",
+          vi: "Bắt đầu từ PDF miễn phí, bài viết và LINE check, sau đó kết nối đến học nhóm và cộng đồng.",
+          en: "Start with free PDFs, articles, and LINE checks, then connect to future workshops and community learning.",
+        },
+      },
+    ] as const,
+  },
+  scamCta: {
+    kicker: { ja: "LINE CHECK", vi: "KIỂM TRA LINE", en: "LINE CHECK" } satisfies Bi,
+    title: {
+      ja: "怪しい話を受けたら、送金・契約の前に一度チェック",
+      vi: "Nếu nhận lời mời đáng ngờ, hãy kiểm tra trước khi chuyển tiền hoặc ký",
+      en: "If something feels suspicious, check before sending money or signing",
+    } satisfies Bi,
+    subtitle: {
+      ja: "投資、送金、紹介ビジネス、保険、NISAなどで迷ったときに、まず確認できる入口です。",
+      vi: "Khi phân vân về đầu tư, chuyển tiền, giới thiệu kinh doanh, bảo hiểm hoặc NISA, đây là nơi để kiểm tra trước.",
+      en: "A first checkpoint when you are unsure about investing, remittances, referrals, insurance, or NISA.",
+    } satisfies Bi,
+    bullets: [
+      { ja: "SNSで投資話を見た", vi: "Thấy lời mời đầu tư trên SNS", en: "You saw an investment offer on social media" },
+      { ja: "知人から紹介された", vi: "Được người quen giới thiệu", en: "Someone you know introduced it" },
+      { ja: "送金や契約を急がされている", vi: "Bị thúc chuyển tiền hoặc ký hợp đồng", en: "You are being rushed to send money or sign" },
+    ] as const,
+    lineCta: { ja: "LINEで確認する", vi: "Kiểm tra trên LINE", en: "Check on LINE" } satisfies Bi,
+    flowCta: { ja: "流れを見る", vi: "Xem cách kiểm tra", en: "View the flow" } satisfies Bi,
+    asideTitle: {
+      ja: "急がされる話ほど、一度止まる",
+      vi: "Càng bị thúc giục, càng cần dừng lại",
+      en: "The more rushed it feels, the more you should pause",
+    } satisfies Bi,
+    asideBody: {
+      ja: "チェックは正解を断定するものではありません。危険サイン、足りない情報、公式情報や専門家に確認すべき点を整理します。",
+      vi: "Việc kiểm tra không khẳng định đúng sai. Nó giúp bạn sắp xếp dấu hiệu nguy hiểm, thông tin còn thiếu và điểm cần hỏi nguồn chính thức hoặc chuyên gia.",
+      en: "The check does not decide what is correct. It organizes warning signs, missing information, and points to verify with official sources or professionals.",
+    } satisfies Bi,
+    pageLink: { ja: "詐欺チェックのページ", vi: "trang kiểm tra lừa đảo", en: "scam check page" } satisfies Bi,
+  },
+  pdfGuide: {
+    kicker: { ja: "FREE PDF", vi: "PDF MIỄN PHÍ", en: "FREE PDF" } satisfies Bi,
+    title: {
+      ja: "日本で損しないお金の基本ガイド",
+      vi: "Guide cơ bản để không bị thiệt về tiền khi sống ở Nhật",
+      en: "A basic money guide for life in Japan",
+    } satisfies Bi,
+    subtitle: {
+      ja: "日本 お金 勉強 ベトナム人、給与明細 税金 社会保険、NISA ベトナム人 日本、詐欺予防 日本 ベトナム人に関心がある方の入口です。",
+      vi: "Dành cho người Việt muốn học về tiền bạc, phiếu lương, thuế, bảo hiểm xã hội, NISA và phòng tránh lừa đảo ở Nhật.",
+      en: "For Vietnamese residents learning about money, pay slips, taxes, social insurance, NISA, and scam prevention in Japan.",
+    } satisfies Bi,
+    cardTitle: {
+      ja: "ガイドで確認できる内容",
+      vi: "Nội dung có thể kiểm tra trong guide",
+      en: "Topics in the guide",
+    } satisfies Bi,
+    themes: [
+      { icon: "budget", title: { ja: "給与明細の見方", vi: "Cách đọc phiếu lương", en: "How to read a pay slip" } },
+      { icon: "tax", title: { ja: "税金・社会保険の基本", vi: "Thuế và bảo hiểm xã hội cơ bản", en: "Taxes and social insurance basics" } },
+      { icon: "investment", title: { ja: "NISAの注意点", vi: "Điểm cần chú ý về NISA", en: "NISA points to check" } },
+      { icon: "bank", title: { ja: "送金前チェック", vi: "Kiểm tra trước khi chuyển tiền", en: "Before remitting money" } },
+      { icon: "scam", title: { ja: "怪しい投資話の見分け方", vi: "Cách nhận biết lời mời đầu tư đáng ngờ", en: "How to spot suspicious offers" } },
+    ] as const,
+    cta: { ja: "無料PDFを見る", vi: "Xem PDF miễn phí", en: "View free PDFs" } satisfies Bi,
+    note: {
+      ja: "※ 教育・情報提供を目的とした資料です。個別判断は公式情報や専門家にも確認してください。",
+      vi: "※ Tài liệu chỉ nhằm mục đích giáo dục và cung cấp thông tin. Hãy kiểm tra thêm nguồn chính thức hoặc chuyên gia khi cần.",
+      en: "Educational information only. Check official sources or professionals when needed.",
+    } satisfies Bi,
+  },
+  founder: {
+    heading: { ja: "Vu Minh Ducのストーリー", vi: "Câu chuyện của Vu Minh Duc", en: "Founder Story" } satisfies Bi,
+    body: {
+      ja: "ベトナム出身、日本在住。ITエンジニアとして働きながら、金融・FPの知識を学び、プロボクサーとしても挑戦を続けています。",
+      vi: "Sinh ra ở Việt Nam, hiện sống tại Nhật. Vừa làm kỹ sư IT, vừa học kiến thức tài chính/FP và tiếp tục thử thách với boxing chuyên nghiệp.",
+      en: "Born in Vietnam and living in Japan. Working as an IT engineer while learning financial planning and continuing as a professional boxer.",
+    } satisfies Bi,
+    reason: {
+      ja: "自分自身も、日本の制度・言葉・お金の難しさを経験してきました。だからこそ、在日ベトナム人が損をしないための学び場を作りたいと考えています。",
+      vi: "Bản thân tôi cũng từng thấy khó với chế độ, ngôn ngữ và chuyện tiền bạc ở Nhật. Vì vậy tôi muốn tạo nơi học để người Việt tại Nhật không bị thiệt.",
+      en: "I have also experienced the difficulty of Japanese systems, language, and money matters. That is why I want to build a learning place for Vietnamese residents in Japan.",
+    } satisfies Bi,
+  },
+  boxing: {
+    kicker: "Founder Story",
+    title: {
+      ja: "リングで学んだ、距離感・継続力・冷静な判断",
+      vi: "Điều học được trên võ đài: khoảng cách, kiên trì và bình tĩnh",
+      en: "Distance, persistence, and calm judgment learned in the ring",
+    } satisfies Bi,
+    body: {
+      ja: "プロボクシングで学んだのは、焦らず距離を取り、相手を見る力です。お金や投資の判断も同じで、急がされる話ほど一度立ち止まることが大切です。",
+      vi: "Boxing chuyên nghiệp giúp tôi học cách giữ khoảng cách, quan sát và không vội. Quyết định về tiền bạc và đầu tư cũng vậy: càng bị thúc giục, càng cần dừng lại.",
+      en: "Professional boxing taught me to keep distance, observe, and stay calm. Money and investment decisions are similar: the more rushed an offer feels, the more important it is to pause.",
+    } satisfies Bi,
+  },
+} as const;

@@ -6,7 +6,7 @@ import { legalVi } from "@/lib/copy/legal-vi";
 
 const title = "プライバシーポリシー";
 const description =
-  "Minh Duc Financeのプライバシーポリシー。お問い合わせ、LINE、note、PDF販売、解析ツールなど外部サービス利用時の情報の扱いについて説明します。";
+  "Minh Duc Financeのプライバシーポリシー。お問い合わせ、LINE、note、PDF教材、解析ツールなど外部サービス利用時の情報の扱いについて説明します。";
 
 export const metadata: Metadata = {
   title,
@@ -32,14 +32,14 @@ export default function PrivacyPage() {
         </h1>
         <div lang="en" className="lang-en">
           <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm">
-            Minh Duc Finance pays attention to how information obtained through this site is handled. When using external services such as LINE, note, PDF sales, payment, or analytics, please also check each service's terms and privacy policy.
+            Minh Duc Finance pays attention to how information obtained through this site is handled. When using external services such as LINE, note, PDF materials, email, or analytics, please also check each service's terms and privacy policy.
           </p>
 
           <h2 className="mt-10 text-xl font-bold text-navy">1. Information collected</h2>
           <ul className="mt-3 list-inside list-disc space-y-2 text-sm text-muted">
             <li>Information you enter when contacting us, such as name, email address, affiliation, and inquiry details</li>
             <li>Usage information based on analytics, which may include information through cookies</li>
-            <li>Information collected by external services such as LINE, social media, or sales platforms</li>
+            <li>Information collected by external services such as LINE, social media, email, or analytics tools</li>
           </ul>
 
           <h2 className="mt-10 text-xl font-bold text-navy">2. Purpose of use</h2>
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
 
           <h2 className="mt-10 text-xl font-bold text-navy">3. Third-party provision</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            We do not provide personal information to third parties without your consent, except as required by law. However, providers of external services such as LINE, note, payment, analytics, and email may collect information as necessary to operate their services.
+            We do not provide personal information to third parties without your consent, except as required by law. However, providers of external services such as LINE, note, analytics, and email may collect information as necessary to operate their services.
           </p>
 
           <h2 className="mt-10 text-xl font-bold text-navy">4. Disclosure, correction, and deletion</h2>
@@ -70,14 +70,14 @@ export default function PrivacyPage() {
         </div>
         <div className="lang-ja">
           <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted sm:mt-4 sm:text-sm">
-            Minh Duc Finance（以下「運営者」）は、本サイトを通じて取得する情報の取り扱いに注意を払います。LINE、note、PDF販売、決済、アクセス解析など外部サービスを利用する場合は、各サービスの規約・プライバシーポリシーもあわせてご確認ください。
+            Minh Duc Finance（以下「運営者」）は、本サイトを通じて取得する情報の取り扱いに注意を払います。LINE、note、PDF教材、メール、アクセス解析など外部サービスを利用する場合は、各サービスの規約・プライバシーポリシーもあわせてご確認ください。
           </p>
 
           <h2 className="mt-10 text-xl font-bold text-navy">1. 取得する情報</h2>
           <ul className="mt-3 list-inside list-disc space-y-2 text-sm text-muted">
             <li>お問い合わせ時にご本人が入力した情報（氏名、メールアドレス、所属、相談内容など）</li>
             <li>アクセス解析に基づく利用状況（Cookie等を通じた情報を含む場合があります）</li>
-            <li>外部サービス（LINE、SNS、販売プラットフォーム）側で取得される情報</li>
+            <li>外部サービス（LINE、SNS、メール、解析ツール）側で取得される情報</li>
           </ul>
 
           <h2 className="mt-10 text-xl font-bold text-navy">2. 利用目的</h2>
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
 
           <h2 className="mt-10 text-xl font-bold text-navy">3. 第三者提供</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            法令に基づく場合を除き、ご本人の同意なく第三者に個人情報を提供しません。ただし、LINE、note、決済、解析ツール、メールなど利用する外部サービスの提供者が、各サービスの運営に必要な範囲で情報を取得する場合があります。
+            法令に基づく場合を除き、ご本人の同意なく第三者に個人情報を提供しません。ただし、LINE、note、解析ツール、メールなど利用する外部サービスの提供者が、各サービスの運営に必要な範囲で情報を取得する場合があります。
           </p>
 
           <h2 className="mt-10 text-xl font-bold text-navy">4. 開示・訂正・削除</h2>

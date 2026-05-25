@@ -240,7 +240,7 @@ export const scamCheckCopy = {
       en: "Once you have paused, gradually organize the meaning of important terms. PDFs are reading materials for that purpose.",
     } satisfies Bi,
     body: {
-      ja: "制度の全体像や生活に近いテーマから入る想定です。内容・価格は販売ページの記載をご確認ください。",
+      ja: "制度の全体像や生活に近いテーマから入る想定です。内容はPDF教材ページで確認してください。",
       vi: "Dự kiến bắt đầu từ bức tranh tổng thể và các chủ đề gần với đời sống. Nội dung và giá xin xem đúng trang bán.",
       en: "The materials start from the overall picture of systems and practical daily-life topics. Please check the sales page for content and pricing.",
     } satisfies Bi,

@@ -52,7 +52,7 @@ export default function DisclaimerPage() {
 
           <h2 className="mt-10 text-xl font-bold text-navy">4. External services</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            This site may link to external services such as LINE, note, payment services, and file delivery. Availability, security, and terms of use for external services are the responsibility of each provider.
+            This site may link to external services such as LINE, note, email, and file delivery. Availability, security, and terms of use for external services are the responsibility of each provider.
           </p>
 
           <h2 className="mt-10 text-xl font-bold text-navy">5. Damages</h2>
@@ -79,7 +79,7 @@ export default function DisclaimerPage() {
 
           <h2 className="mt-10 text-xl font-bold text-navy">4. 外部サービス</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            LINE、note、決済、ファイル配布など外部サービスへリンクする場合があります。外部サービスの可用性、セキュリティ、利用規約は各提供者の責任範囲です。
+            LINE、note、メール、ファイル配布など外部サービスへリンクする場合があります。外部サービスの可用性、セキュリティ、利用規約は各提供者の責任範囲です。
           </p>
 
           <h2 className="mt-10 text-xl font-bold text-navy">5. 損害について</h2>

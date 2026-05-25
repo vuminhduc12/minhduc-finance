@@ -3,12 +3,13 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Container } from "@/components/ui/Container";
+import { ResourceIcon } from "@/components/sections/ResourceHubVisual";
 import { LINE_BOT_URL } from "@/lib/constants";
-import { cta } from "@/lib/copy/cta";
-import { homeCopy } from "@/lib/copy/home";
+import { homeBrandCopy } from "@/lib/copy/home";
 
 export function ScamCheckPromoSection() {
-  const { scamPromo } = homeCopy;
+  const { scamCta } = homeBrandCopy;
+
   return (
     <section className="py-10 sm:py-12 md:py-14" aria-labelledby="scam-promo-heading">
       <Container>
@@ -16,20 +17,23 @@ export function ScamCheckPromoSection() {
           <div>
             <SectionHeading
               id="scam-promo-heading"
-              kickerBi={scamPromo.kicker}
-              titleBi={scamPromo.title}
-              subtitleBi={scamPromo.subtitle}
+              kickerBi={scamCta.kicker}
+              titleBi={scamCta.title}
+              subtitleBi={scamCta.subtitle}
             />
             <ul className="mb-5 space-y-3 text-[0.8125rem] leading-relaxed text-muted sm:mb-6 sm:text-sm">
-              {scamPromo.bullets.map((b) => (
+              {scamCta.bullets.map((b) => (
                 <li key={b.ja} className="flex gap-2">
                   <span className="text-accent" aria-hidden>
                     ・
                   </span>
                   <span>
-                    <span className="block text-foreground">{b.ja}</span>
-                    <span lang="vi" className="mt-0.5 block text-[0.75rem] text-navy-soft sm:text-[0.8125rem]">
+                    <span className="lang-ja block text-foreground">{b.ja}</span>
+                    <span lang="vi" className="lang-vi mt-0.5 block text-[0.75rem] text-navy-soft sm:text-[0.8125rem]">
                       {b.vi}
+                    </span>
+                    <span lang="en" className="lang-en mt-0.5 block text-[0.75rem] text-navy-soft sm:text-[0.8125rem]">
+                      {b.en}
                     </span>
                   </span>
                 </li>
@@ -40,48 +44,52 @@ export function ScamCheckPromoSection() {
                 href={LINE_BOT_URL}
                 external
                 className="sm:w-auto"
-                aria-label={`${cta.lineCheckCurrent.ja} ${cta.lineCheckCurrent.vi}`}
-                subLabelVi={cta.lineCheckCurrent.vi}
+                aria-label={`${scamCta.lineCta.ja} ${scamCta.lineCta.vi}`}
+                subLabelVi={scamCta.lineCta.vi}
+                subLabelEn={scamCta.lineCta.en}
               >
-                {cta.lineCheckCurrent.ja}
+                {scamCta.lineCta.ja}
               </ButtonLink>
               <ButtonLink
                 href="/scam-check"
                 variant="secondary"
                 className="sm:w-auto"
-                aria-label={`${cta.readMechanismFirst.ja} ${cta.readMechanismFirst.vi}`}
-                subLabelVi={cta.readMechanismFirst.vi}
+                aria-label={`${scamCta.flowCta.ja} ${scamCta.flowCta.vi}`}
+                subLabelVi={scamCta.flowCta.vi}
+                subLabelEn={scamCta.flowCta.en}
               >
-                {cta.readMechanismFirst.ja}
+                {scamCta.flowCta.ja}
               </ButtonLink>
             </div>
           </div>
           <Card className="border-accent-muted bg-gradient-to-br from-white to-accent-muted/40">
+            <ResourceIcon variant="scam" />
             <h3 className="text-base font-bold text-navy sm:text-lg">
-              <span className="block">{scamPromo.asideTitle.ja}</span>
-              <span lang="vi" className="mt-1 block text-sm font-semibold text-navy-soft">
-                {scamPromo.asideTitle.vi}
+              <span className="lang-ja mt-3 block">{scamCta.asideTitle.ja}</span>
+              <span lang="vi" className="lang-vi mt-1 block text-sm font-semibold text-navy-soft">
+                {scamCta.asideTitle.vi}
+              </span>
+              <span lang="en" className="lang-en mt-1 block text-sm font-semibold text-navy-soft">
+                {scamCta.asideTitle.en}
               </span>
             </h3>
             <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted sm:mt-3 sm:text-sm">
-              {scamPromo.asideBeforeLink.ja}
+              <span className="lang-ja">{scamCta.asideBody.ja} 詳しくは</span>
               <Link
                 href="/scam-check"
                 className="font-medium text-accent underline-offset-2 hover:underline"
               >
-                {scamPromo.asideLinkLabel.ja}
+                <span className="lang-ja">{scamCta.pageLink.ja}</span>
+                <span lang="vi" className="lang-vi">{scamCta.pageLink.vi}</span>
+                <span lang="en" className="lang-en">{scamCta.pageLink.en}</span>
               </Link>
-              {scamPromo.asideAfterLink.ja}
+              <span className="lang-ja">をご覧ください。</span>
             </p>
-            <p lang="vi" className="mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.75rem] leading-relaxed sm:text-[0.8125rem]">
-              {scamPromo.asideBeforeLink.vi}
-              <Link
-                href="/scam-check"
-                className="font-medium text-accent underline-offset-2 hover:underline"
-              >
-                {scamPromo.asideLinkLabel.vi}
-              </Link>
-              {scamPromo.asideAfterLink.vi}
+            <p lang="vi" className="lang-vi mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.75rem] leading-relaxed sm:text-[0.8125rem]">
+              {scamCta.asideBody.vi}
+            </p>
+            <p lang="en" className="lang-en mt-2 border-l-2 border-accent/30 pl-2.5 text-[0.75rem] leading-relaxed sm:text-[0.8125rem]">
+              {scamCta.asideBody.en}
             </p>
           </Card>
         </div>
