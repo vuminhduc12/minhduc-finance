@@ -630,6 +630,39 @@ export const homeBrandCopy = {
       en: "I have also experienced the difficulty of Japanese systems, language, and money matters. That is why I want to build a learning place for Vietnamese residents in Japan.",
     } satisfies Bi,
   },
+  digitalSupport: {
+    kicker: "Digital Support for Challengers",
+    title: {
+      ja: "挑戦する人の想いを、伝わる形へ。",
+      vi: "Biến hành trình của bạn thành giá trị được truyền tải",
+      en: "Turning Your Vision Into a Digital Presence",
+    } satisfies Bi,
+    body: {
+      ja: "ホームページ制作、SNS導線設計、多言語対応など、個人・小規模事業向けに、“想いが伝わる発信”をサポートします。日本で挑戦する人が、自分の価値を正しく伝えられるよう、シンプルで信頼感のあるデジタル発信を一緒に作ります。",
+      vi: "Hỗ trợ thiết kế website, định hướng SNS, và đa ngôn ngữ dành cho cá nhân và doanh nghiệp nhỏ. Giúp những người đang thử thách bản thân tại Nhật truyền tải câu chuyện và giá trị của mình một cách rõ ràng và đáng tin cậy.",
+      en: "Website creation, social media flow design, and multilingual support for individuals and small businesses. Helping challengers in Japan communicate their story with clarity, simplicity, and trust.",
+    } satisfies Bi,
+    note: {
+      ja: "ただ作るだけではなく、“その人らしさ”が伝わる発信を大切にしています。",
+      vi: "Không chỉ tạo ra một trang web, tôi coi trọng cách truyền tải được cá tính và câu chuyện của mỗi người.",
+      en: "It is not only about making a website. I care about communication that feels true to the person behind it.",
+    } satisfies Bi,
+    points: [
+      { icon: "home", title: { ja: "ホームページ制作", vi: "Thiết kế website", en: "Website creation" } },
+      { icon: "bank", title: { ja: "SNS導線設計", vi: "Định hướng SNS", en: "Social media flow" } },
+      { icon: "family", title: { ja: "多言語対応", vi: "Hỗ trợ đa ngôn ngữ", en: "Multilingual support" } },
+    ] as const,
+    consultCta: {
+      ja: "制作について相談する",
+      vi: "Trao đổi về website",
+      en: "Ask about digital support",
+    } satisfies Bi,
+    lineCta: {
+      ja: "LINEで相談する",
+      vi: "Trao đổi qua LINE",
+      en: "Ask on LINE",
+    } satisfies Bi,
+  },
   boxing: {
     kicker: "Founder Story",
     title: {

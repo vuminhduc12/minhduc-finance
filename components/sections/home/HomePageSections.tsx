@@ -3,6 +3,7 @@ import { DualCtaBand } from "@/components/sections/DualCtaBand";
 import { FaqList } from "@/components/sections/FaqList";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { BoxingStorySection } from "@/components/sections/home/BoxingStorySection";
+import { DigitalSupportSection } from "@/components/sections/home/DigitalSupportSection";
 import { HeroHome } from "@/components/sections/home/HeroHome";
 import { OperatorTeaserSection } from "@/components/sections/home/OperatorTeaserSection";
 import { PdfPromoSection } from "@/components/sections/home/PdfPromoSection";
@@ -26,6 +27,7 @@ export function HomePageSections() {
       <PdfPromoSection />
       <ArticleHubSection limit={3} />
       <OperatorTeaserSection />
+      <DigitalSupportSection />
       <BoxingStorySection />
       <TrustRibbonSection />
       <section className="py-10 sm:py-12 md:py-14" aria-labelledby="home-faq-heading">
