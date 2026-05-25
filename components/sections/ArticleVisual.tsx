@@ -3,6 +3,7 @@ import type { ArticleCategory } from "@/lib/articles";
 type Props = {
   category: ArticleCategory;
   className?: string;
+  size?: "compact" | "feature";
 };
 
 const visualStyles: Record<ArticleCategory, { bg: string; fg: string; label: string }> = {
@@ -13,16 +14,22 @@ const visualStyles: Record<ArticleCategory, { bg: string; fg: string; label: str
   debt: { bg: "bg-[#fff0f3]", fg: "text-[#b34359]", label: "DEBT" },
 };
 
-export function ArticleVisual({ category, className = "" }: Props) {
+export function ArticleVisual({ category, className = "", size = "compact" }: Props) {
   const style = visualStyles[category];
+  const minHeight =
+    size === "feature"
+      ? "min-h-[13rem] sm:min-h-[16rem]"
+      : "min-h-[5.25rem] sm:min-h-[7.5rem]";
+  const iconSize = size === "feature" ? "h-20 w-20 sm:h-24 sm:w-24" : "h-10 w-10 sm:h-14 sm:w-14";
+  const padding = size === "feature" ? "p-5 sm:p-6" : "p-3 sm:p-4";
 
   return (
     <div className={`relative overflow-hidden ${style.bg} ${style.fg} ${className}`}>
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/55" aria-hidden />
-      <div className="absolute -bottom-10 left-6 h-28 w-28 rounded-full bg-white/40" aria-hidden />
-      <div className="relative flex h-full min-h-[5.25rem] flex-col justify-between p-3 sm:min-h-[7.5rem] sm:p-4">
-        <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] opacity-80">{style.label}</p>
-        <svg viewBox="0 0 64 64" className="h-10 w-10 sm:h-14 sm:w-14" aria-hidden>
+      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/55 sm:h-32 sm:w-32" aria-hidden />
+      <div className="absolute -bottom-10 left-6 h-28 w-28 rounded-full bg-white/40 sm:h-36 sm:w-36" aria-hidden />
+      <div className={`relative flex h-full ${minHeight} flex-col justify-between ${padding}`}>
+        <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] opacity-80 sm:text-xs">{style.label}</p>
+        <svg viewBox="0 0 64 64" className={iconSize} aria-hidden>
           {category === "risk" ? (
             <>
               <path d="M32 8 52 16v14c0 13-7.5 22.5-20 27-12.5-4.5-20-14-20-27V16l20-8z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />

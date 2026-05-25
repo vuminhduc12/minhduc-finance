@@ -52,6 +52,49 @@ function useCaseIcon(id: string): ResourceIconVariant {
   return "visa";
 }
 
+const referenceVisuals: readonly {
+  icon: ResourceIconVariant;
+  title: { ja: string; vi: string; en: string };
+  body: { ja: string; vi: string; en: string };
+}[] = [
+  {
+    icon: "tax",
+    title: { ja: "給与・税金", vi: "Lương và thuế", en: "Salary and tax" },
+    body: {
+      ja: "給与明細、所得税、住民税、社会保険を確認します。",
+      vi: "Kiểm tra phiếu lương, thuế thu nhập, thuế cư trú và bảo hiểm.",
+      en: "Check pay slips, income tax, resident tax, and social insurance.",
+    },
+  },
+  {
+    icon: "visa",
+    title: { ja: "在留・手続き", vi: "Lưu trú và thủ tục", en: "Residence and paperwork" },
+    body: {
+      ja: "在留カード、資格変更、更新などの一次情報へ進みます。",
+      vi: "Đi đến nguồn gốc về thẻ lưu trú, đổi tư cách và gia hạn.",
+      en: "Go to primary sources for residence cards, status changes, and renewals.",
+    },
+  },
+  {
+    icon: "investment",
+    title: { ja: "NISA・金融", vi: "NISA và tài chính", en: "NISA and finance" },
+    body: {
+      ja: "制度の説明、注意点、登録業者の確認に使います。",
+      vi: "Dùng để xem chế độ, điểm cần chú ý và kiểm tra đơn vị đăng ký.",
+      en: "Use this for system details, cautions, and registered business checks.",
+    },
+  },
+  {
+    icon: "consumer",
+    title: { ja: "詐欺・トラブル", vi: "Lừa đảo và rắc rối", en: "Scams and trouble" },
+    body: {
+      ja: "契約、SNS勧誘、送金前の相談先を整理します。",
+      vi: "Sắp xếp nơi hỏi về hợp đồng, mời gọi SNS và trước khi chuyển tiền.",
+      en: "Organize where to ask about contracts, SNS offers, and transfers.",
+    },
+  },
+];
+
 export default function OfficialInfoPage() {
   return (
     <>
@@ -113,6 +156,46 @@ export default function OfficialInfoPage() {
                 ))}
               </div>
             </Card>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-border bg-white/78 py-8 sm:py-10" aria-labelledby="reference-visual-map">
+        <Container>
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div className="min-w-0 max-w-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                REFERENCE MAP
+              </p>
+              <h2 id="reference-visual-map" className="mt-2 text-balance text-2xl font-bold text-navy sm:text-3xl">
+                <span className="lang-ja">迷った時に見る参考資料</span>
+                <span lang="vi" className="lang-vi">Tài liệu tham khảo khi bạn phân vân</span>
+                <span lang="en" className="lang-en">Reference materials when unsure</span>
+              </h2>
+            </div>
+            <p className="max-w-lg text-sm leading-relaxed text-muted">
+              <span className="lang-ja">内容ごとに公式情報の入口を分けています。まず近いテーマを選んでください。</span>
+              <span lang="vi" className="lang-vi">Các lối vào nguồn chính thức được chia theo nội dung. Hãy chọn chủ đề gần nhất trước.</span>
+              <span lang="en" className="lang-en">Official sources are grouped by purpose. Start with the closest topic.</span>
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {referenceVisuals.map((item) => (
+              <Card key={item.title.ja} className="min-w-0">
+                <ResourceIcon variant={item.icon} className="h-14 w-14 rounded-2xl" />
+                <h3 className="mt-4 min-w-0 break-words text-lg font-bold leading-snug text-navy">
+                  <span className="lang-ja">{item.title.ja}</span>
+                  <span lang="vi" className="lang-vi">{item.title.vi}</span>
+                  <span lang="en" className="lang-en">{item.title.en}</span>
+                </h3>
+                <p className="mt-2 min-w-0 break-words text-sm leading-relaxed text-muted">
+                  <span className="lang-ja">{item.body.ja}</span>
+                  <span lang="vi" className="lang-vi">{item.body.vi}</span>
+                  <span lang="en" className="lang-en">{item.body.en}</span>
+                </p>
+              </Card>
+            ))}
           </div>
         </Container>
       </section>

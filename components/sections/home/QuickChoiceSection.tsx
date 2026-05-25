@@ -1,12 +1,22 @@
 import Link from "next/link";
+import { ResourceIcon, type ResourceIconVariant } from "@/components/sections/ResourceHubVisual";
 import { Container } from "@/components/ui/Container";
 import { homeCopy } from "@/lib/copy/home";
+
+const cardIcons: readonly ResourceIconVariant[] = [
+  "scam",
+  "tax",
+  "investment",
+  "bank",
+  "pdf",
+  "future",
+];
 
 export function QuickChoiceSection() {
   const { quickChoice } = homeCopy;
 
   return (
-    <section className="py-10 sm:py-12 md:py-14" aria-labelledby="quick-choice-heading">
+    <section className="scroll-mt-24 py-10 sm:py-12 md:py-14" aria-labelledby="quick-choice-heading">
       <Container>
         <div className="grid gap-6 border-y border-border py-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-end">
           <div>
@@ -60,16 +70,22 @@ export function QuickChoiceSection() {
               className="group flex h-full flex-col rounded-3xl border border-border bg-white p-5 shadow-[0_18px_45px_rgba(11,31,58,0.07)] transition-colors hover:bg-accent-muted/25 sm:p-6"
             >
               <div className="mb-4 flex items-center justify-between gap-3">
-                <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent">
-                  <span className="lang-ja">{card.tag.ja}</span>
-                  <span lang="vi" className="lang-vi">{card.tag.vi}</span>
-                  <span lang="en" className="lang-en">{card.tag.en}</span>
-                </span>
+                <div className="flex min-w-0 items-center gap-3">
+                  <ResourceIcon
+                    variant={cardIcons[index] ?? "life"}
+                    className="h-11 w-11 shrink-0 rounded-2xl"
+                  />
+                  <span className="min-w-0 break-words text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent">
+                    <span className="lang-ja">{card.tag.ja}</span>
+                    <span lang="vi" className="lang-vi">{card.tag.vi}</span>
+                    <span lang="en" className="lang-en">{card.tag.en}</span>
+                  </span>
+                </div>
                 <span className="text-3xl font-bold leading-none text-accent-muted" aria-hidden>
                   0{index + 1}
                 </span>
               </div>
-              <h3 className="text-base font-bold leading-snug text-navy sm:text-lg">
+              <h3 className="min-w-0 break-words text-base font-bold leading-snug text-navy sm:text-lg">
                 <span className="lang-ja block">{card.title.ja}</span>
                 <span lang="vi" className="lang-vi block text-[0.82rem] font-semibold text-navy-soft">
                   {card.title.vi}
@@ -78,18 +94,18 @@ export function QuickChoiceSection() {
                   {card.title.en}
                 </span>
               </h3>
-              <p className="lang-ja mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+              <p className="lang-ja mt-3 min-w-0 break-words text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                 {card.body.ja}
               </p>
-              <p lang="vi" className="lang-vi mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+              <p lang="vi" className="lang-vi mt-3 min-w-0 break-words text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                 {card.body.vi}
               </p>
-              <p lang="en" className="lang-en mt-3 text-[0.82rem] leading-relaxed text-muted sm:text-sm">
+              <p lang="en" className="lang-en mt-3 min-w-0 break-words text-[0.82rem] leading-relaxed text-muted sm:text-sm">
                 {card.body.en}
               </p>
               <Link
                 href={card.href}
-                className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-navy px-4 py-2 text-center text-sm font-bold text-white transition-colors hover:bg-navy-soft"
+                className="mt-auto inline-flex min-h-11 items-center justify-center rounded-xl bg-navy px-4 py-2 text-center text-sm font-bold text-white transition-colors hover:bg-navy-soft"
               >
                 <span className="lang-ja">{card.cta.ja}</span>
                 <span lang="vi" className="lang-vi">
